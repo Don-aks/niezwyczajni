@@ -1,0 +1,9 @@
+extends /layout
+
+block head
+  include /constants/constants
+  title= TITLE + " | Artykuły"
+  script(src="articles.js")
+
+block content
+  main.main

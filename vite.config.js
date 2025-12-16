@@ -1,0 +1,48 @@
+import { fileURLToPath } from 'node:url';
+
+import vitePugPlugin from 'vite-plugin-pug-transformer';
+import { vitePluginWebp } from 'vite-plugin-to-webp';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
+
+import optimizeSvgSources from './plugins/optimizeSvgSources';
+import spriteReplacer from './plugins/spriteReplacer';
+import { getAllHTMLFiles } from './utilities';
+
+export default {
+  base: './',
+  resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+
+  build: {
+    emptyOutDir: true,
+    rollupOptions: {
+      input: getAllHTMLFiles(new URL('.', import.meta.url)),
+    },
+  },
+
+  plugins: [
+    vitePugPlugin({ pugOptions: { basedir: './src' } }),
+
+    VitePluginSvgSpritemap(['src/assets/icons/**/*.svg'], {
+      prefix: '',
+      svgo: false,
+      styles: false,
+      injectSvgOnDev: true,
+    }),
+
+    vitePluginWebp({ cwd: ['src/assets/images'] }),
+    ViteImageOptimizer({
+      include: ['src/assets/images/**/*.webp'],
+      webp: {
+        effort: 6,
+        quality: 80,
+        lossless: true,
+        alphaQuality: 80,
+        nearLossless: true,
+      },
+    }),
+
+    optimizeSvgSources(),
+    spriteReplacer(),
+  ],
+};

@@ -1,0 +1,24 @@
+@use 'helpers' as *;
+
+:root {
+  // Fonts
+  --font-family-base: 'OpenSans', system-ui;
+  --font-family-accent: 'Oswald', system-ui;
+
+  // Base colors
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  // Layout
+  --container-width: 1200px;
+  --container-padding-x: 15px;
+
+  // Misc
+  --outline-color: var(--color-white);
+  --outline-width: 2px;
+  --outline-offset: 2px;
+  --outline-border-radius: 4px;
+
+  --borders-radius: 30px;
+  --transition-duration: 0.3s;
+}

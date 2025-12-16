@@ -1,0 +1,130 @@
+@use 'helpers' as *;
+
+// Positioning
+
+.relative {
+  position: relative;
+}
+
+.\!relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+// Flex
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+// Grid
+
+.grid {
+  display: grid;
+}
+
+// Block model
+
+.max-w-1920 {
+  width: min(1920px, 100%);
+}
+
+.px-container {
+  padding-inline: var(--container-padding-x);
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+// Typography
+
+.text-sm {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Colors
+
+.text-color-secondary {
+  color: var(--color-text-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+// Transitions
+
+.transition-colors {
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration);
+}
+
+.transition-colors-svg {
+  transition-property: fill, stroke;
+  transition-duration: var(--transition-duration);
+}
+
+// Other
+
+.rounded {
+  border-radius: var(--borders-radius);
+}
+
+.rounded-50 {
+  border-radius: 50%;
+}
+
+.no-highlight {
+  @include no-highlight;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+}

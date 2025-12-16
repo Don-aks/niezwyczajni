@@ -1,0 +1,49 @@
+@use 'helpers' as *;
+
+@use 'reset';
+@use 'fonts';
+@use 'variables';
+@use 'utilities';
+@use 'animations';
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: 0.01s !important;
+  }
+}
+
+:target {
+  scroll-margin-top: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvh;
+  min-inline-size: 360px;
+
+  font: 16px/1.5 var(--font-family-base);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+// Blocks
+
+// Elements
+
+// Other
