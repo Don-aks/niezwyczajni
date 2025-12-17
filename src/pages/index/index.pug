@@ -8,19 +8,26 @@ block head
 block content
   include /components/header/header
   +header("index")
+
   main.main
-    section.banner
+    section.banner(
+      style="background-image: url('src/assets/images/banner.webp')"
+    )
       .container.banner__container
         .banner__content
-          h1.banner__title Zwyczajnie Niezwyczajni – Chrześcijańska Misja Niosąca Nadzieję w Radomiu
-          p.banner__lead Głosimy Ewangelię Jezusa Chrystusa, dzielimy się świadectwem przemienionego życia i docieramy do ludzi tam, gdzie najbardziej potrzebują nadziei.
+          h1.banner__title
+            | Zwyczajnie Niezwyczajni – Chrześcijańska Misja Niosąca Nadzieję w Radomiu
+          p.banner__lead
+            | Głosimy Ewangelię Jezusa Chrystusa, dzielimy się świadectwem
+            | przemienionego życia i docieramy do ludzi tam, gdzie najbardziej
+            | potrzebują nadziei.
 
-          p.banner__cta Nie jesteś sam – odezwij się do nas
-          .banner__buttons.flex.items-center
+          p.banner__cta Nie jesteś sam – odezwij się do nas:
+          .banner__buttons.flex
             // TODO: Set mailto link in CMS
-            a.btn.banner__btn.banner__btn--primary.transition-colors(
+            a.btn.banner__btn.banner__btn--primary.transition-colors.no-highlight(
               href="mailto:gzikg@onet.pl"
             ) Napisz do nas
-            a.btn.banner__btn.banner__btn--secondary.transition-colors.relative.z-1(
+            a.btn.banner__btn.banner__btn--secondary.transition-colors.relative.z-1.no-highlight(
               href="#meetings"
             ) Gdzie się spotykamy

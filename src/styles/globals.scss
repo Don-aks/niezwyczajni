@@ -95,13 +95,25 @@ li {
   }
 }
 
-.title {
+// prettier-ignore
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+
   font-family: var(--font-family-accent);
   text-transform: uppercase;
 }
 
+p {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
 .btn {
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
 
   font-family: var(--font-family-accent);
   letter-spacing: 0.03em;
