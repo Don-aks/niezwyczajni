@@ -1,0 +1,23 @@
+@use '@/styles/helpers' as *;
+
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 20px 0;
+
+  &__container {
+    padding: 25px 0 20px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__copy {
+    @include container;
+  }
+
+  &__copy-text {
+    font-size: 14px;
+  }
+}

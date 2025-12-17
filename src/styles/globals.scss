@@ -10,6 +10,8 @@
 @use '@/components/logo/logo';
 @use '@/components/nav/nav';
 
+@use '@/components/footer/footer';
+
 html {
   scroll-behavior: smooth;
 }
@@ -88,6 +90,11 @@ li {
   &:not(:last-child) {
     margin-bottom: 7px;
   }
+}
+
+.title {
+  font-family: var(--font-family-accent);
+  text-transform: uppercase;
 }
 
 // Other

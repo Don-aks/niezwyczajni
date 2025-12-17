@@ -104,3 +104,9 @@
   -webkit-focus-ring-color: transparent;
   -webkit-touch-callout: none;
 }
+
+@mixin container {
+  max-inline-size: var(--container-width);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
+}
