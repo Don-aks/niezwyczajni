@@ -2,9 +2,10 @@ extends /layout
 
 block head
   include /constants/constants
-  title= TITLE + " | Świadectwa"
-  script(src="testimonies.js")
+  title= PAGES.testimonies + " — " + TITLE
+  script(src="testimonies.js" type="module")
 
-block contentinclude /components/header/header
+block content
+  include /components/header/header
   +header("testimonies")
   main.main

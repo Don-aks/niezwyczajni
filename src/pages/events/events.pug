@@ -2,9 +2,10 @@ extends /layout
 
 block head
   include /constants/constants
-  title= TITLE + " | Wydarzenia"
-  script(src="events.js")
+  title= PAGES.events + " — " + TITLE
+  script(src="events.js" type="module")
 
-block contentinclude /components/header/header
+block content
+  include /components/header/header
   +header("events")
   main.main

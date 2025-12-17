@@ -2,8 +2,8 @@ extends /layout
 
 block head
   include /constants/constants
-  title= TITLE + " | Artykuły"
-  script(src="articles.js")
+  title= PAGES.articles + " — " + TITLE
+  script(src="articles.js" type="module")
 
 block content
   include /components/header/header

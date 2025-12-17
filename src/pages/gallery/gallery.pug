@@ -2,9 +2,10 @@ extends /layout
 
 block head
   include /constants/constants
-  title= TITLE + " | Galeria"
-  script(src="gallery.js")
+  title= PAGES.gallery + " — " + TITLE
+  script(src="gallery.js" type="module")
 
-block contentinclude /components/header/header
+block content
+  include /components/header/header
   +header("gallery")
   main.main
