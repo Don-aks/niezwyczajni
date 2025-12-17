@@ -83,3 +83,14 @@
     }
   }
 }
+
+// === About === //
+.about {
+  &__content {
+    max-inline-size: 550px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+}

@@ -54,6 +54,10 @@ body {
   @include container;
 }
 
+.section {
+  padding-block: 70px;
+}
+
 .logo {
   background-color: var(--color-primary);
 }
@@ -107,6 +111,48 @@ p {
   &:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+
+blockquote {
+  padding-top: 10px;
+
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 500;
+  font-style: italic;
+
+  color: var(--color-base-secondary);
+
+  &::before,
+  &::after {
+    font-size: 30px;
+    color: var(--color-primary);
+  }
+
+  &::before {
+    content: '„';
+    margin-right: 5px;
+  }
+
+  &::after {
+    content: '”';
+    margin-left: 5px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.section-title {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 36px;
+  color: var(--color-base);
+  line-height: 1.5;
 }
 
 .btn {
