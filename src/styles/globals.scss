@@ -100,6 +100,15 @@ li {
   text-transform: uppercase;
 }
 
+.btn {
+  padding: 10px;
+
+  font-family: var(--font-family-accent);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 // Other
 
 :focus-visible {
