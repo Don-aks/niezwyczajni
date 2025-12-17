@@ -5,5 +5,6 @@ block head
   title= TITLE + " | Wydarzenia"
   script(src="events.js")
 
-block content
+block contentinclude /components/header/header
+  +header("events")
   main.main

@@ -1,0 +1,20 @@
+@use '@/styles/helpers' as *;
+
+.header {
+  height: var(--header-height);
+  margin-bottom: 10px;
+
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-primary);
+
+  &__container {
+    padding-block: 10px;
+    height: 100%;
+  }
+
+  .nav__list {
+    @include mq('') {
+      gap: 20px;
+    }
+  }
+}

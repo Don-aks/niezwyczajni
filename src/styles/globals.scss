@@ -6,6 +6,10 @@
 @use 'utilities';
 @use 'animations';
 
+@use '@/components/header/header';
+@use '@/components/logo/logo';
+@use '@/components/nav/nav';
+
 html {
   scroll-behavior: smooth;
 }
@@ -48,6 +52,10 @@ body {
   max-inline-size: var(--container-width);
   padding-inline: var(--container-padding-x);
   margin-inline: auto;
+}
+
+.logo {
+  background-color: var(--color-primary);
 }
 
 // Elements
