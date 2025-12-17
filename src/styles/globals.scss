@@ -51,9 +51,7 @@ body {
 // Blocks
 
 .container {
-  max-inline-size: var(--container-width);
-  padding-inline: var(--container-padding-x);
-  margin-inline: auto;
+  @include container;
 }
 
 .logo {
@@ -68,10 +66,15 @@ a {
 
   color: var(--color-primary);
 
-  @include transition(text-decoration-color);
+  @include transition((text-decoration-color, color));
   @include no-highlight;
+
   @include hover {
     text-decoration-color: currentColor;
+  }
+
+  &:active {
+    color: var(--color-accent);
   }
 }
 
