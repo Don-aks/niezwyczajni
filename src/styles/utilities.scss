@@ -128,3 +128,18 @@
   clip-path: inset(100%);
   overflow: hidden;
 }
+
+.list-reset {
+  li {
+    position: initial;
+    padding-left: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}

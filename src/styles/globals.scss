@@ -34,8 +34,8 @@ body {
   min-inline-size: 360px;
 
   font: 16px/1.5 var(--font-family-base);
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-background);
+  color: var(--color-base);
 }
 
 .main {
@@ -44,6 +44,48 @@ body {
 
 // Blocks
 
+.container {
+  max-inline-size: var(--container-width);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
+}
+
 // Elements
 
+a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  color: var(--color-primary);
+
+  @include transition(text-decoration-color);
+  @include no-highlight;
+  @include hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+li {
+  position: relative;
+  padding-left: 10px;
+
+  &::before {
+    content: '†';
+    position: absolute;
+    left: 0;
+
+    color: var(--color-primary);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 7px;
+  }
+}
+
 // Other
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

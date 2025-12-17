@@ -8,6 +8,12 @@
   // Base colors
   --color-black: #000000;
   --color-white: #ffffff;
+  --color-base: var(--color-black);
+  --color-background: var(--color-white);
+
+  // Accent colors
+  --color-primary: #c08f63;
+  --color-accent: #4d2117;
 
   // Layout
   --container-width: 1200px;
