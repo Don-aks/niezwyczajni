@@ -7,7 +7,14 @@ const optimizeSvgSources = () => {
     if (!filePath.endsWith('.svg') || !fs.existsSync(filePath)) return;
 
     const svg = fs.readFileSync(filePath, 'utf8');
-    const plugins = ['removeDimensions', 'removeScripts'];
+    const plugins = [
+      'removeDimensions',
+      'removeScripts',
+      'removeComments',
+      'removeMetadata',
+      'removeTitle',
+      'removeDesc',
+    ];
 
     if (isMono) {
       plugins.push(
