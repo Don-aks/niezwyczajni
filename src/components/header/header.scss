@@ -10,6 +10,13 @@
   background-color: var(--color-white);
   --color-nav: var(--color-primary);
 
+  @include transition((background-color, height));
+
+  &.scrolled {
+    height: var(--header-height-sm);
+    box-shadow: var(--shadow-md);
+  }
+
   &:not(.scrolled):has(+ .banner) {
     background-color: transparent;
     --color-nav: var(--color-white);

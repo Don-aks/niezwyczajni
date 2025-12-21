@@ -23,13 +23,9 @@
   --container-width: 1200px;
   --container-padding-x: 15px;
   --header-height: 77px;
+  --header-height-sm: 59px;
 
   // Misc
-  --outline-color: var(--color-white);
-  --outline-width: 2px;
-  --outline-offset: 2px;
-  --outline-border-radius: 4px;
-
-  --borders-radius: 30px;
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition-duration: 0.3s;
 }
