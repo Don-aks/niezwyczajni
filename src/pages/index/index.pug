@@ -12,9 +12,9 @@ block content
   main.main
     section.about.section.relative.flex.justify-between
       .container.about__container
-        .about__content
-          h2.section-title.about__title O nas
-          h3.section-subtitle.about__subtitle Kim Jesteśmy
+        .section__content.about__content
+          h2.section__title.about__title O nas
+          h3.section__subtitle.about__subtitle Kim Jesteśmy
           .about__text
             p
               | Chrześcijańska misja „Zwyczajnie niezwyczajni” z Radomia to
@@ -32,3 +32,10 @@ block content
               figcaption
                 a(href="https://www.bible.com/pl/bible/3490/MRK.16.15")
                   | Ewangelia Marka 16,15
+
+      img.about__image.absolute(
+        src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
+        alt="..."
+        width="600"
+        height="400"
+      )

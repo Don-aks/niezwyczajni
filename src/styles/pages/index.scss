@@ -1,96 +1,12 @@
 @use '@/styles/helpers' as *;
 
-// === Banner === //
-
-.banner {
-  // TODO: make a 100dvh height
-  padding-block: 50px;
-
-  color: var(--color-white);
-  background-color: var(--color-primary);
-
-  &__content {
-    max-width: 57%;
-  }
-
-  &__title {
-    margin-bottom: 30px;
-
-    font-size: 40px;
-    letter-spacing: 0.12em;
-    color: var(--color-white);
-  }
-
-  &__lead {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 500;
-
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__cta {
-    font-size: 20px;
-    font-style: italic;
-
-    &:not(:last-child) {
-      margin-bottom: 25px;
-    }
-  }
-
-  &__buttons {
-    gap: 15px;
-  }
-
-  &__btn {
-    &--primary {
-      background-color: var(--color-background);
-      color: var(--color-base);
-
-      @include hover {
-        background-color: var(--color-base-secondary);
-        color: var(--color-white);
-      }
-    }
-
-    &--secondary {
-      color: var(--color-white);
-      background-color: transparent;
-      border: 2px solid var(--color-white);
-
-      overflow: hidden;
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background-color: var(--color-white);
-        transform: translateY(100%);
-
-        @include transition((transform, color));
-      }
-
-      @include hover {
-        color: var(--color-base);
-
-        &::before {
-          transform: translateY(0);
-        }
-      }
-    }
-  }
-}
+@use '@/components/banner/banner';
 
 // === About === //
-.about {
-  &__content {
-    max-inline-size: 550px;
-  }
 
-  &__subtitle {
-    margin-bottom: 20px;
+.about {
+  &__image {
+    top: -97px;
+    right: 20px;
   }
 }
