@@ -50,6 +50,23 @@ body {
 
 .section {
   padding-block: 70px;
+
+  &__content {
+    max-width: 550px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    font-size: 36px;
+    color: var(--color-base);
+    line-height: 1.5;
+  }
 }
 
 // Elements
@@ -91,6 +108,7 @@ li {
 
 // prettier-ignore
 h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
   color: var(--color-primary);
 
   font-family: var(--font-family-accent);
@@ -132,17 +150,6 @@ blockquote {
   &:not(:last-child) {
     margin-bottom: 15px;
   }
-}
-
-.section-title {
-  font-size: 24px;
-  line-height: 1.2;
-}
-
-.section-subtitle {
-  font-size: 36px;
-  color: var(--color-base);
-  line-height: 1.5;
 }
 
 .btn {
