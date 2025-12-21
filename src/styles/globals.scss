@@ -52,7 +52,7 @@ body {
   padding-block: 70px;
 
   &__content {
-    max-width: 550px;
+    width: min(100%, 550px);
   }
 
   &__title {
@@ -89,6 +89,9 @@ a {
   }
 }
 
+strong {
+  font-weight: 600;
+}
 li {
   position: relative;
   padding-left: 10px;
@@ -153,15 +156,58 @@ blockquote {
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-grid;
+  place-items: center;
   padding: 10px 15px;
 
   font-family: var(--font-family-accent);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include no-highlight;
+  @include transition((background-color, color));
+
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    @include transition((background-color, color));
+
+    @include hover {
+      background-color: var(--color-base);
+      color: var(--color-white);
+    }
+  }
+
+  &--secondary {
+    position: relative;
+    z-index: 1;
+
+    color: var(--color-btn);
+    background-color: transparent;
+    border: 2px solid var(--color-btn);
+
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--color-btn-bg-hover);
+      transform: translateY(100%);
+
+      @include transition((transform, color));
+    }
+
+    @include hover {
+      color: var(--color-btn-hover);
+
+      &::before {
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 // Other

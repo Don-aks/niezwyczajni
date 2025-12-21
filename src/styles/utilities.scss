@@ -86,6 +86,22 @@
   color: var(--color-text-secondary);
 }
 
+// Backgrounds
+
+.bg-back {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--image-url) no-repeat var(--position, center) / cover;
+    filter: brightness(var(--brightness, 0.5));
+  }
+}
+
 .bg-secondary {
   background-color: var(--color-bg-secondary);
 }
@@ -127,19 +143,4 @@
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
   overflow: hidden;
-}
-
-.list-reset {
-  li {
-    position: initial;
-    padding-left: 0;
-
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
-
-    &::before {
-      content: none;
-    }
-  }
 }

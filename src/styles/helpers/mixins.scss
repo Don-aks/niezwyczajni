@@ -106,7 +106,7 @@
 }
 
 @mixin container {
-  max-inline-size: var(--container-width);
+  width: min(100%, var(--container-width));
   padding-inline: var(--container-padding-x);
   margin-inline: auto;
 }

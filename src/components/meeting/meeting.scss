@@ -1,0 +1,75 @@
+@use '@/styles/helpers' as *;
+
+.meeting {
+  width: min(100%, 370px);
+
+  color: var(--color-base);
+  background-color: var(--color-background);
+  @include transition((background-color, color, transform));
+
+  @include hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.03);
+
+    .meeting__title {
+      color: var(--color-white);
+      @include transition(color);
+    }
+
+    a {
+      color: var(--color-accent);
+    }
+
+    .meeting__icon {
+      fill: var(--color-accent);
+    }
+
+    .meeting__btn {
+      color: var(--color-white);
+      background-color: var(--color-accent);
+
+      @include hover {
+        background-color: var(--color-white);
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__inner {
+    height: 100%;
+    gap: 15px;
+    padding: 15px 15px 20px;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: 100%;
+    height: 270px;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+
+    fill: var(--color-primary);
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__text {
+    flex: 1;
+    padding-bottom: 10px;
+  }
+
+  time:not(:last-child) {
+    &::after {
+      content: '–';
+      margin-inline: 5px 3px;
+    }
+  }
+}
