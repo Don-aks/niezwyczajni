@@ -24,10 +24,6 @@
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -48,6 +44,14 @@
 
 .grid {
   display: grid;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 // Block model

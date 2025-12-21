@@ -18,6 +18,24 @@
     gap: 40px;
   }
 
+  &__contact-item {
+    gap: 8px;
+  }
+
+  &__soc1als {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__soc1al-icon {
+    @include square(30px);
+    fill: var(--color-white);
+
+    @include hover(false) {
+      fill: var(--color-primary);
+    }
+  }
+
   &__copy {
     @include container;
   }
