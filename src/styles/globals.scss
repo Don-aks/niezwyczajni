@@ -7,9 +7,7 @@
 @use 'animations';
 
 @use '@/components/header/header';
-@use '@/components/logo/logo';
 @use '@/components/nav/nav';
-
 @use '@/components/footer/footer';
 
 html {
@@ -56,10 +54,6 @@ body {
 
 .section {
   padding-block: 70px;
-}
-
-.logo {
-  background-color: var(--color-primary);
 }
 
 // Elements
