@@ -1,10 +1,19 @@
 @use '@/styles/helpers' as *;
 
 .header {
-  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
+  height: var(--header-height);
   background-color: var(--color-white);
-  border-bottom: 2px solid var(--color-primary);
+  --color-nav: var(--color-primary);
+
+  &:not(.scrolled):has(+ .banner) {
+    background-color: transparent;
+    --color-nav: var(--color-white);
+  }
 
   &__container {
     padding-block: 10px;

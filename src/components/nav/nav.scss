@@ -1,3 +1,5 @@
+@use '@/styles/helpers' as *;
+
 .nav {
   font-family: var(--font-family-accent);
   text-transform: uppercase;
@@ -6,24 +8,30 @@
     gap: 30px;
   }
 
+  &__cross {
+    top: 0;
+    left: 50%;
+
+    width: 11px;
+    height: 15px;
+
+    fill: var(--color-nav);
+    transform: translateX(-50%);
+  }
+
+  &__item {
+    padding-top: 17px;
+    @include transition(padding);
+  }
+
   &__link {
+    color: var(--color-nav);
     text-decoration-thickness: 2px;
 
+    @include transition((color, text-decoration-color));
+
     &.current {
-      padding-top: 12px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-
-        display: block;
-        width: 5px;
-        height: 10px;
-
-        background-color: var(--color-primary);
-      }
+      pointer-events: none;
     }
   }
 }
