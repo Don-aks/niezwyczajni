@@ -1,1 +1,1 @@
-import '@/styles/pages/testimonies.scss';
+import './testimonies.scss';
