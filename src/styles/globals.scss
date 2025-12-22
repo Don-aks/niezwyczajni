@@ -29,6 +29,10 @@ html {
   }
 }
 
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
 body {
   display: flex;
   flex-direction: column;
