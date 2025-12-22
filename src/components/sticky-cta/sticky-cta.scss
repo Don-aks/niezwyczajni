@@ -54,6 +54,15 @@
     @include hover(false) {
       scale: 1.1;
     }
+
+    &:active {
+      background-color: var(--color-white);
+
+      .sticky-cta__icon {
+        animation-play-state: paused;
+        fill: var(--color-primary);
+      }
+    }
   }
 
   &__icon {
