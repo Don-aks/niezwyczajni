@@ -166,28 +166,36 @@ p {
 }
 
 blockquote {
+  position: relative;
   padding-top: 10px;
 
   font-size: 20px;
-  line-height: 1;
   font-weight: 500;
   font-style: italic;
 
   color: var(--color-base-secondary);
 
+  &:first-letter {
+    padding-left: 15px;
+  }
+
   &::before,
   &::after {
+    position: absolute;
+
     font-size: 30px;
     color: var(--color-primary);
   }
 
   &::before {
     content: '„';
+    top: 0;
     margin-right: 5px;
   }
 
   &::after {
     content: '”';
+    bottom: -5px;
     margin-left: 5px;
   }
 
