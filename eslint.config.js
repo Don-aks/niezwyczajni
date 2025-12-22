@@ -21,6 +21,13 @@ export default [
       'no-new': 'off',
       'no-param-reassign': 'off',
       'no-unused-expressions': 'off',
+      'lines-between-class-members': [
+        'error',
+        {
+          enforcement: 'always',
+          enforce: [{ blankLine: 'never', prev: 'field', next: 'field' }],
+        },
+      ],
       'import/prefer-default-export': 'off',
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
       // 'import/extensions': 'off',
