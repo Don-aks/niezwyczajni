@@ -1,0 +1,96 @@
+@use '@/styles/helpers' as *;
+
+@keyframes tada {
+  0% {
+    scale: 1;
+  }
+
+  2.5%,
+  5% {
+    scale: 0.9;
+    rotate: -3deg;
+  }
+
+  7.5%,
+  12.5%,
+  17.5%,
+  22.5% {
+    scale: 1.1;
+    rotate: 3deg;
+  }
+
+  10%,
+  15%,
+  20% {
+    scale: 1.1;
+    rotate: -3deg;
+  }
+
+  15% {
+    scale: 1.1;
+  }
+
+  25% {
+    scale: 1;
+  }
+
+  // pause...
+
+  100% {
+    scale: 1;
+  }
+}
+
+.sticky-cta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  &__link {
+    @include square(77px);
+    background-color: var(--color-primary);
+
+    @include transition(scale);
+    @include hover(false) {
+      scale: 1.1;
+    }
+  }
+
+  &__icon {
+    @include square(77px - 25px);
+
+    fill: var(--color-white);
+    animation: tada 4.5s infinite;
+  }
+
+  &__popover {
+    position: fixed;
+    right: 20px;
+    bottom: 110px;
+    max-width: 300px;
+    padding: 15px 20px;
+    opacity: 1;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--borders-radius);
+    transform: translateX(0);
+
+    @include transition(transform);
+
+    &:not(.visible) {
+      transform: translateX(calc(100% + 20px));
+    }
+
+    .contact-info {
+      gap: 0;
+    }
+
+    .contact-info__soc1al-icon {
+      fill: var(--color-primary);
+
+      @include hover {
+        fill: var(--color-accent);
+      }
+    }
+  }
+}
