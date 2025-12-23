@@ -102,7 +102,7 @@
     z-index: -1;
 
     background: var(--image-url) no-repeat var(--position, center) / cover;
-    filter: brightness(var(--brightness, 0.5));
+    filter: brightness(var(--brightness, 0.35));
   }
 }
 
