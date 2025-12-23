@@ -1,38 +1,8 @@
 @use '@/styles/helpers' as *;
 
-@use '@/components/banner/banner';
-@use '@/components/meeting/meeting';
+@use '@/components/card/card';
 
-// === About === //
-
-.about {
-  &__image {
-    top: -97px;
-    right: 20px;
-  }
-}
-
-// === Meetings === //
-
-.meetings {
-  padding-block: 100px;
-  color: var(--color-white);
-  text-align: center;
-
-  &__subtitle {
-    font-size: 48px;
-    color: var(--color-white);
-  }
-
-  &__text {
-    width: min(100%, 777px);
-    margin: 0 auto 30px;
-
-    text-align: center;
-  }
-
-  &__list {
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-}
+@use '@/sections/banner/banner';
+@use '@/sections/about/about';
+@use '@/sections/meetings/meetings';
+@use '@/sections/mission/mission';

@@ -1,0 +1,15 @@
+.meetings {
+  text-align: center;
+
+  time:not(:last-child) {
+    &::after {
+      content: '–';
+      margin-inline: 5px 3px;
+    }
+  }
+
+  &__list {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

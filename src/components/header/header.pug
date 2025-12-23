@@ -20,6 +20,3 @@ mixin header(currentPage)
                 class=currentPage === page ? "current" : ""
                 href=page + ".html"
               )= label
-
-  if currentPage === "index"
-    include /components/banner/banner

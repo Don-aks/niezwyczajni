@@ -1,0 +1,17 @@
+.mission {
+  &__slider {
+    top: 50%;
+    left: 0;
+    width: 600px;
+    height: 400px;
+    transform: translateY(-50%);
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    margin-left: auto;
+  }
+}

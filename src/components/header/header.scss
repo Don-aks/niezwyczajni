@@ -20,7 +20,7 @@
     }
   }
 
-  &:not(.scrolled):has(+ .banner) {
+  &:not(.scrolled):has(+ .main > .banner) {
     background-color: transparent;
     --color-nav: var(--color-white);
   }
