@@ -53,6 +53,10 @@
     @include transition(scale);
     @include hover(false) {
       scale: 1.1;
+
+      .sticky-cta__icon {
+        animation-play-state: paused;
+      }
     }
 
     &:active {
