@@ -1,9 +1,10 @@
 @use '@/styles/helpers' as *;
 
 @use '@/components/card/card';
+@use '@/components/slider-pagination/slider-pagination';
 
 @use '@/sections/banner/banner';
 @use '@/sections/about/about';
+@use '@/sections/about-mission/about-mission';
 @use '@/sections/meetings/meetings';
 @use '@/sections/mission/mission';
-@use '@/sections/about-mission/about-mission';

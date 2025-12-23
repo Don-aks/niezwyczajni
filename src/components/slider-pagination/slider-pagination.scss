@@ -1,0 +1,38 @@
+@use '@/styles/helpers' as *;
+
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  .swiper-pagination-bullet {
+    position: relative;
+
+    display: block;
+    width: calc(33.33% - 10px / 3);
+    height: 3px;
+
+    background-color: var(--color-base);
+    cursor: pointer;
+
+    @include transition(background-color);
+    @include no-highlight;
+
+    @include hover {
+      background-color: var(--color-accent);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+  }
+}

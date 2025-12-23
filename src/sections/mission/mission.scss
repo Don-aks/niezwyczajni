@@ -1,9 +1,13 @@
+@use '@/styles/helpers' as *;
+
 .mission {
   &__slider {
     top: 50%;
     left: 0;
+
     width: 600px;
     height: 400px;
+
     transform: translateY(-50%);
   }
 
@@ -13,5 +17,57 @@
 
   &__content {
     margin-left: auto;
+  }
+
+  &__slide {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      @include transition(opacity);
+
+      pointer-events: none;
+    }
+
+    @include hover {
+      &::before {
+        opacity: 1;
+      }
+
+      .mission__image {
+        transform: scale(1.05);
+      }
+
+      .mission__slide-caption {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    @include transition(transform);
+  }
+
+  &__slide-caption {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+    z-index: 2;
+
+    font-size: 24px;
+
+    color: var(--color-white);
+    opacity: 0;
+    @include transition(opacity);
   }
 }
