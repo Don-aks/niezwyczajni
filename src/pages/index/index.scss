@@ -1,7 +1,9 @@
 @use '@/styles/helpers' as *;
 
 @use '@/components/card/card';
+@use '@/components/image-wrapper/image-wrapper';
 @use '@/components/slider-pagination/slider-pagination';
+@use '@/components/slider/slider';
 
 @use '@/sections/banner/banner';
 @use '@/sections/about/about';

@@ -1,0 +1,27 @@
+.slider {
+  &__wrapper {
+    position: static;
+  }
+
+  &__slide {
+    width: 600px;
+    height: 400px;
+  }
+
+  &__btn {
+    position: absolute;
+    left: calc(-100% - 20px);
+    top: 50%;
+
+    &--next {
+      left: auto;
+      right: calc(-100% - 20px);
+    }
+  }
+
+  &__btn-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-base);
+  }
+}
