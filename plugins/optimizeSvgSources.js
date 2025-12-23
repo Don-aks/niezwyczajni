@@ -8,12 +8,28 @@ const optimizeSvgSources = () => {
 
     const svg = fs.readFileSync(filePath, 'utf8');
     const plugins = [
+      'cleanupNumericValues',
+      'removeEditorsNSData',
+      'convertStyleToAttrs',
+      'convertShapeToPath',
+      'removeXMLProcInst',
+      'removeUselessDefs',
       'removeDimensions',
-      'removeScripts',
       'removeComments',
+      'removeDoctype',
       'removeMetadata',
+      'collapseGroups',
+      'convertColors',
+      'removeScripts',
+      'cleanupAttrs',
       'removeTitle',
       'removeDesc',
+      'removeXMLNS',
+      'mergePaths',
+      {
+        name: 'removeAttrs',
+        params: { attrs: ['id', 'version'] },
+      },
     ];
 
     if (isMono) {

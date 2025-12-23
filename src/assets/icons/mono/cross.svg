@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140"><rect x="40" y="0" width="20" height="140"/><rect x="10" y="40" width="80" height="20"/></svg>
+<svg viewBox="0 0 100 140"><path d="M40 0H60V140H40z"/><path d="M10 40H90V60H10z"/></svg>
