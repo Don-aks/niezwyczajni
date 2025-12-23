@@ -57,11 +57,34 @@ body {
 .section {
   padding-block: 70px;
 
+  &--on-dark {
+    color: var(--color-white);
+
+    .section__subtitle {
+      font-size: 48px;
+      color: var(--color-white);
+    }
+  }
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--extended {
+    padding-block: 100px;
+  }
+
+  &__text {
+    width: min(100%, 777px);
+    margin: 0 auto 30px;
+  }
+
   &__content {
     width: min(100%, 550px);
   }
 
   &__title {
+    margin-bottom: 10px;
     font-size: 24px;
     line-height: 1.2;
   }
@@ -72,6 +95,13 @@ body {
     font-size: 36px;
     color: var(--color-base);
     line-height: 1.5;
+  }
+
+  &__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
   }
 }
 
@@ -163,6 +193,10 @@ p {
   &:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+
+figure {
+  margin-bottom: 20px;
 }
 
 blockquote {
