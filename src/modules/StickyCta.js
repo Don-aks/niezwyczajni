@@ -22,14 +22,33 @@ class StickyCta {
   }
 
   showPopover() {
-    this.popover.classList.toggle(this.popoverClass);
+    this.popover.classList.add(this.popoverClass);
+    this.element.setAttribute('aria-expanded', 'true');
+    document.addEventListener('click', this.handleOutsideClick);
+  }
+
+  hidePopover() {
+    this.popover.classList.remove(this.popoverClass);
+    this.element.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('click', this.handleOutsideClick);
   }
 
   handleClick = (event) => {
     if (window.innerWidth < breakpoints.tablet) return;
-
     event.preventDefault();
-    this.showPopover();
+
+    const isVisible = this.popover.classList.contains(this.popoverClass);
+    if (isVisible) {
+      this.hidePopover();
+    } else {
+      this.showPopover();
+    }
+  };
+
+  handleOutsideClick = (event) => {
+    if (!this.root.contains(event.target)) {
+      this.hidePopover();
+    }
   };
 }
 
