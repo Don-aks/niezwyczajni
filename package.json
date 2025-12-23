@@ -17,7 +17,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.38.0",
     "@prettier/plugin-pug": "^3.4.2",
-    "@spiriit/vite-plugin-svg-spritemap": "^5.0.0",
+    "@spiriit/vite-plugin-svg-spritemap": "^6.0.0",
     "@vheemstra/vite-plugin-imagemin": "^2.2.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
