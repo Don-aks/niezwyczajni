@@ -262,8 +262,8 @@ blockquote {
 // Other
 
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: $color-primary;
+  color: $color-white;
 }
 
 :focus-visible {
