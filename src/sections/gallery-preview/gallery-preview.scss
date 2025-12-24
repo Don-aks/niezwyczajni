@@ -1,0 +1,35 @@
+@use '@/styles/helpers' as *;
+
+.gallery-preview {
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+  }
+
+  &__link-text {
+    position: relative;
+    padding-right: 34px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url('/__spritemap.svg#gallery_white-view') center/contain
+        no-repeat;
+      transform: translateY(-50%);
+    }
+  }
+}

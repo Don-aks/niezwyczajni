@@ -1,8 +1,6 @@
-.slider {
-  &__wrapper {
-    position: static;
-  }
+@use '@/styles/helpers' as *;
 
+.slider {
   &__slide {
     width: 600px;
     height: 400px;
@@ -10,18 +8,37 @@
 
   &__btn {
     position: absolute;
-    left: calc(-100% - 20px);
+    right: -55px;
     top: 50%;
+    z-index: 1;
 
-    &--next {
-      left: auto;
-      right: calc(-100% - 20px);
+    display: inline-grid;
+    place-items: center;
+
+    transform: translateY(-50%);
+    opacity: 0.7;
+    @include transition(opacity);
+
+    &--prev {
+      right: auto;
+      left: -55px;
+
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    @include hover {
+      opacity: 1;
+    }
+
+    &:active {
+      .slider__btn-icon {
+        fill: var(--color-accent);
+      }
     }
   }
 
   &__btn-icon {
-    width: 24px;
-    height: 24px;
-    fill: var(--color-base);
+    @include square(55px);
+    fill: var(--color-primary);
   }
 }
