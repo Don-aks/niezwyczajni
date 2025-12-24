@@ -57,6 +57,10 @@ body {
 .section {
   padding-block: 70px;
 
+  &:has(.section__title--with-cross) {
+    padding-top: 40px;
+  }
+
   &--on-dark {
     color: var(--color-white);
 
@@ -106,6 +110,42 @@ body {
 
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+
+    &--border-top,
+    &--with-cross {
+      position: relative;
+      padding-top: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+      }
+    }
+
+    &--border-top {
+      &::before {
+        width: 177px;
+        height: 3px;
+
+        background-color: var(--color-primary);
+        transform: translateX(-50%);
+      }
+    }
+
+    &--with-cross {
+      padding-top: calc(37px + 15px);
+
+      &::before {
+        width: 26px;
+        height: 37px;
+
+        background: url('/__spritemap#cross_primary-view') center/contain
+          no-repeat;
+        transform: translateX(-50%);
+      }
     }
   }
 
