@@ -40,16 +40,16 @@
       inset: 0;
       z-index: -1;
       background-color: var(--color-btn-bg-hover);
-      transform: translateY(100%);
+      translate: 0 100%;
 
-      @include transition((transform, color));
+      @include transition((translate, color));
     }
 
     @include hover {
       color: var(--color-btn-hover);
 
       &::before {
-        transform: translateY(0);
+        translate: 0 0;
       }
     }
   }

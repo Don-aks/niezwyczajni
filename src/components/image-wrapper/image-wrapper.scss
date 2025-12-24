@@ -26,7 +26,7 @@
     }
 
     .image-wrapper__image {
-      transform: scale(1.05);
+      scale: 1.05;
     }
 
     .image-wrapper__caption {
@@ -35,7 +35,7 @@
   }
 
   &__image {
-    @include transition(transform);
+    @include transition(scale);
   }
 
   &__caption {

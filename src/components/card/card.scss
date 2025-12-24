@@ -5,12 +5,12 @@
 
   color: var(--color-base);
   background-color: var(--color-background);
-  @include transition((background-color, color, transform));
+  @include transition((background-color, color, scale));
 
   @include hover {
     background-color: var(--color-primary);
     color: var(--color-white);
-    transform: scale(1.03);
+    scale: 1.03;
 
     .card__title {
       color: var(--color-white);
