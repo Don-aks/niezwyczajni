@@ -36,11 +36,19 @@
     }
   }
 
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   *::selection {
     background-color: $color-accent;
   }
 
   &__inner {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     gap: 15px;
     padding: 15px 15px 20px;
