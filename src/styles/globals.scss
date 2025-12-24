@@ -61,7 +61,6 @@ body {
     color: var(--color-white);
 
     .section__subtitle {
-      font-size: 48px;
       color: var(--color-white);
     }
   }
@@ -74,9 +73,17 @@ body {
     padding-block: 100px;
   }
 
+  &__header {
+    margin-bottom: 40px;
+  }
+
   &__text {
     width: min(100%, 777px);
-    margin: 0 auto 30px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
 
   &__content {
@@ -84,17 +91,22 @@ body {
   }
 
   &__title {
-    margin-bottom: 10px;
     font-size: 24px;
     line-height: 1.2;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &__subtitle {
-    margin-bottom: 20px;
-
-    font-size: 36px;
+    font-size: 48px;
     color: var(--color-base);
     line-height: 1.5;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &__cards-container {
