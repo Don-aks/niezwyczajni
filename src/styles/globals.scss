@@ -257,7 +257,7 @@ blockquote {
     @include transition((background-color, color));
 
     @include hover {
-      background-color: var(--color-base);
+      background-color: var(--color-primary-dark);
       color: var(--color-white);
     }
   }

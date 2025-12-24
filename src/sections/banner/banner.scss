@@ -78,6 +78,10 @@
     &--primary {
       color: var(--color-black);
       background-color: var(--color-white);
+
+      @include hover {
+        background-color: var(--color-base);
+      }
     }
 
     &--secondary {

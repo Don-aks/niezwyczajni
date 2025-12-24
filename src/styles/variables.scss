@@ -17,6 +17,7 @@
 
   // Accent colors
   --color-primary: #{$color-primary};
+  --color-primary-dark: #{color.adjust($color-primary, $lightness: -15%)};
   --color-accent: #{$color-accent};
 
   // Layout
