@@ -1,0 +1,20 @@
+mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText })
+  li.card
+    if imageSrc
+      img.card__image(src=imageSrc alt=imageAlt width="400" height="267")
+    .card__inner
+      if iconId
+        svg.card__icon.transition-colors-svg
+          use(href=`/__spritemap#${iconId}`)
+      h4.card__title= title
+      if text
+        .card__text
+          p= text
+      if href
+        a.btn.btn--primary.card__btn(
+          href=href
+          target="_blank"
+          rel="noopener noreferrer"
+        )= btnText
+      else if btnText
+        button.btn.btn--primary.card__btn(type="button")= btnText

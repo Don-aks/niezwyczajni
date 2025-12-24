@@ -1,3 +1,5 @@
+include /components/card/card
+
 section.about-mission.section.section--on-dark.section--centered.bg-back(
   style="--image-url: url('https://www.custodia.org/wp-content/uploads/2024/11/whatsapp_image_2022-07-01_at_17.41.43.jpeg'); --brightness: 0.35"
 )
@@ -14,35 +16,6 @@ section.about-mission.section.section--on-dark.section--centered.bg-back(
         | Ewangelią i osobistym świadectwem.
 
     ul.section__cards-container.list-reset
-      li.card
-        img.card__image(
-          src="https://sojo.net/files/blog/shutterstock_1126048436_1.jpg"
-          alt="Ewangelizacja uliczna w Radomiu"
-          width="400"
-          height="267"
-        )
-        .card__inner
-          svg.card__icon.transition-colors-svg
-            use(href="/__spritemap#city")
-          h4.card__title Działamy na ulicach Radomia
-          .card__text
-            p
-              | Regularnie wychodzimy na ulice Radomia, aby dzielić się
-              | Dobrą Nowiną z tymi, którzy jej najbardziej potrzebują.
+      +card({ imageSrc: "https://sojo.net/files/blog/shutterstock_1126048436_1.jpg", imageAlt: "Ewangelizacja uliczna w Radomiu", iconId: "city", title: "Działamy na ulicach Radomia", text: "Regularnie wychodzimy na ulice Radomia, aby dzielić się Dobrą Nowiną z tymi, którzy jej najbardziej potrzebują." })
 
-      li.card
-        img.card__image(
-          src="https://www.christianitytoday.com/wp-content/uploads/2022/08/130651.jpeg?w=1920"
-          alt="Ewangelizacja więzienna w Radomiu"
-          width="400"
-          height="267"
-        )
-        .card__inner
-          svg.card__icon.transition-colors-svg
-            use(href="/__spritemap#prison")
-          h4.card__title Działamy we więzieniach
-          .card__text
-            p
-              | Odwiedzamy osądzone osoby w radomskich zakładach
-              | karnych, oferując im wsparcie duchowe i nadzieję na
-              | przemianę poprzez Ewangelię.
+      +card({ imageSrc: "https://www.christianitytoday.com/wp-content/uploads/2022/08/130651.jpeg?w=1920", imageAlt: "Ewangelizacja więzienna w Radomiu", iconId: "prison", title: "Działamy we więzieniach", text: "Odwiedzamy osądzone osoby w radomskich zakładach karnych, oferując im wsparcie duchowe i nadzieję na przemianę poprzez Ewangelię." })

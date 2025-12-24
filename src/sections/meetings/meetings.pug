@@ -1,3 +1,5 @@
+include /components/card/card
+
 section#meetings.meetings.section.section--on-dark.section--centered.section--extended.bg-back(
   style="--image-url: url('https://campusministry.georgetown.edu/wp-content/uploads/sites/500/2024/02/53131181838_9beee9620b_k.jpg'); --brightness: 0.35"
 )
@@ -14,60 +16,5 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
           | przyjaźni.
 
     ul.meetings__list.list-reset.flex.justify-center
-      li.card.meetings__item.flex.flex-col
-        img.card__image(
-          src="https://www.luxmed.pl/assets/media/Grupa%20wsparcia.jpeg%3Ffm=webp&q=90&lossless=0"
-          alt="Spotkanie grupy wsparcia i studium biblijne"
-          width="400"
-          height="267"
-        )
-        .card__inner.flex.flex-col
-          svg.card__icon.transition-colors-svg
-            use(href="/__spritemap#bible")
-          h4.card__title Grupa wsparcia & Studium Biblijne
-          .card__text
-            p
-              | Spotykamy się w każdą środę na Studium Biblijnym oraz grupie
-              | wsparcia w naszej placówce przy ul. 25 Czerwca 41, w
-              | godzinach
-              |
-              strong
-                time(datetime="16:00") 16:00
-                time(datetime="18:00") 18:00
-          a.btn.btn--primary.card__btn(
-            href="https://maps.app.goo.gl/ubpt2wxhCGNE9J2G8"
-            target="_blank"
-            rel="noopener noreferrer"
-          )
-            | Zobacz lokalizację
-
-      //- TODO: Change img alt text
-      li.card.meetings__item.flex.flex-col
-        img.card__image(
-          src="https://powiatzgorzelecki.pl/wp-content/uploads/2023/08/MK3_2941-scaled.jpg"
-          alt="Spotkanie młodzieżowe TymekTeam w ..."
-          width="400"
-          height="267"
-        )
-        .card__inner.flex.flex-col
-          svg.card__icon.transition-colors-svg
-            use(href="/__spritemap#girl")
-          h4.card__title Spotkania młodzieżowe
-          .card__text
-            p
-              | W soboty prowadzimy spotkania młodzieżowe
-              |
-              a(href="https://instagram.com/tymekteam/")
-                | „TymekTeam”
-              |
-              | w „Domu Ojca” na ul. Głównej 12, w godzinach
-              |
-              strong
-                time(datetime="16:00") 16:00
-                time(datetime="19:00") 19:00
-          a.btn.btn--primary.card__btn(
-            href="https://maps.app.goo.gl/jDeH9SSvDxnCShxy9"
-            target="_blank"
-            rel="noopener noreferrer"
-          )
-            | Zobacz lokalizację
+      +card({ imageSrc: "https://www.luxmed.pl/assets/media/Grupa%20wsparcia.jpeg%3Ffm=webp&q=90&lossless=0", imageAlt: "Spotkanie grupy wsparcia i studium biblijne", iconId: "bible", title: "Grupa wsparcia & Studium Biblijne", text: "Spotykamy się w każdą środę na Studium Biblijnym oraz grupie wsparcia w naszej placówce przy ul. 25 Czerwca 41, w godzinach 16:00-18:00.", href: "https://maps.app.goo.gl/ubpt2wxhCGNE9J2G8", btnText: "Zobacz lokalizację" })
+      +card({ imageSrc: "https://powiatzgorzelecki.pl/wp-content/uploads/2023/08/MK3_2941-scaled.jpg", imageAlt: "Spotkanie młodzieżowe TymekTeam w ...", iconId: "girl", title: "Spotkania młodzieżowe", text: "W soboty prowadzimy spotkania młodzieżowe „TymekTeam” w „Domu Ojca” na ul. Głównej 12, w godzinach 16:00-19:00.", href: "https://maps.app.goo.gl/jDeH9SSvDxnCShxy9", btnText: "Zobacz lokalizację" })
