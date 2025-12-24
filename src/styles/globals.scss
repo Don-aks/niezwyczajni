@@ -6,6 +6,8 @@
 @use 'utilities';
 @use 'animations';
 
+@use '@/components/btn/btn';
+
 @use '@/components/header/header';
 @use '@/components/nav/nav';
 @use '@/components/contact-info/contact-info';
@@ -48,116 +50,9 @@ body {
   flex-grow: 1;
 }
 
-// Blocks
-
 .container {
   @include container;
 }
-
-.section {
-  padding-block: 70px;
-
-  &:has(.section__title--with-cross) {
-    padding-top: 40px;
-  }
-
-  &--on-dark {
-    color: var(--color-white);
-
-    .section__subtitle {
-      color: var(--color-white);
-    }
-  }
-
-  &--centered {
-    text-align: center;
-  }
-
-  &--extended {
-    padding-block: 100px;
-  }
-
-  &__header {
-    margin-bottom: 40px;
-  }
-
-  &__text {
-    width: min(100%, 777px);
-    margin: 0 auto;
-
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-
-  &__content {
-    width: min(100%, 550px);
-  }
-
-  &__title {
-    font-size: 24px;
-    line-height: 1.2;
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
-
-  &__subtitle {
-    font-size: 48px;
-    color: var(--color-base);
-    line-height: 1.5;
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    &--border-top,
-    &--with-cross {
-      position: relative;
-      padding-top: 20px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-      }
-    }
-
-    &--border-top {
-      &::before {
-        width: 177px;
-        height: 3px;
-
-        background-color: var(--color-primary);
-        transform: translateX(-50%);
-      }
-    }
-
-    &--with-cross {
-      padding-top: calc(37px + 15px);
-
-      &::before {
-        width: 26px;
-        height: 37px;
-
-        background: url('/__spritemap#cross_primary-view') center/contain
-          no-repeat;
-        transform: translateX(-50%);
-      }
-    }
-  }
-
-  &__cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-}
-
-// Elements
 
 a {
   text-decoration: underline;
@@ -289,63 +184,6 @@ blockquote {
     margin-bottom: 15px;
   }
 }
-
-.btn {
-  display: inline-grid;
-  place-items: center;
-  padding: 10px 15px;
-
-  font-family: var(--font-family-accent);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  @include no-highlight;
-  @include transition((background-color, color));
-
-  &--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    @include transition((background-color, color));
-
-    @include hover {
-      background-color: var(--color-primary-dark);
-      color: var(--color-white);
-    }
-  }
-
-  &--secondary {
-    position: relative;
-    z-index: 1;
-
-    color: var(--color-btn);
-    background-color: transparent;
-    border: 2px solid var(--color-btn);
-
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background-color: var(--color-btn-bg-hover);
-      transform: translateY(100%);
-
-      @include transition((transform, color));
-    }
-
-    @include hover {
-      color: var(--color-btn-hover);
-
-      &::before {
-        transform: translateY(0);
-      }
-    }
-  }
-}
-
-// Other
 
 ::selection {
   background-color: $color-primary;
