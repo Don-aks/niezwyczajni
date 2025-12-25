@@ -1,6 +1,9 @@
+@use '@/styles/helpers' as *;
+
 .banner {
   // TODO: make a 100dvh height
-  padding-block: calc(50px + var(--header-height)) 50px;
+  padding-block: calc(50px + var(--header-height)) 60px;
+
   color: var(--color-white);
 
   &__content {
@@ -44,34 +47,29 @@
   }
 
   &__title {
-    margin-bottom: 30px;
-
     font-size: 40px;
     letter-spacing: 0.12em;
     color: var(--color-white);
-  }
-
-  &__lead {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 500;
 
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   }
 
-  &__cta {
-    font-size: 20px;
-    font-style: italic;
+  &__lead {
+    font: 500 18px/1.5 var(--font-family-base);
 
     &:not(:last-child) {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
   }
 
   &__buttons {
     gap: 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &__btn {
@@ -85,9 +83,25 @@
     }
 
     &--secondary {
-      --color-btn: var(--color-white);
-      --color-btn-hover: var(--color-black);
-      --color-btn-bg-hover: var(--color-white);
+      text-decoration: underline;
+
+      @include hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+    font-style: italic;
+
+    span:not(:last-child) {
+      margin-right: 5px;
+
+      &::after {
+        content: '•';
+        margin-left: 6px;
+      }
     }
   }
 }
