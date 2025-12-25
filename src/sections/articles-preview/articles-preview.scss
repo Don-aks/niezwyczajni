@@ -1,0 +1,19 @@
+.articles-preview {
+  &__container {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -320px;
+      z-index: -1;
+
+      width: 557px;
+      height: 777px;
+
+      background: url('/__spritemap#cross_primary-view') center/contain
+        no-repeat;
+
+      rotate: 5deg;
+    }
+  }
+}

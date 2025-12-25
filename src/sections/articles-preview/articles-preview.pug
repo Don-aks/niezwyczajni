@@ -1,0 +1,52 @@
+-
+  var articles = [
+    {
+      title: "Ewangelizacja w miejskich przestrzeniach",
+      excerpt: "Dowiedz się, jak nasza misja dociera do ludzi na ulicach Radomia, niosąc przesłanie nadziei i miłości.",
+      imageUrl: "https://www.radiomaryja.pl/wp-content/uploads/2021/08/Ewangelizacja-w-Beskidach-3-1030x687.jpg",
+      imageAlt: "Ewangelizacja uliczna",
+      link: "#",
+      date: "2024-03-14",
+      dateText: "14 marca 2024",
+    },
+    {
+      title: "Wsparcie więźniów poprzez wiarę",
+      excerpt: "Poznaj historie przemiany życia więźniów, którzy odnaleźli siłę i nadzieję dzięki naszej misji.",
+      imageUrl: "https://www.churchofjesuschrist.org/imgs/6243814b0ca5f6af118731e74ce5719a7bd3c3a8/full/%21500%2C/0/default",
+      imageAlt: "Wsparcie więźniów",
+      link: "#",
+      date: "2024-02-28",
+      dateText: "28 lutego 2024",
+    },
+    {
+      title: "Jak możesz pomóc naszej misji?",
+      excerpt: "Zobacz, w jaki sposób możesz zaangażować się i wspierać naszą chrześcijańską misję ewangelizacyjną.",
+      imageUrl: "https://cdn.galleries.smcloud.net/t/galleries/gf-qtYD-QdxM-2moc_zloty-polski-pieniadze-banknoty-monety-664x442.jpg",
+      imageAlt: "Wolontariat w misji",
+      link: "#",
+      date: "2024-02-15",
+      dateText: "15 lutego 2024",
+    },
+  ]
+
+section.articles-preview.section
+  .container.articles-preview__container.relative.z-1
+    header.section__header
+      h2.section__title Nasz blog
+      h3.section__subtitle Najnowsze artykuły z życia misji
+    .articles-preview__content.section__cards-container
+      each article of articles
+        article.article-card.articles-preview__card.flex.flex-col
+          .article-card__image-wrapper
+            img.article-card__image.articles-preview__image(
+              src=article.imageUrl
+              alt=article.imageAlt
+              width="600"
+              height="400"
+            )
+            time.article-card__date(datetime=article.date)= article.dateText
+          .article-card__inner
+            h3.article-card__title= article.title
+            p.article-card__text= article.excerpt
+            a.btn.btn--secondary.article-card__link(href=article.link)
+              span.article-card__link-text Czytaj więcej

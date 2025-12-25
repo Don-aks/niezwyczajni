@@ -17,6 +17,10 @@
 
   &--centered {
     text-align: center;
+
+    .section__text {
+      margin-inline: auto;
+    }
   }
 
   &--extended {
@@ -29,11 +33,7 @@
 
   &__text {
     width: min(100%, 777px);
-    margin: 0 auto;
-
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
+    margin: 0;
   }
 
   &__content {
@@ -90,7 +90,7 @@
     line-height: 1.5;
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
   }
 
