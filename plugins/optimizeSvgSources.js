@@ -71,8 +71,8 @@ const optimizeSvgSources = () => {
     name: 'optimize-svg-sources',
     buildStart: runAll,
 
-    watchChange(id, change) {
-      if (change === 'update' || change === 'create') handleSvgChange(id);
+    watchChange(id, { event }) {
+      if (event === 'update' || event === 'create') handleSvgChange(id);
     },
   };
 };
