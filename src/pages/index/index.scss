@@ -5,6 +5,8 @@
 @use '@/components/image-wrapper/image-wrapper';
 @use '@/components/slider-pagination/slider-pagination';
 @use '@/components/slider/slider';
+@use '@/components/article-card/article-card';
+@use '@/components/story/story';
 
 @use '@/sections/banner/banner';
 @use '@/sections/about/about';
@@ -12,3 +14,4 @@
 @use '@/sections/meetings/meetings';
 @use '@/sections/mission/mission';
 @use '@/sections/gallery-preview/gallery-preview';
+@use '@/sections/articles-preview/articles-preview';
