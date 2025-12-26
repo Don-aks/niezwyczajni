@@ -1,3 +1,28 @@
+include /components/image-wrapper/image-wrapper
+
+-
+  var gallery = [
+    {
+      src: "https://campusministry.georgetown.edu/wp-content/uploads/sites/500/2024/02/53131181838_9beee9620b_k.jpg",
+      alt: "Ewangelizacja uliczna",
+      caption: "Ewangelizacja uliczna"
+    },
+    {
+      src: "https://www.luxmed.pl/assets/media/Grupa%20wsparcia.jpeg%3Ffm=webp&q=90&lossless=0",
+      alt: "Warsztaty ewangelizacyjne",
+      width: 600,
+      height: 400,
+      caption: "Warsztaty ewangelizacyjne"
+    },
+    {
+      src: "https://powiatzgorzelecki.pl/wp-content/uploads/2023/08/MK3_2941-scaled.jpg",
+      alt: "Spotkanie ewangelizacyjne",
+      width: 600,
+      height: 400,
+      caption: "Spotkanie ewangelizacyjne"
+    }
+  ]
+
 section.gallery-preview.section.section--centered
   .container
     header.section__header.gallery-preview__header
@@ -6,30 +31,9 @@ section.gallery-preview.section.section--centered
     .gallery-preview__content.relative
       .slider.gallery-preview__slider.swiper
         .slider__wrapper.swiper-wrapper
-          .image-wrapper.slider__slide.swiper-slide
-            img.image-wrapper__image(
-              src="https://campusministry.georgetown.edu/wp-content/uploads/sites/500/2024/02/53131181838_9beee9620b_k.jpg"
-              alt="Ewangelizacja uliczna"
-              width="600"
-              height="400"
-            )
-            .image-wrapper__caption Ewangelizacja uliczna
-          .image-wrapper.slider__slide.swiper-slide
-            img.image-wrapper__image(
-              src="https://www.luxmed.pl/assets/media/Grupa%20wsparcia.jpeg%3Ffm=webp&q=90&lossless=0"
-              alt="Warsztaty ewangelizacyjne"
-              width="600"
-              height="400"
-            )
-            .image-wrapper__caption Warsztaty ewangelizacyjne
-          .image-wrapper.slider__slide.swiper-slide
-            img.image-wrapper__image(
-              src="https://powiatzgorzelecki.pl/wp-content/uploads/2023/08/MK3_2941-scaled.jpg"
-              alt="Spotkanie ewangelizacyjne"
-              width="600"
-              height="400"
-            )
-            .image-wrapper__caption Spotkanie ewangelizacyjne
+          each image of gallery
+            +imageWrapper(image, "swiper-slide")
+
       .slider__navigation.gallery-preview__slider-navigation
         button.slider__btn.slider__btn--prev
           svg.slider__btn-icon
