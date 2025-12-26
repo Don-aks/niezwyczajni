@@ -18,22 +18,28 @@ class StickyCta {
   }
 
   bindEvents() {
-    this.element.addEventListener('click', this.handleClick);
+    this.element.addEventListener('click', this.#handleClick);
   }
 
   showPopover() {
     this.popover.classList.add(this.popoverClass);
+
     this.element.setAttribute('aria-expanded', 'true');
-    document.addEventListener('click', this.handleOutsideClick);
+    this.popover.setAttribute('aria-hidden', 'false');
+
+    document.addEventListener('click', this.#handleOutsideClick);
   }
 
   hidePopover() {
     this.popover.classList.remove(this.popoverClass);
+
     this.element.setAttribute('aria-expanded', 'false');
-    document.removeEventListener('click', this.handleOutsideClick);
+    this.popover.setAttribute('aria-hidden', 'true');
+
+    document.removeEventListener('click', this.#handleOutsideClick);
   }
 
-  handleClick = (event) => {
+  #handleClick = (event) => {
     if (window.innerWidth < breakpoints.tablet) return;
     event.preventDefault();
 
@@ -45,7 +51,7 @@ class StickyCta {
     }
   };
 
-  handleOutsideClick = (event) => {
+  #handleOutsideClick = (event) => {
     if (!this.root.contains(event.target)) {
       this.hidePopover();
     }
