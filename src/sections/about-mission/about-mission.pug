@@ -1,4 +1,33 @@
-include /components/card/card
+include /components/story/story
+
+-
+  var storyItems = [
+    {
+      iconId: "city",
+      title: "Ewangelizacja Uliczna",
+      text: "Regularnie wychodzimy na ulice Radomia, aby dzielić się Dobrą Nowiną z tymi, którzy jej najbardziej potrzebują."
+    },
+    {
+      iconId: "prison",
+      title: "Ewangelizacja więzienna w Radomiu",
+      text: "Odwiedzamy osadzone osoby w radomskich zakładach karnych, oferując im wsparcie duchowe i nadzieję na przemianę poprzez Ewangelię."
+    },
+    {
+      iconId: "bible",
+      title: "Nasza Misja",
+      text: "Głosimy Ewangelię Jezusa Chrystusa jako jedyną drogę do zbawienia i przemiany życia."
+    },
+    {
+      iconId: "heart",
+      title: "Miłość i Troska",
+      text: "Okazujemy miłość i troskę każdemu człowiekowi, niezależnie od jego przeszłości czy obecnej sytuacji."
+    },
+    {
+      iconId: "hands",
+      title: "Wsparcie Duchowe",
+      text: "Wspieramy osoby poprzez modlitwę, rozmowy oraz praktyczną pomoc w ich duchowym rozwoju."
+    },
+  ]
 
 section.about-mission.section.section--on-dark.section--centered.bg-back(
   style="--image-url: url('https://www.custodia.org/wp-content/uploads/2024/11/whatsapp_image_2022-07-01_at_17.41.43.jpeg'); --brightness: 0.35"
@@ -8,14 +37,11 @@ section.about-mission.section.section--on-dark.section--centered.bg-back(
       h2.section__title.section__title--with-cross
         | Wierzymy w moc przemienienia
       h3.section__subtitle Ewangelizacja Uliczna i Więzienna
-    .section__text
-      p
-        | Boża łaska ma moc przemienić życie <strong>każdego</strong>
-        | człowieka. Dlatego odwiedzamy więzienia, szkoły oraz miejsca,
-        | w których żyją ludzie pozbawieni nadziei, dzieląc się z nimi
-        | Ewangelią i osobistym świadectwem.
+      .section__text
+        p
+          | Boża łaska ma moc przemienić życie <strong>każdego</strong>
+          | człowieka. Dlatego odwiedzamy więzienia, szkoły oraz miejsca,
+          | w których żyją ludzie pozbawieni nadziei, dzieląc się z nimi
+          | Ewangelią i osobistym świadectwem.
 
-    ul.section__cards-container.list-reset
-      +card({ imageSrc: "https://sojo.net/files/blog/shutterstock_1126048436_1.jpg", imageAlt: "Ewangelizacja uliczna w Radomiu", iconId: "city", title: "Działamy na ulicach Radomia", text: "Regularnie wychodzimy na ulice Radomia, aby dzielić się Dobrą Nowiną z tymi, którzy jej najbardziej potrzebują." })
-
-      +card({ imageSrc: "https://www.christianitytoday.com/wp-content/uploads/2022/08/130651.jpeg?w=1920", imageAlt: "Ewangelizacja więzienna w Radomiu", iconId: "prison", title: "Działamy we więzieniach", text: "Odwiedzamy osądzone osoby w radomskich zakładach karnych, oferując im wsparcie duchowe i nadzieję na przemianę poprzez Ewangelię." })
+    +storiesSection(storyItems, "about-mission__stories")

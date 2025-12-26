@@ -1,0 +1,12 @@
+mixin storiesSection(storiesArray, additionalClass = "")
+  ul.story.list-reset(class=additionalClass)
+    each item of storiesArray
+      +story(item)
+
+mixin story({ iconId, title, text })
+  li.story__item
+    .story__icon-wrapper
+      svg.story__icon
+        use(href=`__spritemap#${iconId}`)
+    h4.story__item-title= title
+    p.story__item-text= text
