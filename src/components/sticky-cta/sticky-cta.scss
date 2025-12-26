@@ -45,12 +45,18 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: var(--header-z-index);
 
   &__link {
     @include square(77px);
     background-color: var(--color-primary);
 
     @include transition(scale);
+
+    &:focus-visible {
+      border-radius: 50%;
+    }
+
     @include hover(false) {
       scale: 1.1;
 
