@@ -54,6 +54,10 @@ body {
   @include container;
 }
 
+main > section:last-child {
+  padding-bottom: 200px;
+}
+
 a {
   text-decoration: underline;
   text-decoration-color: transparent;
