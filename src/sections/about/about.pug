@@ -1,5 +1,5 @@
-section.about.section.flex.justify-between
-  .container.about__container.relative
+section.about.section
+  .container.about__container.flex.justify-between.items-center
     .section__content.about__content
       header.section__header.about__header
         h2.section__title.about__title Kim Jesteśmy
@@ -15,9 +15,22 @@ section.about.section.flex.justify-between
           | Spotykamy się regularnie, modlimy się, studiujemy Pismo
           | Święte i angażujemy się w różne formy ewangelizacji.
 
-    img.about__image.absolute(
-      src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
-      alt="..."
-      width="600"
-      height="400"
-    )
+    .about__image-wrapper.relative
+      img.about__image.absolute(
+        src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
+        alt="..."
+        width="600"
+        height="400"
+      )
+      img.about__image.absolute(
+        src="https://zarzadcy.com.pl/wp-uploads/wspolnota-mieszkaniowa-nmxe.jpg"
+        alt="..."
+        width="600"
+        height="400"
+      )
+      img.about__image.absolute(
+        src="https://www.poslanie.pl/upload/art_paragraph/591_img1_people-4050698_1280.jpg"
+        alt="..."
+        width="600"
+        height="400"
+      )

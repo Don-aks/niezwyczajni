@@ -16,8 +16,25 @@
     }
   }
 
+  &__image-wrapper {
+    width: 600px;
+    height: 400px;
+  }
+
   &__image {
-    top: -97px;
     right: 0;
+    z-index: 3;
+
+    &:nth-child(2) {
+      right: -40px;
+      z-index: 2;
+      translate: 0 -20px;
+    }
+
+    &:nth-child(3) {
+      right: -80px;
+      z-index: 1;
+      translate: 0 -40px;
+    }
   }
 }
