@@ -13,24 +13,6 @@
 
   &__link {
     font-size: 24px;
-  }
-
-  &__link-text {
-    position: relative;
-    padding-right: calc(30px + 12px);
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-
-      display: block;
-      @include square(30px);
-
-      background: url('/__spritemap.svg#gallery_white-view') center/contain
-        no-repeat;
-      translate: 0 -50%;
-    }
+    --icon: url('/__spritemap#gallery_white-view');
   }
 }
