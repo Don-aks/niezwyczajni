@@ -1,3 +1,21 @@
+include /components/image-wrapper/image-wrapper
+
+-
+  var images = [
+    {
+      src: "https://iccscampus.org/wp-content/uploads/2017/11/Serving-God-in-prison.jpg",
+      caption: "Ewangelizacja w więzieniu"
+    },
+    {
+      src: "https://wp.cruxnow.com/wp-content/uploads/2021/06/street-evangelization.png",
+      caption: "Ewangelizacja uliczna"
+    },
+    {
+      src: "https://www.evangelism.today/wp-content/uploads/2023/03/preaching_1-1080x675.jpg",
+      caption: "Praca z młodzieżą"
+    }
+  ]
+
 section.mission.section
   .container.mission__container.relative
     .mission__content.section__content
@@ -24,30 +42,7 @@ section.mission.section
       .slider-pagination.mission__slider-pagination.flex
 
     .slider.mission__slider.swiper.absolute
-      .mission__slider-inner.swiper-wrapper.list-reset
-        .image-wrapper.slider__slide.swiper-slide
-          img.image-wrapper__image(
-            src="https://iccscampus.org/wp-content/uploads/2017/11/Serving-God-in-prison.jpg"
-            alt="Ewangelizacja w więzieniu"
-            width="600"
-            height="400"
-          )
-          span.image-wrapper__caption Ewangelizacja w więzieniu
-
-        .image-wrapper.slider__slide.swiper-slide
-          img.image-wrapper__image(
-            src="https://wp.cruxnow.com/wp-content/uploads/2021/06/street-evangelization.png"
-            alt="Ewangelizacja uliczna"
-            width="600"
-            height="400"
-          )
-          span.image-wrapper__caption Ewangelizacja uliczna
-
-        .image-wrapper.slider__slide.swiper-slide
-          img.image-wrapper__image(
-            src="https://www.evangelism.today/wp-content/uploads/2023/03/preaching_1-1080x675.jpg"
-            alt="Praca z młodzieżą"
-            width="600"
-            height="400"
-          )
-          span.image-wrapper__caption Praca z młodzieżą
+      ul.mission__slider-inner.swiper-wrapper.list-reset
+        each image of images
+          li.slider__slide.swiper-slide
+            +imageWrapper(image)
