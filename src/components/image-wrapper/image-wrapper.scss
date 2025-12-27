@@ -20,7 +20,7 @@
     pointer-events: none;
   }
 
-  &:hover {
+  &:hover:has(&__caption) {
     &::before {
       opacity: 1;
     }
