@@ -1,7 +1,22 @@
+@use '@/styles/helpers' as *;
+
 .cta {
   padding-block: 20px;
 
   &__content {
     width: min(600px, 100%);
+  }
+
+  &__btn {
+    text-decoration: underline;
+    text-decoration-skip-ink: 2px;
+    text-decoration-color: transparent;
+
+    color: var(--color-base);
+    @include transition(text-decoration-color);
+
+    @include hover {
+      text-decoration-color: currentColor;
+    }
   }
 }
