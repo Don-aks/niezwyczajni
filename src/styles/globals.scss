@@ -166,6 +166,10 @@ blockquote {
 
   color: var(--color-base-secondary);
 
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
   &:first-letter {
     padding-left: 17px;
   }
@@ -190,8 +194,8 @@ blockquote {
     margin-left: 5px;
   }
 
-  &:not(:last-child) {
-    margin-bottom: 15px;
+  & + figcaption {
+    font-weight: 500;
   }
 }
 
