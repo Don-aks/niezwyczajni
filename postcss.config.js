@@ -1,7 +1,7 @@
 export default {
   plugins: {
     autoprefixer: { grid: true },
-    pxtoRem: {
+    ['postcss-pxtorem']: {
       rootValue: 16,
       unitPrecision: 5,
       propList: ['*'],
