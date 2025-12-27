@@ -20,7 +20,7 @@
     pointer-events: none;
   }
 
-  @include hover {
+  &:hover {
     &::before {
       opacity: 1;
     }
