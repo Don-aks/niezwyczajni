@@ -1,3 +1,5 @@
+include /components/article-card/article-card
+
 -
   var articles = [
     {
@@ -36,21 +38,7 @@ section.articles-preview.section.relative.z-1
       h3.section__subtitle Najnowsze artykuły z życia misji
     .articles-preview__content.section__cards-container
       each article of articles
-        article.article-card.articles-preview__card.flex.flex-col
-          .article-card__image-wrapper
-            img.article-card__image.articles-preview__image(
-              src=article.imageUrl
-              alt=article.imageAlt
-              width="600"
-              height="400"
-            )
-            time.article-card__date(datetime=article.date)= article.dateText
-          .article-card__inner
-            h3.article-card__title= article.title
-            p.article-card__text= article.excerpt
-            a.btn.btn--secondary.article-card__link(href=article.link)
-              span.article-card__link-text Czytaj więcej
-
+        +articleCard(article)
     footer.articles-preview__footer.text-center
       a.btn.btn--primary.btn--with-icon.articles-preview__link(
         href="blog.html"

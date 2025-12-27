@@ -1,0 +1,15 @@
+mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText })
+  article.article-card.articles-preview__card.flex.flex-col
+    .article-card__image-wrapper
+      img.article-card__image.articles-preview__image(
+        src=imageUrl
+        alt=imageAlt
+        width="600"
+        height="400"
+      )
+      time.article-card__date(datetime=date)= dateText
+    .article-card__inner
+      h3.article-card__title= title
+      p.article-card__text= excerpt
+      a.btn.btn--secondary.article-card__link(href=link)
+        | Czytaj więcej
