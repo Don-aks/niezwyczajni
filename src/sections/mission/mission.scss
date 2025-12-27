@@ -1,14 +1,13 @@
 @use '@/styles/helpers' as *;
 
 .mission {
-  &__slider {
-    top: 50%;
-    left: 0;
+  &__container {
+    gap: 30px;
+  }
 
+  &__slider {
     width: 600px;
     height: 400px;
-
-    translate: 0 -50%;
   }
 
   &__container {

@@ -17,7 +17,13 @@ include /components/image-wrapper/image-wrapper
   ]
 
 section.mission.section
-  .container.mission__container.relative
+  .container.mission__container.flex.justify-between.items-center
+    .slider.mission__slider.swiper
+      ul.slider__wrapper.swiper-wrapper.list-reset
+        each image of images
+          li.slider__slide.swiper-slide
+            +imageWrapper(image)
+
     .mission__content.section__content
       h2.section__title.mission__title Jaki nasz cel?
       h3.section__subtitle.mission__subtitle Nasza Misja
@@ -40,9 +46,3 @@ section.mission.section
             a(href="https://www.bible.com/pl/bible/3490/JHN.3.16-17")
               | Ewangelia Jana 3,16–17
       .slider-pagination.mission__slider-pagination.flex
-
-    .slider.mission__slider.swiper.absolute
-      ul.mission__slider-inner.swiper-wrapper.list-reset
-        each image of images
-          li.slider__slide.swiper-slide
-            +imageWrapper(image)
