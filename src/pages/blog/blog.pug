@@ -3,10 +3,10 @@ extends /layout
 block head
   include /constants/constants
   title= PAGES.articles + " — " + TITLE
-  script(src="articles.js" type="module")
+  script(src="blog.js" type="module")
 
 block content
   include /components/header/header
-  +header("articles")
+  +header("blog")
 
   main.main
