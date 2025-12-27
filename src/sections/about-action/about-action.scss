@@ -1,0 +1,10 @@
+.about-action {
+  &__text {
+    margin: 0;
+    text-align: left;
+
+    blockquote {
+      color: var(--color-white);
+    }
+  }
+}
