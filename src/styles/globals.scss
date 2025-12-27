@@ -85,6 +85,10 @@ strong {
   margin: 20px 0;
 
   list-style: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 ol:not(.list-reset) {
@@ -147,7 +151,9 @@ p {
 }
 
 figure {
-  margin-bottom: 20px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 blockquote {
@@ -161,7 +167,7 @@ blockquote {
   color: var(--color-base-secondary);
 
   &:first-letter {
-    padding-left: 15px;
+    padding-left: 17px;
   }
 
   &::before,
