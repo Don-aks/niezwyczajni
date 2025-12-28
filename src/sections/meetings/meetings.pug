@@ -37,6 +37,13 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
           | studiować Pismo Święte oraz budować relacje wsparcia i
           | przyjaźni.
 
-    ul.section__cards-container.list-reset
+    ul.section__cards-container.meetings__list.list-reset
       each meeting of meetings
         +card(meeting)
+
+    footer.meetings__footer
+      a.btn.btn--primary.btn--with-icon.meetings__link(
+        href="#faq"
+        style="--icon: url('/__spritemap#question_white-view'); --icon-size: 34px"
+      )
+        span(style="padding-right: calc(34px + 7px)") Najczęściej zadawane pytania

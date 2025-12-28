@@ -1,0 +1,9 @@
+.meetings {
+  padding-bottom: 60px;
+
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
