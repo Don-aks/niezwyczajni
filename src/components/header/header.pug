@@ -20,4 +20,5 @@ mixin header(currentPage)
               a.nav__link(
                 class=currentPage === page ? "current" : ""
                 href=page + ".html"
+                tabindex=currentPage === page ? "-1" : "0"
               )= label
