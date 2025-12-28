@@ -11,7 +11,7 @@ mixin header(currentPage)
           height="55"
         )
       nav.header__nav.nav
-        ul.nav__list.flex.items-center.list-reset
+        ul.nav__list.list-reset.flex.items-center.gap-30
           each [page, label] of Object.entries(PAGES)
             li.nav__item(class=currentPage === page ? "relative" : "")
               if currentPage === page
