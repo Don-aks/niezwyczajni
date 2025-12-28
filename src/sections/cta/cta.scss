@@ -7,6 +7,12 @@
     width: min(600px, 100%);
   }
 
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
   &__btn {
     text-decoration: underline;
     text-decoration-skip-ink: 2px;
