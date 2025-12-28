@@ -5,6 +5,7 @@ class StickyCta {
     root: '.sticky-cta',
     link: '.sticky-cta__link',
     popover: '.sticky-cta__popover',
+    showPopoverElements: '[data-show-popover]',
   };
   popoverClass = 'visible';
 
@@ -14,11 +15,18 @@ class StickyCta {
 
     this.element = this.root.querySelector(this.selectors.link);
     this.popover = this.root.querySelector(this.selectors.popover);
+    this.showPopoverElements = document.querySelectorAll(
+      this.selectors.showPopoverElements,
+    );
+
     this.bindEvents();
   }
 
   bindEvents() {
     this.element.addEventListener('click', this.#handleClick);
+    this.showPopoverElements.forEach((el) => {
+      el.addEventListener('click', this.#handleClick);
+    });
   }
 
   showPopover() {
@@ -40,7 +48,7 @@ class StickyCta {
   }
 
   #handleClick = (event) => {
-    if (window.innerWidth < breakpoints.tablet) return;
+    if (window.innerWidth <= breakpoints.tablet) return;
     event.preventDefault();
 
     const isVisible = this.popover.classList.contains(this.popoverClass);
@@ -52,6 +60,10 @@ class StickyCta {
   };
 
   #handleOutsideClick = (event) => {
+    if (event.target.closest(this.selectors.showPopoverElements)) {
+      return;
+    }
+
     if (!this.root.contains(event.target)) {
       this.hidePopover();
     }
