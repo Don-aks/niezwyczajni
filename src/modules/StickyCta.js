@@ -5,9 +5,11 @@ class StickyCta {
     root: '.sticky-cta',
     link: '.sticky-cta__link',
     popover: '.sticky-cta__popover',
+    description: '.sticky-cta__description',
     showPopoverElements: '[data-show-popover]',
   };
   popoverClass = 'visible';
+  desktopDescription = 'Zobacz dane kontaktowe';
 
   constructor() {
     this.root = document.querySelector(this.selectors.root);
@@ -15,11 +17,20 @@ class StickyCta {
 
     this.element = this.root.querySelector(this.selectors.link);
     this.popover = this.root.querySelector(this.selectors.popover);
+    this.description = this.element.querySelector(this.selectors.description);
     this.showPopoverElements = document.querySelectorAll(
       this.selectors.showPopoverElements,
     );
 
+    this.setDescriptionText();
     this.bindEvents();
+  }
+
+  setDescriptionText() {
+    if (window.innerWidth > breakpoints.tablet) {
+      this.description.textContent = this.desktopDescription;
+      this.element.setAttribute('title', this.desktopDescription);
+    }
   }
 
   bindEvents() {
