@@ -76,17 +76,10 @@
     &--primary {
       color: var(--color-black);
       background-color: var(--color-white);
+      outline-color: var(--color-white);
 
       @include hover {
         background-color: var(--color-base);
-      }
-    }
-
-    &--secondary {
-      text-decoration: underline;
-
-      @include hover {
-        color: var(--color-primary);
       }
     }
   }
