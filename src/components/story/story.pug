@@ -1,4 +1,4 @@
-mixin storiesSection(storiesArray, additionalClass = "")
+mixin storiesList(storiesArray, additionalClass = "")
   ul.story.list-reset(class=additionalClass)
     each item of storiesArray
       +story(item)
