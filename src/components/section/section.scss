@@ -27,8 +27,10 @@
     padding-block: 100px;
   }
 
-  &__header {
-    margin-bottom: 40px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
   &__text {

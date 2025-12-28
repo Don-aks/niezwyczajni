@@ -14,12 +14,6 @@
     rotate: 5deg;
   }
 
-  &__content {
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-  }
-
   &__link {
     --icon: url('/__spritemap#article_white-view');
   }
