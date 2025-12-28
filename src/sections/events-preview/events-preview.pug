@@ -1,0 +1,49 @@
+include /components/event-card/event-card
+
+-
+  var events = [
+    {
+      imageSrc: "https://i0.wp.com/adiberj.com.br/wp-content/uploads/2021/08/louvor-adoracao.jpg?resize=696%2C464&ssl=1",
+      imageAlt: "Some alt text",
+      title: "Spotkanie modlitewne",
+      date: "2024-08-05",
+      dateText: "5 sierpnia 2024",
+      description: "Dołącz do nas na wspólne spotkanie modlitewne w naszej misji.",
+      link: "#",
+    },
+    {
+      imageSrc: "https://ichtis.info/images/stories/_nik6871.jpg",
+      imageAlt: "Some alt text",
+      title: "Warsztaty ewangelizacyjne",
+      date: "2024-07-15",
+      dateText: "15 lipca 2024",
+      description: "Naucz się skutecznych metod ewangelizacji podczas naszych warsztatów.",
+      link: "#",
+    },
+    {
+      imageSrc: "https://www.targikielce.pl/storage/image/core_files/2025/9/23/f1ec2b4d5dd2ce6e64b4bb425cb7ecca/default/preview/koncert-charytatywny-2025-plakat.jpg",
+      imageAlt: "Some alt text",
+      title: "Koncert charytatywny",
+      date: "2024-06-20",
+      dateText: "20 czerwca 2024",
+      description: "Wspieraj naszą misję poprzez udział w koncercie charytatywnym.",
+      link: "#",
+      isHappened: true,
+    }
+  ]
+
+section.section.events-preview
+  .container.section__container.events-preview__container
+    header.section__header
+      h2.section__title Wydarzenia i aktualności
+      h3.section__subtitle Bądź na bieżąco z naszymi inicjatywami
+
+    .events-preview__events.section__cards-container
+      each event in events
+        +eventCard(event)
+
+    footer.section__footer.text-center
+      a.btn.btn--primary.btn--with-icon.events-preview__link(
+        href="events.html"
+      )
+        span Zobacz wszystkie wydarzenia

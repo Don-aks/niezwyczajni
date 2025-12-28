@@ -1,0 +1,12 @@
+mixin eventCard({ imageSrc, imageAlt, title, date, dateText, description, link, isHappened })
+  .event-card.flex.flex-col(class=isHappened ? "happened" : "")
+    .event-card__image-wrapper
+      img.event-card__image(src=imageSrc alt=imageAlt width="600" height="400")
+      time.event-card__date(datetime=date)
+        | #{ dateText }
+    .event-card__inner.flex.flex-col
+      h3.event-card__title= title
+      if description
+        p.event-card__description= description
+      if link
+        a.event-card__link.btn.btn--secondary(href=link) Czytaj więcej
