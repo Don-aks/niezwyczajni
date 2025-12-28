@@ -10,7 +10,7 @@ mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText })
         h4.card__title= title
         if text
           .card__text
-            p= text
+            p !{ text }
         if href
           a.btn.btn--primary.card__btn(
             href=href
