@@ -4,9 +4,9 @@ mixin storiesSection(storiesArray, additionalClass = "")
       +story(item)
 
 mixin story({ iconId, title, text })
-  li.story__item
-    .story__icon-wrapper
-      svg.story__icon
+  li.story__item.transition-colors
+    .story__icon-wrapper.transition-colors
+      svg.story__icon.transition-colors-svg
         use(href=`__spritemap#${iconId}`)
-    h4.story__item-title= title
-    p.story__item-text= text
+    h4.story__item-title.transition-colors= title
+    p.story__item-text.transition-colors= text

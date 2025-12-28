@@ -31,8 +31,24 @@
     margin-left: auto;
 
     text-align: left;
-
     background-color: var(--color-story, var(--color-white));
+
+    @include hover {
+      background-color: var(--color-story-hover, var(--color-primary));
+      color: var(--color-white);
+
+      .story__icon-wrapper {
+        background-color: var(--color-white);
+      }
+
+      .story__icon {
+        fill: var(--color-primary);
+      }
+
+      .story__item-title {
+        color: var(--color-white);
+      }
+    }
 
     &:not(:last-child) {
       margin-bottom: 30px;
