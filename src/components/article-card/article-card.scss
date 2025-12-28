@@ -35,8 +35,6 @@
   }
 
   &__inner {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     padding: 30px 20px;
     border: 2px solid var(--color-primary);
@@ -50,6 +48,7 @@
 
   &__link {
     border: 3px solid var(--color-primary);
+
     --color-btn: var(--color-primary);
     --color-btn-hover: var(--color-white);
     --color-btn-bg-hover: var(--color-primary);
