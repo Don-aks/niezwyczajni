@@ -57,7 +57,8 @@
   }
 
   &__lead {
-    font: 500 18px/1.5 var(--font-family-base);
+    width: min(100%, 500px);
+    font: 18px/1.5 var(--font-family-base);
 
     &:not(:last-child) {
       margin-bottom: 20px;
