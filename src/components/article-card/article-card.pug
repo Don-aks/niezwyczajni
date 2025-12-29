@@ -1,10 +1,10 @@
-mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText })
-  article.article-card.articles-preview__card.flex.flex-col
+mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText }, additionalClasses = "", imageWidth = 370)
+  article.article-card.articles-preview__card.flex.flex-col(class=additionalClasses)
     .article-card__image-wrapper
       img.article-card__image.articles-preview__image(
         src=imageUrl
         alt=imageAlt
-        width="600"
+        width=imageWidth
         height="200"
       )
       time.article-card__date(datetime=date)= dateText

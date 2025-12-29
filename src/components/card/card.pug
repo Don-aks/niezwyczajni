@@ -1,8 +1,13 @@
-mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText })
+mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText }, additionalClasses = "", imageWidth = 370)
   li.card
     article.card__wrapper
       if imageSrc
-        img.card__image(src=imageSrc alt=imageAlt width="400" height="267")
+        img.card__image(
+          src=imageSrc
+          alt=imageAlt
+          width=imageWidth
+          height="267"
+        )
       .card__inner
         if iconId
           svg.card__icon.transition-colors-svg
