@@ -8,7 +8,7 @@
 @use '@/components/slider/slider';
 @use '@/components/event-card/event-card';
 @use '@/components/article-card/article-card';
-@use '@/components/story/story';
+@use '@/components/video/video';
 
 @use '@/sections/banner/banner';
 @use '@/sections/about/about';
@@ -17,6 +17,7 @@
 @use '@/sections/events-preview/events-preview';
 @use '@/sections/mission/mission';
 @use '@/sections/articles-preview/articles-preview';
+@use '@/sections/videos-preview/videos-preview';
 @use '@/sections/meetings/meetings';
 @use '@/sections/gallery-preview/gallery-preview';
 @use '@/sections/faq/faq';

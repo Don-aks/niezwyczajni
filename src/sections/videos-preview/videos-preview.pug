@@ -1,0 +1,48 @@
+include /components/video/video
+
+-
+  var videos = [
+    {
+      youtubeId: "dQw4w9WgXcQ",
+      title: "Inspirujący film 1",
+    },
+    {
+      youtubeId: "3JZ_D3ELwOQ",
+      title: "Inspirujący film 2",
+      isHD: false
+    },
+    {
+      youtubeId: "L_jWHffIx5E",
+      title: "Inspirujący film 3"
+    },
+    {
+      youtubeId: "eY52Zsg-KVI",
+      title: "Inspirujący film 4",
+      isHD: false
+    },
+    {
+      youtubeId: "9bZkp7q19f0",
+      title: "Inspirujący film 5"
+    },
+    {
+      youtubeId: "fJ9rUzIMcZQ",
+      title: "Inspirujący film 6",
+      isHD: false
+    }
+  ]
+
+section.videos-preview.section
+  .container.section__container.items-start
+    header.section__header
+      h2.section__title Zobacz nasze filmy
+      h3.section__subtitle Inspirujące historie i przesłania
+
+    .section__cards-container
+      each video in videos
+        +video({ ...video, width: 370, height: 208 }, "section__card")
+
+    a.btn.btn--primary.btn--with-icon.videos-preview__link(
+      href="videos.html"
+      style="--icon: url('/__spritemap#video_white-view')"
+    )
+      span Zobacz wszystkie filmy

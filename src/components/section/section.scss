@@ -102,4 +102,8 @@
     justify-content: center;
     gap: 30px;
   }
+
+  &__card {
+    flex-basis: calc(33.33% - 20px);
+  }
 }

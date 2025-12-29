@@ -1,0 +1,13 @@
+mixin video({ youtubeId, title, isHD }, additionalClasses = "")
+  if isHD == undefined
+    - isHD = true;
+
+  .video(class=additionalClasses data-youtube-id=youtubeId title=title)
+    button.video__inner(
+      type="button"
+      style=`
+        background-image: url('https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg')`
+    )
+      span.visually-hidden Odtwórz wideo: #{ title }
+      svg.video__icon
+        use(href="/__spritemap#video-circle")

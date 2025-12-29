@@ -1,6 +1,7 @@
 import Header from '@/modules/Header';
 import StickyCta from '@/modules/StickyCta';
-import Swipers from './modules/swipers';
+import Swipers from '@/modules/swipers';
+import Videos from '@/modules/Videos';
 
 import 'swiper/css';
 import '@/styles/globals.scss';
@@ -8,3 +9,4 @@ import '@/styles/globals.scss';
 new Header();
 new StickyCta();
 new Swipers();
+new Videos();
