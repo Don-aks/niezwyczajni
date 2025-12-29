@@ -1,0 +1,94 @@
+include /components/video/video
+
+-
+  var faqItems = [
+    {
+      question: "Kim jesteśmy i czym jest misja „Zwyczajnie Niezwyczajni”?",
+      answer: "<p>Misja „Zwyczajnie Niezwyczajni” to wspólnota chrześcijan, którzy doświadczyli Bożej łaski i miłości, a dzięki temu przemiany swojego życia – wolności od grzechu i uzależnień.</p><p>Dziś dzielimy się tym, co sami otrzymaliśmy: Ewangelią, czyli Dobrą Nowiną o Jezusie Chrystusie, oraz osobistym świadectwem zmienionego życia.</p><p>Prowadzimy spotkania ewangelizacyjne w więzieniach, na ulicach i w szkołach, a także cotygodniową grupę wsparcia – otwartą dla każdego, kto potrzebuje pomocy lub rozmowy.</p>"
+    },
+    {
+      question: "Do jakiego nurtu chrześcijaństwa należy wasza misja?",
+      answer: "<p>Istnieje wiele nurtów, kościołów i denominacji. Gdy jednak sięgniemy do Dziejów Apostolskich – księgi opisującej narodziny pierwszego Kościoła – czytamy:</p><figure><blockquote>W Antiochii też po raz pierwszy uczniów nazwano chrześcijanami.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/act.11.26\">Dzieje Apostolskie 11, 26</a></figcaption></figure><p>Dla nas chrześcijanin to przede wszystkim uczeń i naśladowca Jezusa Chrystusa – i tak właśnie siebie postrzegamy.</p><p>Od momentu naszego nawrócenia i nowego narodzenia uczymy się żyć w relacji z Jezusem, poznając Go przez Słowo Boże i modlitwę.</p>"
+    },
+    {
+      question: "Jak długo istnieje wasza misja?",
+      answer: "<p>Nasze działania ewangelizacyjne prowadzimy od kilku lat. Około 2019 roku zarejestrowaliśmy się jako stowarzyszenie, co umożliwiło nam formalną współpracę z więzieniami, szkołami i innymi instytucjami.</p>"
+    },
+    {
+      question: "Kto stoi za inicjatywą i kto ją prowadzi?",
+      answer: "<p>Pomysłodawcą i założycielem misji jest Grzegorz Gzik. Warto jednak podkreślić, że misja to wspólne dzieło wielu osób, które na równi angażują się w głoszenie Ewangelii i pomoc innym.</p>"
+    },
+    {
+      question: "Dlaczego głosicie Ewangelię na ulicach?",
+      answer: "<p>Jako chrześcijanie traktujemy poważnie tzw. wielki nakaz misyjny, który Jezus pozostawił swoim uczniom:</p><figure><blockquote>I powiedział do nich: Idźcie na cały świat i głoście ewangelię wszelkiemu stworzeniu.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/MRK.16.15\">Ewangelia Marka 16,15</a></figcaption></figure><p>Dlatego wychodzimy na ulice, aby rozmawiać z ludźmi o tym, kim jest Jezus i co uczynił dla naszego zbawienia.</p><p>Wielu ludzi wierzy w Boga, ale nie zna Go osobiście i opiera swoją wiarę głównie na tradycji. Chcemy pokazywać, że chrześcijaństwo to przede wszystkim żywa relacja z Jezusem Chrystusem.</p>",
+      video: {
+        youtubeId: "5SOEigurjtk",
+        title: "Dlaczego głosimy Ewangelię na ulicach?"
+      }
+    },
+    {
+      question: "Czy prowadzicie działania w szkołach lub innych instytucjach?",
+      answer: "<p>Tak. Prowadzimy spotkania w szkołach, więzieniach oraz innych miejscach, do których zostajemy zaproszeni. Jesteśmy otwarci na współpracę z każdą instytucją zainteresowaną takimi działaniami.</p>",
+      buttons: [
+        {
+          text: "Skontaktuj się z nami",
+          isOpenContactInfo: true,
+          classes: 'btn--primary'
+        }
+      ]
+    },
+    {
+      question: "Czy mogę przyjść, jeśli nie jestem osobą wierzącą lub dopiero szukam?",
+      answer: "<p>Tak, oczywiście. Nasze spotkania są otwarte dla wszystkich – niezależnie od przekonań religijnych czy etapu duchowej drogi.</p><p>Jedyną zasadą jest wzajemny szacunek. Zależy nam, aby każdy uczestnik czuł się bezpiecznie i komfortowo.</p><p>Jeśli przychodzisz z otwartością i gotowością do spokojnej rozmowy – jesteś u nas mile widziany.</p>",
+      buttons: [
+        {
+          text: "Zobacz nasze spotkania",
+          link: "#meetings",
+          classes: 'btn--primary'
+        }
+      ]
+    }
+  ]
+
+mixin faqItem({ question, answer, buttons, video }, id)
+  - buttons = buttons ?? [];
+
+  details.faq__item(name="faq")
+    summary.faq__question
+      span.faq__question-text(
+        id=`faq-question-${id}`
+        aria-details=`faq-answer-${id}`
+      )= question
+
+  .faq__answer.grid(id=`faq-answer-${id}` aria-labelledby=`faq-question-${id}`)
+    .faq__answer-inner.flex.justify-between
+      .faq__answer-text-wrapper
+        .faq__answer-text
+          | !{ answer }
+        if video
+          +video({ ...video, width: 360, height: 202 }, "faq__answer-video")
+
+      if buttons.length
+        .faq__answer-action.flex.flex-col
+          each btn in buttons
+            - var { text, link, classes, isOpenContactInfo } = btn;
+            - var Tag = link ? "a" : "button";
+            - link = isOpenContactInfo ? "tel:+48737524539" : link;
+
+            #{Tag}.btn.faq__answer-btn(
+              class=classes
+              type=!link ? "button" : null
+              href=link
+              data-show-contact-info=isOpenContactInfo
+            )= text
+
+section#faq.faq.section
+  .container.faq__container.flex
+    .faq__decor-icon.relative(style="width: 500px")
+    .faq__inner.section__container
+      header.faq__header.section__header
+        h2.section__title Najczęściej zadawane pytania
+        h3.section__subtitle Masz pytania? Mamy odpowiedzi!
+      .faq__content.section__content
+        each item, index in faqItems
+          +faqItem(item, index)

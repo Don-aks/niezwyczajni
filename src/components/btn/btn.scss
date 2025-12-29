@@ -9,6 +9,7 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
+  text-wrap: nowrap;
 
   @include no-highlight;
   @include transition((background-color, color));
