@@ -38,12 +38,13 @@ section.section.events-preview
       h2.section__title Wydarzenia i aktualności
       h3.section__subtitle Bądź na bieżąco z naszymi inicjatywami
 
-    .events-preview__events.section__cards-container
+    .events-preview__content.section__cards-container
       each event in events
-        +eventCard(event)
+        +eventCard(event, "section__card")
 
     footer.section__footer.text-center
       a.btn.btn--primary.btn--with-icon.events-preview__link(
         href="events.html"
+        style="--icon: url('/__spritemap#event_white-view')"
       )
         span Zobacz wszystkie wydarzenia
