@@ -6,7 +6,7 @@ class StickyCta {
     link: '.sticky-cta__link',
     popover: '.sticky-cta__popover',
     description: '.sticky-cta__description',
-    showPopoverElements: '[data-show-popover]',
+    showPopoverElements: '[data-show-contact-info]',
   };
   popoverClass = 'visible';
   desktopDescription = 'Zobacz dane kontaktowe';
