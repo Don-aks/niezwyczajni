@@ -1,33 +1,34 @@
 import isScrolledToElement from './isScrolledToElement';
 
+const forceReflow = (el) => el.offsetHeight;
+
 const addClassesOnScroll = (
-  element,
-  visibleClass,
-  hiddenClass = null,
-  isFirstCall = false,
-  offsetY = window.innerHeight / 2,
+  el,
+  hiddenClass,
+  {
+    visibleClass = null,
+    isFirstCall = false,
+    offsetY = window.innerHeight / 2,
+  },
 ) => {
   if (isFirstCall) {
-    element.style.transition = 'none';
-    element.offsetHeight; // forced reflow
+    el.style.transition = 'none';
+    forceReflow(el);
   }
 
-  if (element.classList.contains(visibleClass)) {
-    element.classList.remove(visibleClass);
-    element.offsetHeight; // forced reflow
+  if (visibleClass && el.classList.contains(visibleClass)) {
+    el.classList.remove(visibleClass);
+    forceReflow(el);
   }
 
-  const isScrolled = isScrolledToElement(element, offsetY);
-  element.classList.toggle(visibleClass, isScrolled);
+  const isVisible = isScrolledToElement(el, offsetY);
 
-  if (hiddenClass) {
-    element.classList.toggle(hiddenClass, !isScrolled);
-  }
+  visibleClass && el.classList.toggle(visibleClass, isVisible);
+  hiddenClass && el.classList.toggle(hiddenClass, !isVisible);
 
   if (isFirstCall) {
-    // Restore transition after DOM is loaded
     requestAnimationFrame(() => {
-      element.style.transition = '';
+      el.style.transition = '';
     });
   }
 };
