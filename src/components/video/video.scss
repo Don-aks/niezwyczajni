@@ -1,9 +1,7 @@
 @use '@/styles/helpers' as *;
 
 .video {
-  aspect-ratio: 16 / 9;
-
-  &__inner {
+  &__btn {
     position: relative;
 
     display: block;
@@ -14,6 +12,7 @@
     background-position: center;
     background-size: cover;
 
+    aspect-ratio: 16 / 9;
     @include no-highlight;
 
     &:focus-visible {
@@ -41,6 +40,43 @@
     @include transition(scale);
 
     translate: -50% -50%;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: var(--font-family-base);
+    color: var(--color-base);
+  }
+
+  &__metadata {
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__duration,
+  &__label {
+    position: absolute;
+    z-index: 1;
+
+    padding: 4px 8px;
+    font-size: 18px;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+
+  &__duration {
+    bottom: 15px;
+    right: 17px;
+  }
+
+  &__label {
+    top: 15px;
+    left: 17px;
+
+    background-color: var(--color-accent);
   }
 
   iframe {

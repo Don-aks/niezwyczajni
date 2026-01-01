@@ -1,13 +1,28 @@
-mixin video({ youtubeId, title, isHD }, additionalClasses = "")
-  if isHD == undefined
-    - isHD = true;
+mixin video({ youtubeId, title, isHD, duration, label }, hasTitle = true, additionalClasses = "")
+  - isHD = isHD ?? true;
 
-  .video(class=additionalClasses data-youtube-id=youtubeId title=title)
-    button.video__inner(
-      type="button"
-      style=`
-        background-image: url('https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg')`
-    )
-      span.visually-hidden Odtwórz wideo: #{ title }
-      svg.video__icon
-        use(href="/__spritemap#video-circle")
+  .video.flex.flex-col.gap-15(
+    class=additionalClasses
+    data-youtube-id=youtubeId
+    title=hasTitle ? null : `Odtwórz wideo: ${title}`
+  )
+    .video__inner.flex.flex-col.gap-15
+      button.video__btn.relative(
+        type="button"
+        style=`
+          background-image: url(
+            'https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg'
+          );
+        `
+      )
+        span.visually-hidden
+          | Odtwórz wideo #{ hasTitle ? '' : `pod tytułem: ${title}` }
+        svg.video__icon
+          use(href="/__spritemap#video-circle")
+        .video__metadata
+          if duration
+            time.video__duration(datetime=duration)= duration
+          if label
+            span.video__label= label
+      if hasTitle
+        h3.video__title= title
