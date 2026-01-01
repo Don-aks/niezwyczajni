@@ -20,15 +20,6 @@ include /components/video/video
       title: "Inspirujący film 4",
       isHD: false
     },
-    {
-      youtubeId: "9bZkp7q19f0",
-      title: "Inspirujący film 5"
-    },
-    {
-      youtubeId: "fJ9rUzIMcZQ",
-      title: "Inspirujący film 6",
-      isHD: false
-    }
   ]
 
 section.videos-preview.section
@@ -37,9 +28,9 @@ section.videos-preview.section
       h2.section__title Zobacz nasze filmy
       h3.section__subtitle Inspirujące historie i przesłania
 
-    .section__cards-container
+    .videos-preview__content.grid
       each video in videos
-        +video({ ...video, width: 370, height: 208 }, "section__card")
+        +video({ ...video, width: 585, height: 329 })
 
     a.btn.btn--primary.btn--with-icon.videos-preview__link(
       href="videos.html"
