@@ -1,3 +1,5 @@
+include /components/cta-btn/cta-btn
+
 section.cta.section
   .container.flex.justify-between.items-center
     .cta__content
@@ -9,9 +11,12 @@ section.cta.section
             | Spotykamy się regularnie, modlimy się,
             | rozmawiamy i pomagamy sobie nawzajem.
 
-      .cta__buttons
-        a.cta__link.btn.btn--primary(href="#meetings") Zobacz nasze spotkania
-        a.cta__btn.btn(href="tel:+48737524539" data-show-contact-info)
+      .section__footer.cta__buttons
+        +ctaBtn("cta__link")
+        a.btn.btn--secondary.cta__btn(
+          href="tel:+48737524539"
+          data-show-contact-info
+        )
           | Skontaktuj się z nami
     img.cta__image(
       src="https://as1.ftcdn.net/jpg/02/11/29/06/1000_F_211290641_8wvpbJKta9wIs1jcnwQXjF1dXehA1QM0.jpg"

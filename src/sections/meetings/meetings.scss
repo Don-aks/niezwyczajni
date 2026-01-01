@@ -6,4 +6,11 @@
       margin-bottom: 30px;
     }
   }
+
+  &__link {
+    --color-btn: var(--color-white);
+    --color-btn-hover: var(--color-base);
+    --color-btn-bg-hover: var(--color-white);
+    font-size: 15px;
+  }
 }

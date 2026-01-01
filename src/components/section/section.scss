@@ -1,7 +1,7 @@
 @use '@/styles/helpers' as *;
 
 .section {
-  padding-block: 70px;
+  padding-block: 80px;
 
   &:has(.section__title--with-cross) {
     padding-top: 40px;
@@ -87,6 +87,8 @@
   }
 
   &__subtitle {
+    margin: 0;
+
     font-size: 48px;
     color: var(--color-base);
     line-height: 1.5;
@@ -105,5 +107,11 @@
 
   &__card {
     flex-basis: calc(33.33% - 20px);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
 }

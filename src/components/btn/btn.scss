@@ -3,7 +3,7 @@
 .btn {
   display: inline-grid;
   place-items: center;
-  padding: 10px 15px;
+  padding: 10px 20px;
 
   font-family: var(--font-family-accent);
   letter-spacing: 0.03em;
@@ -26,8 +26,14 @@
   }
 
   &--secondary {
+    // Default button colors
+    --color-btn: var(--color-accent);
+    --color-btn-hover: var(--color-white);
+    --color-btn-bg-hover: var(--color-accent);
+
     position: relative;
     z-index: 1;
+    font-size: 14px;
 
     color: var(--color-btn);
     background-color: transparent;
@@ -56,25 +62,16 @@
   }
 
   &--with-icon {
-    padding-inline: 20px;
-    font-size: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 
-    span:not(.visually-hidden) {
-      position: relative;
-      padding-right: calc(var(--icon-size, 30px) + 12px);
+    svg {
+      @include square(17px);
 
-      &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 50%;
-
-        display: block;
-        @include square(var(--icon-size, 30px));
-
-        background: var(--icon) center/contain no-repeat;
-        translate: 0 -50%;
-      }
+      fill: currentColor;
+      @include transition(fill);
     }
   }
 }

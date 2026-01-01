@@ -1,4 +1,5 @@
 include /components/card/card
+include /components/cta-btn/cta-btn
 
 -
   var meetings = [
@@ -41,9 +42,9 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
       each meeting of meetings
         +card(meeting)
 
-    footer.meetings__footer
-      a.btn.btn--primary.btn--with-icon.meetings__link(
-        href="#faq"
-        style="--icon: url('/__spritemap#question_white-view'); --icon-size: 34px"
-      )
-        span(style="padding-right: calc(34px + 7px)") Najczęściej zadawane pytania
+    footer.section__footer.meetings__footer
+      +ctaBtn
+      a.btn.btn--secondary.btn--with-icon.meetings__link(href="#faq")
+        | Najczęściej zadawane pytania
+        svg
+          use(href="/__spritemap#question")

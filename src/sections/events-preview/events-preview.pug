@@ -1,4 +1,5 @@
 include /components/event-card/event-card
+include /components/cta-btn/cta-btn
 
 -
   var events = [
@@ -42,9 +43,9 @@ section.section.events-preview
       each event in events
         +eventCard(event, "section__card")
 
-    footer.section__footer.text-center
-      a.btn.btn--primary.btn--with-icon.events-preview__link(
-        href="events.html"
-        style="--icon: url('/__spritemap#event_white-view')"
-      )
-        span Zobacz wszystkie wydarzenia
+    footer.section__footer.events-preview__footer
+      +ctaBtn
+      a.btn.btn--secondary.btn--with-icon(href="events.html")
+        | Zobacz wszystkie wydarzenia
+        svg
+          use(href="/__spritemap#event")

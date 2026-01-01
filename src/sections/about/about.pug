@@ -1,9 +1,11 @@
+include /components/cta-btn/cta-btn
+
 section.about.section
   .container.about__container.flex.justify-between.items-center
-    .section__content.about__content
+    .section__content.section__container.about__content.gap-30
       header.section__header.about__header
         h2.section__title.about__title Kim Jesteśmy
-        h3.section__subtitle.about__subtitle O nas
+        h3.section__subtitle.about__subtitle O naszej misji
       .about__text
         p
           | Chrześcijańska misja „Zwyczajnie niezwyczajni” z Radomia to
@@ -14,6 +16,11 @@ section.about.section
         p
           | Spotykamy się regularnie, modlimy się, studiujemy Pismo
           | Święte i angażujemy się w różne formy ewangelizacji.
+
+      footer.section__footer.about__footer
+        +ctaBtn
+        a.btn.btn--secondary(href="about.html")
+          | Dowiedz się więcej o nas
 
     .about__image-wrapper.relative
       img.about__image.absolute(

@@ -1,4 +1,5 @@
 include /components/video/video
+include /components/cta-btn/cta-btn
 
 -
   var faqItems = [
@@ -92,3 +93,11 @@ section#faq.faq.section
       .faq__content.section__content
         each item, index in faqItems
           +faqItem(item, index)
+      footer.faq__footer.flex.gap-15
+        +ctaBtn
+        a.btn.btn--secondary.btn--with-icon.faq__btn.faq__btn--secondary(
+          href="about.html#faq"
+        )
+          | Zobacz więcej pytań
+          svg
+            use(href="/__spritemap#question")
