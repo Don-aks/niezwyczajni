@@ -5,13 +5,7 @@ class Header {
 
   constructor() {
     this.element = document.querySelector('.header');
-    if (!this.element) return;
-
     this.handleScroll();
-    this.bindEvents();
-  }
-
-  bindEvents() {
     window.addEventListener('scroll', this.handleScroll);
   }
 
