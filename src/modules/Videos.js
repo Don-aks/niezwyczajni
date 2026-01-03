@@ -1,24 +1,21 @@
 class Videos {
-  selector = '.video';
-  hiddenClass = 'hidden';
+  selectors = {
+    root: '.video',
+    button: '.video__btn',
+  };
 
   constructor() {
-    this.elements = document.querySelectorAll(this.selector);
-    this.bindEvents();
+    document.addEventListener('click', this.onClick);
   }
 
-  bindEvents() {
-    this.elements.forEach((element) => {
-      element.addEventListener('click', this.onClick);
-    });
-  }
+  getIframe(videoId, width) {
+    const height = Math.round((width * 9) / 16);
 
-  getIframeHtml(videoId, width, height) {
     return `
       <iframe
         width="${width}"
         height="${height}"
-        src="https://www.youtube.com/embed/${videoId}"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -27,17 +24,17 @@ class Videos {
   }
 
   onClick = (event) => {
-    const element = event.target.closest(this.selector);
-    if (!element) return;
+    const button = event.target.closest(this.selectors.button);
+    if (!button) return;
 
-    const videoId = element.dataset.youtubeId;
-    if (!videoId) throw new Error('`data-youtube-id` is missing');
+    const video = button.closest(this.selectors.root);
+    const videoId = video?.dataset.youtubeId;
+    if (!videoId) throw new Error('Video ID is missing');
 
-    const elWidth = Math.round(parseInt(getComputedStyle(element).width));
-    const width = elWidth ?? 360;
-    const height = Math.round((width * 9) / 16);
+    const width = button.offsetWidth || 360;
 
-    element.innerHTML = this.getIframeHtml(videoId, width, height);
+    button.remove();
+    video.insertAdjacentHTML('afterbegin', this.getIframe(videoId, width));
   };
 }
 
