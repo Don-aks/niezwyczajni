@@ -19,10 +19,9 @@ mixin video({ youtubeId, title, isHD, duration, label }, hasTitle = true, additi
           | Odtwórz wideo #{ hasTitle ? '' : `pod tytułem: ${title}` }
         svg.video__icon
           use(href="/__spritemap#video-circle")
-        .video__metadata
-          if duration
-            time.video__duration(datetime=duration)= duration
-          if label
-            span.video__label= label
+        if duration
+          time.video__duration(datetime=duration)= duration
+        if label
+          span.video__label= label
       if hasTitle
         h3.video__title= title
