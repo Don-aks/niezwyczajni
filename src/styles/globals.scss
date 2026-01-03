@@ -46,6 +46,7 @@ body {
 }
 
 .main {
+  padding-top: var(--header-height);
   flex-grow: 1;
 }
 
