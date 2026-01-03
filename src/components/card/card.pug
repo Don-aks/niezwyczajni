@@ -1,4 +1,4 @@
-mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText }, additionalClasses = "", imageWidth = 370)
+mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText, btnIcon }, additionalClasses = "", imageWidth = 370)
   li.card
     article.card__wrapper
       if imageSrc
@@ -16,11 +16,15 @@ mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText }, additiona
         if text
           .card__text
             p !{ text }
-        if href
-          a.btn.btn--primary.card__btn(
+        if btnText
+          - Tag = href ? "a" : "button";
+          #{Tag}.btn.btn--primary.card__btn(
+            type=!href ? "button" : null
             href=href
-            target="_blank"
-            rel="noopener noreferrer"
-          )= btnText
-        else if btnText
-          button.btn.btn--primary.card__btn(type="button")= btnText
+            target=href && "_blank"
+            rel=href && "noopener noreferrer"
+          )
+            | #{ btnText }
+            if btnIcon
+              svg
+                use(href=`/__spritemap#${btnIcon}`)

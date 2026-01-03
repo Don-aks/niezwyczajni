@@ -77,4 +77,16 @@
     flex: 1;
     padding-bottom: 10px;
   }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    svg {
+      @include square(17px);
+      fill: currentColor;
+    }
+  }
 }
