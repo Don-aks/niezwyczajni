@@ -80,6 +80,12 @@
   }
 
   &__answer-inner {
+    --padding-size: calc(var(--outline-size) + var(--outline-offset));
+
+    gap: 23px;
+    padding-top: var(--padding-size);
+    padding-right: var(--padding-size);
+
     overflow: hidden;
     gap: 23px;
   }
