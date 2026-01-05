@@ -54,17 +54,21 @@
   }
 }
 
-@mixin limit-lines($lines: 1) {
+@mixin limit-lines($lines: 1, $isUsedBefore: false) {
   @if ($lines > 1) {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    @if not $isUsedBefore {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
     -webkit-line-clamp: $lines;
-  } @else {
+  } @else if (not $isUsedBefore) {
     white-space: nowrap;
   }
 
-  text-overflow: ellipsis;
-  overflow: hidden;
+  @if not $isUsedBefore {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 /**
