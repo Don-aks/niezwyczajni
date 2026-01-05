@@ -29,7 +29,7 @@
     $size: map.get($breakpoints, $size);
   }
 
-  @if $type == max-width {
+  @if $type == max {
     $size: $size - 1px;
   }
 
