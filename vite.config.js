@@ -13,6 +13,14 @@ export default {
   base: './',
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: "@use '@/styles/helpers' as *;",
+      },
+    },
+  },
+
   build: {
     emptyOutDir: true,
     rollupOptions: {

@@ -1,18 +1,3 @@
-@use 'helpers' as *;
-
-@use 'reset';
-@use 'fonts';
-@use 'variables';
-@use 'utilities';
-
-@use '@/components/btn/btn';
-
-@use '@/components/header/header';
-@use '@/components/nav/nav';
-@use '@/components/contact-info/contact-info';
-@use '@/components/footer/footer';
-@use '@/components/sticky-cta/sticky-cta';
-
 html {
   scroll-behavior: smooth;
 }

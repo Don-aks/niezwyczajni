@@ -1,11 +1,1 @@
-@use '@/styles/helpers' as *;
 
-.gallery-preview {
-  &__header {
-    margin-bottom: 50px;
-  }
-
-  &__link {
-    --icon: url('/__spritemap#gallery_white-view');
-  }
-}

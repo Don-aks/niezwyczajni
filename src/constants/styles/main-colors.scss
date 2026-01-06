@@ -1,0 +1,7 @@
+// Colors which are used in ::selection pseudo-element.
+// ::selection are not supported to use CSS variables,
+// so we define colors directly here.
+
+$color-white: #ffffff;
+$color-primary: #c08f63;
+$color-accent: #80301e;
