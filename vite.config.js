@@ -19,6 +19,7 @@ export default {
         additionalData: "@use '@/styles/helpers' as *;",
       },
     },
+    devSourcemap: true,
   },
 
   build: {
