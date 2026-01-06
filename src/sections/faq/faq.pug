@@ -51,7 +51,7 @@ include /components/cta-btn/cta-btn
     }
   ]
 
-mixin faqItem({ question, answer, buttons, video }, id)
+mixin _faqItem({ question, answer, buttons, video }, id)
   - buttons = buttons ?? [];
 
   details.faq__item(name="faq")
@@ -92,7 +92,7 @@ section#faq.faq.section
         h3.section__subtitle Masz pytania? Mamy odpowiedzi!
       .faq__content.section__content
         each item, index in faqItems
-          +faqItem(item, index)
+          +_faqItem(item, index)
       footer.faq__footer.flex.gap-15
         +ctaBtn
         a.btn.btn--secondary.btn--with-icon.faq__btn.faq__btn--secondary(
