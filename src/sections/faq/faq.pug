@@ -24,7 +24,8 @@ include /components/cta-btn/cta-btn
       answer: "<p>Jako chrześcijanie traktujemy poważnie tzw. wielki nakaz misyjny, który Jezus pozostawił swoim uczniom:</p><figure><blockquote>I powiedział do nich: Idźcie na cały świat i głoście ewangelię wszelkiemu stworzeniu.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/MRK.16.15\">Ewangelia Marka 16,15</a></figcaption></figure><p>Dlatego wychodzimy na ulice, aby rozmawiać z ludźmi o tym, kim jest Jezus i co uczynił dla naszego zbawienia.</p><p>Wielu ludzi wierzy w Boga, ale nie zna Go osobiście i opiera swoją wiarę głównie na tradycji. Chcemy pokazywać, że chrześcijaństwo to przede wszystkim żywa relacja z Jezusem Chrystusem.</p>",
       video: {
         youtubeId: "5SOEigurjtk",
-        title: "Dlaczego głosimy Ewangelię na ulicach?"
+        title: "Dlaczego głosimy Ewangelię na ulicach?",
+        isShowTitle: false,
       }
     },
     {
@@ -67,7 +68,7 @@ mixin _faqItem({ question, answer, buttons, video }, id)
         .faq__answer-text
           | !{ answer }
         if video
-          +video({ ...video, width: 360, height: 202 }, "faq__answer-video")
+          +video({ ...video, width: 360, height: 202 }, false, "faq__answer-video")
 
       if buttons.length
         .faq__answer-action.flex.flex-col

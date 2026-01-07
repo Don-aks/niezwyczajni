@@ -1,10 +1,11 @@
-mixin video({ youtubeId, title, isHD, duration, label }, hasTitle = true, additionalClasses = "")
+mixin video({ youtubeId, title, isHD, duration, label, isShowTitle }, hasTitle = true, classNames = "")
   - isHD = isHD ?? true;
+  - isShowTitle = isShowTitle ?? true;
 
   .video.flex.flex-col.gap-15(
-    class=additionalClasses
+    class=classNames
     data-youtube-id=youtubeId
-    title=hasTitle ? null : `Odtwórz wideo: ${title}`
+    title=hasTitle ? "Odtwórz wideo" : `Odtwórz wideo: ${title}`
   )
     .video__inner.flex.flex-col.gap-15
       button.video__btn.relative(
@@ -23,5 +24,5 @@ mixin video({ youtubeId, title, isHD, duration, label }, hasTitle = true, additi
           time.video__duration(datetime=duration)= duration
         if label
           span.video__label= label
-      if hasTitle
-        h3.video__title= title
+      if isShowTitle || hasTitle
+        h3.video__title.margin-reset= title
