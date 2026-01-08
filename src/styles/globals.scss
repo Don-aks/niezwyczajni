@@ -36,14 +36,14 @@ body {
   &:not(:has(> .banner)) {
     padding-top: var(--header-height);
   }
+
+  > .section:last-child {
+    padding-bottom: 200px;
+  }
 }
 
 .container {
   @include container;
-}
-
-main > section:last-child {
-  padding-bottom: 200px;
 }
 
 a {
