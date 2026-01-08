@@ -9,7 +9,7 @@ mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText }, 
       )
       time.article-card__date(datetime=date)= dateText
     .article-card__inner.flex.flex-col
-      h3.article-card__title= title
-      p.article-card__text !{ excerpt }
+      h3.article-card__title.margin-reset= title
+      p.article-card__text.margin-reset !{ excerpt }
       a.btn.btn--secondary.article-card__link(href=link)
         | Czytaj więcej
