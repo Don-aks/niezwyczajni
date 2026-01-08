@@ -31,8 +31,11 @@ body {
 }
 
 .main {
-  padding-top: var(--header-height);
   flex-grow: 1;
+
+  &:not(:has(> .banner)) {
+    padding-top: var(--header-height);
+  }
 }
 
 .container {
