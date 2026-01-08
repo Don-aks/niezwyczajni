@@ -16,6 +16,14 @@
   &--centered {
     text-align: center;
 
+    .section__title--border-top,
+    .section__title--with-cross {
+      &::before {
+        left: 50%;
+        translate: -50% 0;
+      }
+    }
+
     .section__text {
       margin-inline: auto;
     }
@@ -57,8 +65,7 @@
         content: '';
         position: absolute;
         top: 0;
-        left: 50%;
-        translate: -50% 0;
+        left: 0;
       }
     }
 
