@@ -41,7 +41,7 @@
 
   &__text {
     flex-grow: 1;
-    margin-top: 15px;
+    @include limit-lines(4);
   }
 
   &__link {

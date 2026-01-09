@@ -94,7 +94,7 @@ ol:not(.list-reset) {
       color: var(--color-primary);
     }
 
-    &:not(:last-child) {
+    &:not(:last-child, .margin-reset) {
       margin-bottom: 7px;
     }
   }

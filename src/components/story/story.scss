@@ -91,4 +91,8 @@
   &__item-text {
     line-height: 1.3;
   }
+
+  ::selection {
+    background-color: $color-accent;
+  }
 }

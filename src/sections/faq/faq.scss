@@ -22,8 +22,11 @@
   }
 
   &__item {
-    margin-bottom: 15px;
     cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-bottom: calc(15px - var(--outline-size) - var(--outline-offset));
+    }
 
     &[open] {
       .faq__question {
@@ -89,12 +92,6 @@
   }
 
   &__answer-text {
-    p {
-      &:not(:last-child) {
-        margin-bottom: 5px;
-      }
-    }
-
     figure {
       &:not(:last-child) {
         margin-bottom: 15px;
