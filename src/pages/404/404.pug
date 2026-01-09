@@ -1,0 +1,24 @@
+extends /layout
+
+block head
+  script(src="src/pages/404/404.js" type="module")
+
+block content
+  include /components/header/header
+  +header
+
+  main.main
+    section.section-404
+      .container.section-404__container.flex.flex-col.justify-center.items-center
+        video.section-404__video.mx-auto(
+          src="src/assets/videos/404.webm"
+          playsinline
+          autoplay
+          muted
+          loop
+        )
+        h1.section__title 404 - Strona nie znaleziona
+        p.section-404__text
+          | Przepraszamy, ale strona, której szukasz, nie istnieje lub została
+          | przeniesiona.
+        a.btn.btn--primary(href="index.html") Powrót na stronę główną
