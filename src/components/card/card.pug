@@ -1,5 +1,5 @@
-mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText, btnIcon }, additionalClasses = "", imageWidth = 370)
-  li.card
+mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText, btnIcon }, classNames = "", imageWidth = 370)
+  li.card(class=classNames)
     article.card__wrapper
       if imageSrc
         img.card__image(
@@ -17,7 +17,8 @@ mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText, btnIcon }, 
           .card__text
             p !{ text }
         if btnText
-          - Tag = href ? "a" : "button";
+          - var Tag = href ? "a" : "button";
+
           #{Tag}.btn.btn--primary.card__btn(
             type=!href ? "button" : null
             href=href

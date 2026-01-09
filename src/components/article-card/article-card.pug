@@ -1,5 +1,5 @@
-mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText }, additionalClasses = "", imageWidth = 370)
-  article.article-card.articles-preview__card.flex.flex-col(class=additionalClasses)
+mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText }, classNames = "", imageWidth = 370)
+  article.article-card.articles-preview__card.flex.flex-col(class=classNames)
     .article-card__image-wrapper
       img.article-card__image.articles-preview__image(
         src=imageUrl

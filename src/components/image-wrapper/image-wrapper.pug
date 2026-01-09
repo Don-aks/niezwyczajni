@@ -1,4 +1,4 @@
-mixin imageWrapper({ src, alt, width, height, caption }, additionalClasses = "")
+mixin imageWrapper({ src, alt, width, height, caption }, classNames = "")
   if !width || !height
     - width = 600;
     - height = 400;
@@ -6,7 +6,7 @@ mixin imageWrapper({ src, alt, width, height, caption }, additionalClasses = "")
   if !alt
     - alt = caption ?? "";
 
-  figure.image-wrapper.slider__slide(class=additionalClasses)
+  figure.image-wrapper.slider__slide(class=classNames)
     img.image-wrapper__image(src=src alt=alt width=width height=height)
     if caption
       figcaption.image-wrapper__caption= caption
