@@ -1,0 +1,23 @@
+extends /layout
+
+block head
+  include /constants/constants
+  - var pageName = "about";
+  title= PAGES[pageName] + " — " + TITLE
+  script(src=`src/pages/${pageName}/${pageName}.js` type="module")
+
+block content
+  include /components/header/header
+  +header(pageName)
+
+  main.main
+    include /sections/about-banner/about-banner
+    include /sections/about-mission/about-mission
+    include /sections/mission/mission
+    include /sections/team/team
+    include /sections/about-action/about-action
+    include /sections/gallery-preview/gallery-preview
+    include /sections/articles-preview/articles-preview
+    include /sections/faq/faq
+    +faq(pageName)
+    include /sections/cta/cta
