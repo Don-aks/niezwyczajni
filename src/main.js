@@ -7,7 +7,6 @@ import '@/styles/reset.scss';
 import '@/styles/fonts.scss';
 import '@/styles/variables.scss';
 import '@/styles/utilities.scss';
-import 'swiper/css';
 import '@/styles/globals.scss';
 
 import '@/components/btn/btn.scss';
