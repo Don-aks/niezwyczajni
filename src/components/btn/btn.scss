@@ -44,7 +44,12 @@
     background-color: transparent;
     border: 2px solid var(--color-btn);
 
-    @include transition((color, border-color));
+    @include transition(
+      (
+        color: var(--transition-duration),
+        border-color: calc(var(--transition-duration) * 0.5),
+      )
+    );
     overflow: hidden;
 
     @include hover {
