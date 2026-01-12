@@ -44,7 +44,21 @@
     background-color: transparent;
     border: 2px solid var(--color-btn);
 
+    @include transition((color, border-color));
     overflow: hidden;
+
+    @include hover {
+      color: var(--color-btn-hover);
+      border-color: var(--color-btn-bg-hover);
+
+      &::before {
+        translate: 0 0;
+      }
+    }
+
+    &:active {
+      color: var(--color-btn-hover);
+    }
 
     &::before {
       content: '';
@@ -55,13 +69,14 @@
       translate: 0 100%;
 
       @include transition(translate);
-    }
 
-    @include hover {
-      color: var(--color-btn-hover);
-
-      &::before {
-        translate: 0 0;
+      // Reduce transition duration on smaller screens
+      @include mq('tablet-lg') {
+        @include transition(
+          (
+            translate: calc(var(--transition-duration) * 0.25),
+          )
+        );
       }
     }
   }
