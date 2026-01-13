@@ -2,11 +2,12 @@ extends /layout
 
 block head
   include /constants/constants
-  title= PAGES.videos + " — " + TITLE
-  script(src="videos.js" type="module")
+  - var pageName = "videos";
+  title= PAGES.content.subpages[pageName] + " — " + TITLE
+  script(src=`src/pages/${pageName}/${pageName}.js` type="module")
 
 block content
   include /components/header/header
-  +header("videos")
+  +header(pageName)
 
   main.main

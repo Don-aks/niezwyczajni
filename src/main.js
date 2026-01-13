@@ -1,4 +1,5 @@
 import Header from '@/modules/Header';
+import Nav from '@/modules/Nav';
 import StickyCta from '@/modules/StickyCta';
 import Swipers from '@/modules/swipers';
 import Videos from '@/modules/Videos';
@@ -18,6 +19,7 @@ import '@/components/footer/footer.scss';
 import '@/components/sticky-cta/sticky-cta.scss';
 
 new Header();
+new Nav();
 new StickyCta();
 new Swipers();
 new Videos();

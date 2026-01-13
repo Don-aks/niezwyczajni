@@ -2,12 +2,13 @@ extends /layout
 
 block head
   include /constants/constants
+  - var pageName = "index";
   title Zwyczajnie Niezwyczajni – Chrześcijańska Misja Ewangelizacyjna w Radomiu
-  script(src="src/pages/index/index.js" type="module")
+  script(src=`src/pages/${pageName}/${pageName}.js` type="module")
 
 block content
   include /components/header/header
-  +header("index")
+  +header(pageName)
 
   main.main
     include /sections/banner/banner

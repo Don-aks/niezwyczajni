@@ -20,12 +20,107 @@
 
   &__link {
     color: var(--color-nav);
+
+    text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-decoration-color: transparent;
+    text-transform: uppercase;
 
     @include transition((color, text-decoration-color));
+
+    @include hover {
+      text-decoration-color: currentColor;
+    }
 
     &.current {
       pointer-events: none;
     }
+  }
+
+  &__submenu-toggle {
+    padding-right: calc(5px + 10px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 55%;
+      right: 0;
+
+      display: block;
+      width: 0;
+      height: 0;
+
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--color-nav);
+
+      @include transition(rotate);
+      translate: 0 -50%;
+    }
+
+    &.active {
+      &::after {
+        rotate: 180deg;
+      }
+
+      & + .nav__submenu {
+        opacity: 1;
+
+        translate: 0 0;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__submenu-link {
+    &.current {
+      + .nav__cross {
+        left: 10px;
+        top: 50%;
+
+        fill: var(--color-white);
+        translate: 0 -50%;
+      }
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: -15px;
+    z-index: calc(var(--header-z-index) + 1);
+
+    text-align: center;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-dropdown);
+    opacity: 0;
+
+    translate: 0 -10px;
+    visibility: hidden;
+
+    @include transition((opacity, translate, visibility));
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: 15px;
+
+      display: block;
+      width: 0;
+      height: 0;
+
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid var(--color-primary);
+    }
+  }
+
+  &__submenu-link {
+    display: block;
+    padding: 10px 15px;
+    color: var(--color-white);
   }
 }
