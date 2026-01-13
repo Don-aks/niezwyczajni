@@ -1,3 +1,13 @@
+mixin _social
+  a.contact-info__soc1al(
+    href="https://www.facebook.com/profile.php?id=61581355841275"
+    aria-label="Odwiedź nasz profil na Facebooku"
+    target="_blank"
+    rel="noopener"
+  )
+    svg.contact-info__soc1al-icon.transition-colors-svg
+      use(href="/__spritemap#facebook")
+
 .contact-info.flex.flex-col
   p
     strong Grzegorz Gzik
@@ -7,17 +17,7 @@
     a(href="mailto:gzikg@onet.pl") gzikg@onet.pl
 
   .contact-info__soc1als.flex
-    mixin social
-      a.contact-info__soc1al(
-        href="https://www.facebook.com/profile.php?id=61581355841275"
-        aria-label="Odwiedź nasz profil na Facebooku"
-        target="_blank"
-        rel="noopener"
-      )
-        svg.contact-info__soc1al-icon.transition-colors-svg
-          use(href="/__spritemap#facebook")
-
-    +social
-    +social
-    +social
-    +social
+    +_social
+    +_social
+    +_social
+    +_social
