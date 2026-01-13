@@ -11,16 +11,15 @@
     }
   }
 
+  &__buttons {
+    justify-content: start;
+  }
+
   &__btn {
-    text-decoration: underline;
-    text-decoration-skip-ink: 2px;
-    text-decoration-color: transparent;
+    --color-btn: var(--color-accent);
+    --color-btn-hover: var(--color-white);
+    --color-btn-bg-hover: var(--color-accent);
 
-    color: var(--color-base);
-    @include transition(text-decoration-color);
-
-    @include hover {
-      text-decoration-color: currentColor;
-    }
+    @include transition((color, border-color));
   }
 }
