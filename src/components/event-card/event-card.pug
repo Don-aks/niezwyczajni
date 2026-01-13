@@ -1,5 +1,5 @@
-mixin eventCard({ imageSrc, imageAlt, title, date, dateText, description, link, isHappened }, imageWidth = 370)
-  .event-card.flex.flex-col(class=isHappened ? "happened" : "")
+mixin eventCard({ imageSrc, imageAlt, title, date, dateText, location, description, link, isHappened }, imageWidth = 370, classNames = "")
+  .event-card.flex.flex-col(class=`${isHappened ? 'happened ' : ''}${classNames}`)
     .event-card__image-wrapper
       img.event-card__image(
         src=imageSrc
