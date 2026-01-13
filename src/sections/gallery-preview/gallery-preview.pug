@@ -1,3 +1,4 @@
+include /components/cta-btn/cta-btn
 include /components/image-wrapper/image-wrapper
 
 -
@@ -37,8 +38,9 @@ section.gallery-preview.section.section--centered
             use(href="__spritemap#arrow-right")
           span.visually-hidden Następne zdjęcie
 
-    footer.gallery-preview__footer.text-center
-      a.btn.btn--primary.btn--with-icon.gallery-preview__link(
-        href="gallery.html"
-      )
-        span Zobacz całą galerię
+    footer.section__footer
+      +ctaBtn
+      a.btn.btn--secondary.btn--with-icon(href="gallery.html")
+        | Zobacz całą galerię
+        svg
+          use(href="/__spritemap#gallery")

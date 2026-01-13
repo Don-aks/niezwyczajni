@@ -2,55 +2,87 @@ include /components/video/video
 include /components/cta-btn/cta-btn
 
 -
-  var faqItems = [
-    {
-      question: "Kim jesteśmy i czym jest misja „Zwyczajnie Niezwyczajni”?",
-      answer: "<p>Misja „Zwyczajnie Niezwyczajni” to wspólnota chrześcijan, którzy doświadczyli Bożej łaski i miłości, a dzięki temu przemiany swojego życia – wolności od grzechu i uzależnień.</p><p>Dziś dzielimy się tym, co sami otrzymaliśmy: Ewangelią, czyli Dobrą Nowiną o Jezusie Chrystusie, oraz osobistym świadectwem zmienionego życia.</p><p>Prowadzimy spotkania ewangelizacyjne w więzieniach, na ulicach i w szkołach, a także cotygodniową grupę wsparcia – otwartą dla każdego, kto potrzebuje pomocy lub rozmowy.</p>"
-    },
-    {
-      question: "Do jakiego nurtu chrześcijaństwa należy wasza misja?",
-      answer: "<p>Istnieje wiele nurtów, kościołów i denominacji. Gdy jednak sięgniemy do Dziejów Apostolskich – księgi opisującej narodziny pierwszego Kościoła – czytamy:</p><figure><blockquote>W Antiochii też po raz pierwszy uczniów nazwano chrześcijanami.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/act.11.26\">Dzieje Apostolskie 11, 26</a></figcaption></figure><p>Dla nas chrześcijanin to przede wszystkim uczeń i naśladowca Jezusa Chrystusa – i tak właśnie siebie postrzegamy.</p><p>Od momentu naszego nawrócenia i nowego narodzenia uczymy się żyć w relacji z Jezusem, poznając Go przez Słowo Boże i modlitwę.</p>"
-    },
-    {
-      question: "Jak długo istnieje wasza misja?",
-      answer: "<p>Nasze działania ewangelizacyjne prowadzimy od kilku lat. Około 2019 roku zarejestrowaliśmy się jako stowarzyszenie, co umożliwiło nam formalną współpracę z więzieniami, szkołami i innymi instytucjami.</p>"
-    },
-    {
-      question: "Kto stoi za inicjatywą i kto ją prowadzi?",
-      answer: "<p>Pomysłodawcą i założycielem misji jest Grzegorz Gzik. Warto jednak podkreślić, że misja to wspólne dzieło wielu osób, które na równi angażują się w głoszenie Ewangelii i pomoc innym.</p>"
-    },
-    {
-      question: "Dlaczego głosicie Ewangelię na ulicach?",
-      answer: "<p>Jako chrześcijanie traktujemy poważnie tzw. wielki nakaz misyjny, który Jezus pozostawił swoim uczniom:</p><figure><blockquote>I powiedział do nich: Idźcie na cały świat i głoście ewangelię wszelkiemu stworzeniu.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/MRK.16.15\">Ewangelia Marka 16,15</a></figcaption></figure><p>Dlatego wychodzimy na ulice, aby rozmawiać z ludźmi o tym, kim jest Jezus i co uczynił dla naszego zbawienia.</p><p>Wielu ludzi wierzy w Boga, ale nie zna Go osobiście i opiera swoją wiarę głównie na tradycji. Chcemy pokazywać, że chrześcijaństwo to przede wszystkim żywa relacja z Jezusem Chrystusem.</p>",
-      video: {
-        youtubeId: "5SOEigurjtk",
-        title: "Dlaczego głosimy Ewangelię na ulicach?",
-        isShowTitle: false,
+  var faqItems = {
+    index: [
+      {
+        question: "Kim jesteśmy i czym jest misja „Zwyczajnie Niezwyczajni”?",
+        answer: "<p>Misja „Zwyczajnie Niezwyczajni” to wspólnota chrześcijan, którzy doświadczyli Bożej łaski i miłości, a dzięki temu przemiany swojego życia – wolności od grzechu i uzależnień.</p><p>Dziś dzielimy się tym, co sami otrzymaliśmy: Ewangelią, czyli Dobrą Nowiną o Jezusie Chrystusie, oraz osobistym świadectwem zmienionego życia.</p><p>Prowadzimy spotkania ewangelizacyjne w więzieniach, na ulicach i w szkołach, a także cotygodniową grupę wsparcia – otwartą dla każdego, kto potrzebuje pomocy lub rozmowy.</p>"
+      },
+      {
+        question: "Do jakiego nurtu chrześcijaństwa należy wasza misja?",
+        answer: "<p>Istnieje wiele nurtów, kościołów i denominacji. Gdy jednak sięgniemy do Dziejów Apostolskich – księgi opisującej narodziny pierwszego Kościoła – czytamy:</p><figure><blockquote>W Antiochii też po raz pierwszy uczniów nazwano chrześcijanami.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/act.11.26\">Dzieje Apostolskie 11, 26</a></figcaption></figure><p>Dla nas chrześcijanin to przede wszystkim uczeń i naśladowca Jezusa Chrystusa – i tak właśnie siebie postrzegamy.</p><p>Od momentu naszego nawrócenia i nowego narodzenia uczymy się żyć w relacji z Jezusem, poznając Go przez Słowo Boże i modlitwę.</p>"
+      },
+      {
+        question: "Kto stoi za inicjatywą i kto ją prowadzi?",
+        answer: "<p>Pomysłodawcą i założycielem misji jest Grzegorz Gzik. Warto jednak podkreślić, że misja to wspólne dzieło wielu osób, które na równi angażują się w głoszenie Ewangelii i pomoc innym.</p>"
+      },
+      {
+        question: "Jak wyglądają wasze spotkania?",
+        answer: "<p>Nasze spotkania odbywają się w różnych miejscach – od spotkań z młodzieżą, przez działania uliczne, aż po spotkania w zakładach karnych. Ich forma może się różnić, ale zawsze łączy je ten sam cel.</p><p>Stawiamy na relację, rozmowę i dzielenie się naszą wiarą oraz osobistymi doświadczeniami. Często opowiadamy swoje historie nawrócenia, czytamy fragment Pisma Świętego i wspólnie je rozważamy.</p><p>Zachęcamy do osobistego poznania Jezusa, odpowiadamy na pytania, rozmawiamy o wątpliwościach i – jeśli ktoś tego potrzebuje – oferujemy wsparcie oraz modlitwę.</p><p>Na zakończenie rozdawane są darmowe egzemplarze Biblii i zaproszenia na kolejne spotkania.</p><p>Niezależnie od formy, fundamentem każdego spotkania jest osoba Jezusa Chrystusa – Ten, który leczy, uwalnia, zbawia i daje prawdziwy pokój.</p>",
+      },
+      {
+        question: "Czy mogę przyjść, jeśli nie jestem osobą wierzącą lub dopiero szukam?",
+        answer: "<p>Tak, oczywiście. Nasze spotkania są otwarte dla wszystkich – niezależnie od przekonań religijnych czy etapu duchowej drogi.</p><p>Jedyną zasadą jest wzajemny szacunek. Zależy nam, aby każdy uczestnik czuł się bezpiecznie i komfortowo.</p><p>Jeśli przychodzisz z otwartością i gotowością do spokojnej rozmowy – jesteś u nas mile widziany.</p>",
+        buttons: [
+          {
+            text: "Zobacz nasze spotkania",
+            href: "#meetings",
+            classes: "btn--primary",
+          }
+        ]
       }
-    },
-    {
-      question: "Czy prowadzicie działania w szkołach lub innych instytucjach?",
-      answer: "<p>Tak. Prowadzimy spotkania w szkołach, więzieniach oraz innych miejscach, do których zostajemy zaproszeni. Jesteśmy otwarci na współpracę z każdą instytucją zainteresowaną takimi działaniami.</p>",
-      buttons: [
-        {
-          text: "Skontaktuj się z nami",
-          isOpenContactInfo: true,
-          classes: 'btn--primary'
+    ],
+    about: [
+      {
+        question: "Jak długo istnieje wasza misja?",
+        answer: "<p>Nasze działania ewangelizacyjne prowadzimy od kilku lat. Około 2019 roku zarejestrowaliśmy się jako stowarzyszenie, co umożliwiło nam formalną współpracę z więzieniami, szkołami i innymi instytucjami.</p>"
+      },
+      {
+        question: "Jak mogę dołączyć do waszej misji lub wesprzeć wasze działania?",
+        answer: "<p>Jeśli chcesz dołączyć do naszej misji lub wesprzeć nasze działania, skontaktuj się z nami klikając przycisk z prawej strony. Chętnie porozmawiamy o możliwościach współpracy i zaangażowania.</p>",
+        buttons: [
+          {
+            isOpenContactInfo: true,
+            classes: "btn--primary",
+          }
+        ]
+      },
+      {
+        question: "Czy prowadzicie działania w szkołach lub innych instytucjach?",
+        answer: "<p>Tak. Prowadzimy spotkania w szkołach, więzieniach oraz innych miejscach, do których zostajemy zaproszeni. Jesteśmy otwarci na współpracę z każdą instytucją zainteresowaną takimi działaniami.</p>",
+        buttons: [
+          {
+            isOpenContactInfo: true,
+            classes: "btn--primary",
+          }
+        ]
+      },
+      {
+        question: "Dlaczego głosicie Ewangelię na ulicach?",
+        answer: "<p>Jako chrześcijanie traktujemy poważnie tzw. wielki nakaz misyjny, który Jezus pozostawił swoim uczniom:</p><figure><blockquote>I powiedział do nich: Idźcie na cały świat i głoście ewangelię wszelkiemu stworzeniu.</blockquote><figcaption><a href=\"https://www.bible.com/pl/bible/138/MRK.16.15\">Ewangelia Marka 16,15</a></figcaption></figure><p>Dlatego wychodzimy na ulice, aby rozmawiać z ludźmi o tym, kim jest Jezus i co uczynił dla naszego zbawienia.</p><p>Wielu ludzi wierzy w Boga, ale nie zna Go osobiście i opiera swoją wiarę głównie na tradycji. Chcemy pokazywać, że chrześcijaństwo to przede wszystkim żywa relacja z Jezusem Chrystusem.</p>",
+        video: {
+          youtubeId: "5SOEigurjtk",
+          title: "Dlaczego głosimy Ewangelię na ulicach?",
+          isShowTitle: false,
         }
-      ]
-    },
-    {
-      question: "Czy mogę przyjść, jeśli nie jestem osobą wierzącą lub dopiero szukam?",
-      answer: "<p>Tak, oczywiście. Nasze spotkania są otwarte dla wszystkich – niezależnie od przekonań religijnych czy etapu duchowej drogi.</p><p>Jedyną zasadą jest wzajemny szacunek. Zależy nam, aby każdy uczestnik czuł się bezpiecznie i komfortowo.</p><p>Jeśli przychodzisz z otwartością i gotowością do spokojnej rozmowy – jesteś u nas mile widziany.</p>",
-      buttons: [
-        {
-          text: "Zobacz nasze spotkania",
-          link: "#meetings",
-          classes: 'btn--primary'
-        }
-      ]
-    }
-  ]
+      },
+      {
+        question: "Jak zrobić pierwsze kroki w wierze i czytaniu Biblii?",
+        answer: "<p>Jeśli dopiero zaczynasz swoją drogę wiary lub chcesz lepiej poznać Jezusa i Biblię, nie jesteś sam. Wielu z nas przechodziło przez te same pytania i wątpliwości.</p><p>Zachęcamy do rozpoczęcia od Ewangelii, regularnej modlitwy i tzw. „cichego czasu” z Bogiem. Ważne jest także, aby wzrastać we wspólnocie – tam, gdzie Biblia jest czytana i traktowana jako autorytet.</p><p>Chętnie pomożemy Ci postawić pierwsze kroki, odpowiedzieć na pytania i towarzyszyć w dalszej drodze wiary.</p>",
+        buttons: [
+          {
+            text: "Zobacz więcej porad",
+            classes: "btn--primary",
+            href: "articles/bla-bla-bla",
+          },
+          {
+            isOpenContactInfo: true,
+            classes: "btn--secondary",
+          }
+        ]
+      },
+    ]
+  };
 
 mixin _faqItem({ question, answer, buttons, video }, id)
   - buttons = buttons ?? [];
@@ -84,21 +116,23 @@ mixin _faqItem({ question, answer, buttons, video }, id)
               data-show-contact-info=isOpenContactInfo
             )= text
 
-section#faq.faq.section
-  .container.faq__container.flex
-    .faq__decor-icon.relative(style="width: 500px")
-    .faq__inner.section__container
-      header.faq__header.section__header
-        h2.section__title Najczęściej zadawane pytania
-        h3.section__subtitle Masz pytania? Mamy odpowiedzi!
-      .faq__content.section__content
-        each item, index in faqItems
-          +_faqItem(item, index)
-      footer.faq__footer.flex.gap-15
-        +ctaBtn
-        a.btn.btn--secondary.btn--with-icon.faq__btn.faq__btn--secondary(
-          href="about.html#faq"
-        )
-          | Zobacz więcej pytań
-          svg
-            use(href="/__spritemap#question")
+mixin faq(page)
+  section#faq.faq.section
+    .container.faq__container.flex
+      .faq__decor-icon.relative(style="width: 500px")
+      .faq__inner.section__container
+        header.faq__header.section__header
+          h2.section__title Najczęściej zadawane pytania
+          h3.section__subtitle Masz pytania? Mamy odpowiedzi!
+        .faq__content.section__content
+          each item, index in faqItems[page]
+            +_faqItem(item, index)
+        if page === "index"
+          footer.section__footer.faq__footer
+            +ctaBtn
+            a.btn.btn--secondary.btn--with-icon.faq__btn.faq__btn--secondary(
+              href="about.html#faq"
+            )
+              | Zobacz więcej pytań
+              svg
+                use(href="/__spritemap#question")
