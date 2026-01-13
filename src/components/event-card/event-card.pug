@@ -1,7 +1,7 @@
 mixin eventCard({ imageSrc, imageAlt, title, date, dateText, description, link, isHappened }, imageWidth = 370)
   .event-card.flex.flex-col(class=isHappened ? "happened" : "")
     .event-card__image-wrapper
-      img.event-card__image(src=imageSrc alt=imageAlt width="600" height="400")
+      img.event-card__image(src=imageSrc alt=imageAlt width="600" height="200")
       time.event-card__date(datetime=date)
         | #{ dateText }
     .event-card__inner.flex.flex-col
