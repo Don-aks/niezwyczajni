@@ -10,7 +10,8 @@ mixin eventCard({ imageSrc, imageAlt, title, date, dateText, location, descripti
       time.event-card__date(datetime=date)
         | #{ dateText }
     .event-card__inner.flex.flex-col
-      h3.event-card__title= title
+      h3.event-card__title.margin-reset= title
+
       if description
         p.event-card__description !{ description }
       if link
