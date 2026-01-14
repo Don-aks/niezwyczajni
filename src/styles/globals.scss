@@ -70,6 +70,7 @@ strong {
 
 :is(ul, ol):not(.list-reset) {
   padding: 0;
+  padding-left: 25px;
   margin: 20px 0;
 
   list-style: none;
