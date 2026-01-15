@@ -37,10 +37,17 @@
   &.clickable {
     position: relative;
 
-    .card__btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+    .card__btn {
+      @include hover {
+        background-color: var(--color-accent);
+        color: var(--color-white);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
     }
   }
 
