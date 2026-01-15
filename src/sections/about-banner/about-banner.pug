@@ -1,5 +1,72 @@
+include /components/cta-btn/cta-btn
+include /components/card/card
+
+-
+  var cards = [
+    {
+      title: 'Na ulicach Radomia',
+      text: 'Zatrzymujemy się, rozmawiamy i słuchamy. Dzielimy się Ewangelią i nadzieją z każdym, kto jej potrzebuje.',
+      iconId: 'city',
+      btnText: 'Dowiedź się więcej',
+      href: '#about-mission',
+      isCardClickable: true,
+    },
+    {
+      title: 'Za murami więzień',
+      text: 'Przynosimy światło i nowy początek tam, gdzie świat często nie widzi już żadnej szansy.',
+      iconId: 'prison',
+      btnText: 'Dowiedź się więcej',
+      href: '#about-mission',
+      isCardClickable: true,
+    },
+    {
+      title: 'Żywe Słowo Boże',
+      text: 'Biblia to żywe Słowo, które prowadzi i uzdrawia. Pokazuje drogę do wolności i nowego życia.',
+      iconId: 'bible',
+      btnText: 'Dowiedź się więcej',
+      href: '#about-mission',
+      isCardClickable: true,
+    }
+  ]
+
 section.about-banner.section
-  .about-banner__container.container
-    .about-banner__content
-      h1.about-banner__title Zwyczajnie Niezwyczajni
-      p.about-banner__text Chrześcijańska Misja Ewangelizacyjna w Radomiu
+  .about-banner__container.container.flex.flex-col
+    .about-banner__hero.flex.justify-between.items-center.gap-30
+      .section__content.flex.flex-col.gap-30
+        h1.about-banner__title.margin-reset
+          | Chrześcijańska misja „Zwyczajnie niezwyczajni”
+        .about-banner__text.margin-reset
+          p
+            | Wierzymy, że nikt nie jest stracony.
+          p
+            | Że każdy człowiek — bez względu na swoją historię, błędy czy
+            | upadki — może doświadczyć miłości Boga, która naprawdę zmienia
+            | życie.
+        .about-banner__buttons.flex.gap-15
+          +ctaBtn
+          button.btn.btn--secondary(type="button" data-show-contact-info)
+            | Skontaktuj się z nami
+
+      .about-banner__image-wrapper.relative
+        img.about-banner__image.absolute(
+          src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
+          alt="..."
+          width="600"
+          height="400"
+        )
+        img.about-banner__image.absolute(
+          src="https://zarzadcy.com.pl/wp-uploads/wspolnota-mieszkaniowa-nmxe.jpg"
+          alt="..."
+          width="600"
+          height="400"
+        )
+        img.about-banner__image.absolute(
+          src="https://www.poslanie.pl/upload/art_paragraph/591_img1_people-4050698_1280.jpg"
+          alt="..."
+          width="600"
+          height="400"
+        )
+
+    ul.section__cards-container.about-banner__cards-container.list-reset.text-center.relative
+      each card in cards
+        +card(card, "about-banner__card")

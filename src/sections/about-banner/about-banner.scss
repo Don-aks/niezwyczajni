@@ -1,0 +1,58 @@
+.about-banner {
+  padding-block: 80px 0;
+
+  &__container {
+    gap: 70px;
+  }
+
+  &__title {
+    font-size: 47px;
+  }
+
+  &__text {
+    line-height: 1.7;
+  }
+
+  &__image-wrapper {
+    width: 600px;
+  }
+
+  &__image {
+    top: -136px;
+    right: 0;
+    z-index: 3;
+
+    @include transition((opacity, translate));
+    will-change: opacity, translate;
+
+    &:nth-child(2) {
+      top: -176px;
+      right: -40px;
+      z-index: 2;
+    }
+
+    &:nth-child(3) {
+      top: -216px;
+      right: -80px;
+      z-index: 1;
+    }
+
+    &.hidden {
+      opacity: 0;
+      translate: 40px 0;
+    }
+  }
+
+  &__cards-container {
+    z-index: 5;
+    margin-bottom: -100px;
+  }
+
+  &__card {
+    border: 3px solid var(--color-primary);
+
+    .card__inner {
+      padding-block: 40px 25px;
+    }
+  }
+}
