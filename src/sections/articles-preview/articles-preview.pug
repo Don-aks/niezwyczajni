@@ -1,3 +1,4 @@
+include /components/cta-btn/cta-btn
 include /components/article-card/article-card
 
 -
@@ -40,6 +41,7 @@ section.articles-preview.section.relative.z-1
       each article of articles
         +articleCard(article)
     footer.section__footer
+      +ctaBtn
       a.btn.btn--secondary.btn--with-icon(href="blog.html")
         | Zobacz wszystkie artykuły
         svg
