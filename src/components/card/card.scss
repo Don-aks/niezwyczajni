@@ -34,6 +34,16 @@
     }
   }
 
+  &.clickable {
+    position: relative;
+
+    .card__btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;

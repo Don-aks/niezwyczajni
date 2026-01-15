@@ -1,5 +1,18 @@
-mixin card({ imageSrc, imageAlt, iconId, title, text, href, btnText, btnIcon }, classNames = "", imageWidth = 370)
-  li.card(class=classNames)
+mixin card(props, classNames = "", imageWidth = 370)
+  -
+    var {
+      imageSrc,
+      imageAlt,
+      iconId,
+      title,
+      text,
+      href,
+      btnText,
+      btnIcon,
+      isCardClickable,
+    } = props;
+
+  li.card(class=`${classNames} ${isCardClickable ? 'clickable' : ''}`)
     article.card__wrapper
       if imageSrc
         img.card__image(
