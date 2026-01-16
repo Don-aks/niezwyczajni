@@ -2,7 +2,7 @@
   font-family: var(--font-family-accent);
   text-transform: uppercase;
 
-  &__cross {
+  &__marker {
     top: 0;
     left: 50%;
 
@@ -74,7 +74,7 @@
 
   &__submenu-link {
     &.current {
-      + .nav__cross {
+      + .nav__marker {
         left: 10px;
         top: 50%;
 

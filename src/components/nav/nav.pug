@@ -6,7 +6,7 @@ mixin nav(currentPage)
       each [page, navItem] of Object.entries(PAGES)
         li.nav__item(class=currentPage === page ? "relative" : "")
           if currentPage === page && typeof navItem === "string"
-            svg.nav__cross.absolute.transition-colors-svg
+            svg.nav__marker.absolute.transition-colors-svg
               use(href="/__spritemap#cross")
 
           if typeof navItem === "string"
@@ -31,5 +31,5 @@ mixin nav(currentPage)
                     )= sublabel
 
                     if currentPage === subpage
-                      svg.nav__cross.absolute.transition-colors-svg
+                      svg.nav__marker.absolute.transition-colors-svg
                         use(href="/__spritemap#cross")
