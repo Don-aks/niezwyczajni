@@ -1,6 +1,5 @@
 .articles-preview {
-  &::before {
-    content: '';
+  &__decor {
     position: absolute;
     top: -50px;
     right: clamp(35px, 3vw, -80px);
@@ -9,8 +8,13 @@
     width: 557px;
     height: 777px;
 
-    background: url('/__spritemap#cross_primary-view') center/contain no-repeat;
+    fill: var(--color-primary);
 
+    @include transition(rotate);
     rotate: 5deg;
+
+    &.hidden {
+      rotate: 0deg;
+    }
   }
 }

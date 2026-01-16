@@ -32,7 +32,9 @@ include /components/article-card/article-card
     },
   ]
 
-section.articles-preview.section.relative.z-1
+section.articles-preview.section.relative
+  svg.articles-preview__decor(data-animate-on-scroll)
+    use(href="/__spritemap#cross")
   .container.section__container.articles-preview__container
     header.section__header
       h2.section__title Nasz blog
