@@ -1,4 +1,18 @@
-mixin eventCard({ imageSrc, imageAlt, title, date, dateText, location, description, link, isHappened }, imageWidth = 370, classNames = "")
+mixin eventCard(props, imageWidth = 370, classNames = "")
+  -
+    var {
+      imageSrc,
+      imageAlt,
+      title,
+      date,
+      dateText,
+      location,
+      locationUrl,
+      description,
+      link,
+      isHappened,
+    } = props;
+
   .event-card.flex.flex-col(class=`${isHappened ? 'happened ' : ''}${classNames}`)
     .event-card__image-wrapper
       img.event-card__image(
@@ -11,6 +25,14 @@ mixin eventCard({ imageSrc, imageAlt, title, date, dateText, location, descripti
         | #{ dateText }
     .event-card__inner.flex.flex-col
       h3.event-card__title.margin-reset= title
+      a.event-card__location.flex(
+        href=locationUrl
+        target="_blank"
+        rel="noopener noreferrer"
+      )
+        svg
+          use(href="/__spritemap#location-pin")
+        | #{ location }
 
       if description
         p.event-card__description !{ description }

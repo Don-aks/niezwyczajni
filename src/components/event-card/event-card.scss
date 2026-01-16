@@ -50,6 +50,16 @@
     border-top: 0;
   }
 
+  &__location {
+    gap: 5px;
+    margin-top: -10px;
+
+    svg {
+      @include square(16px);
+      fill: var(--color-primary);
+    }
+  }
+
   &__description {
     flex-grow: 1;
 
