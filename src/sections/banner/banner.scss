@@ -70,6 +70,8 @@
   }
 
   &__btn {
+    padding-block: 9px;
+
     &--primary {
       color: var(--color-black);
       background-color: var(--color-white);
