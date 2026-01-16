@@ -14,7 +14,7 @@
   }
 
   &__item {
-    padding-top: 17px;
+    padding-block: 17px;
     @include transition(padding);
   }
 
