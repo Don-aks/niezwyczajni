@@ -76,6 +76,11 @@
       color: var(--color-black);
       background-color: var(--color-white);
       outline-color: var(--color-white);
+
+      @include hover {
+        background-color: var(--color-white-secondary);
+        color: var(--color-base);
+      }
     }
 
     &--secondary {
@@ -92,7 +97,8 @@
       @include transition((color, border-color));
 
       @include hover {
-        background-color: var(--color-base);
+        color: var(--color-white-secondary);
+        border-color: var(--color-white-secondary);
       }
     }
   }
