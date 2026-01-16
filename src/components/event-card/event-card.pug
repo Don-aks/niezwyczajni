@@ -23,7 +23,7 @@ mixin eventCard(props, imageWidth = 370, classNames = "")
       )
       time.event-card__date(datetime=date)
         | #{ dateText }
-    .event-card__inner.flex.flex-col
+    .event-card__inner.flex.flex-col.gap-15
       h3.event-card__title.margin-reset= title
       a.event-card__location.flex(
         href=locationUrl
@@ -35,6 +35,6 @@ mixin eventCard(props, imageWidth = 370, classNames = "")
         | #{ location }
 
       if description
-        p.event-card__description !{ description }
+        p.event-card__description.margin-reset !{ description }
       if link
         a.event-card__link.btn.btn--secondary(href=link) Czytaj więcej
