@@ -3,7 +3,7 @@ extends /layout
 block head
   include /constants/constants
   - var pageName = "events";
-  title= PAGES.content.subpages[pageName] + " — " + TITLE
+  title= PAGES[pageName] + " — " + TITLE
   script(src=`src/pages/${pageName}/${pageName}.js` type="module")
 
 block content
