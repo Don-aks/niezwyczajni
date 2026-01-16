@@ -62,6 +62,7 @@
 
   &__description {
     flex-grow: 1;
+    @include limit-lines(2);
   }
 
   &__link {
