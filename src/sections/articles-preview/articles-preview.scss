@@ -9,6 +9,7 @@
     height: 777px;
 
     fill: var(--color-primary);
+    opacity: var(--decor-opacity);
 
     @include transition(rotate);
     rotate: 5deg;
