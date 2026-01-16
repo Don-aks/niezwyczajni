@@ -1,0 +1,19 @@
+.events-preview {
+  &__decor {
+    position: absolute;
+    top: -70px;
+    right: clamp(35px, 3vw, -80px);
+    z-index: -1;
+
+    width: 557px;
+    height: 777px;
+    fill: var(--color-primary);
+
+    rotate: 5deg;
+    @include transition(rotate);
+
+    &.hidden {
+      rotate: 0deg;
+    }
+  }
+}

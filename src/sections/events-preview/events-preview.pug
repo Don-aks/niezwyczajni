@@ -33,7 +33,9 @@ include /components/cta-btn/cta-btn
     }
   ]
 
-section.section.events-preview
+section.section.events-preview.relative
+  svg.events-preview__decor(data-animate-on-scroll)
+    use(href="/__spritemap#cross")
   .container.section__container.events-preview__container
     header.section__header
       h2.section__title Wydarzenia i aktualności
