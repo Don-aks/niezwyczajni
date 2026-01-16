@@ -128,7 +128,7 @@ mixin faq(page)
           each item, index in faqItems[page]
             +_faqItem(item, index)
         if page === "index"
-          footer.section__footer.faq__footer
+          footer.section__footer.justify-start
             +ctaBtn
             a.btn.btn--secondary.btn--with-icon.faq__btn.faq__btn--secondary(
               href="about.html#faq"
