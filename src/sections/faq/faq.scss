@@ -10,8 +10,13 @@
       no-repeat;
     opacity: var(--decor-opacity);
 
+    @include transition(rotate);
     rotate: 15deg;
     aspect-ratio: 1;
+
+    &.hidden {
+      rotate: 0deg;
+    }
   }
 
   &__inner {
