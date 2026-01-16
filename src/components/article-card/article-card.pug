@@ -8,7 +8,7 @@ mixin articleCard({ imageUrl, imageAlt, title, excerpt, link, date, dateText }, 
         height="200"
       )
       time.article-card__date(datetime=date)= dateText
-    .article-card__inner.flex.flex-col
+    .article-card__inner.flex.flex-col.gap-15
       h3.article-card__title.margin-reset= title
       p.article-card__text.margin-reset !{ excerpt }
       a.btn.btn--secondary.article-card__link(href=link)
