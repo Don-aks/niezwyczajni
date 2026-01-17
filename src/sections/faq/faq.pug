@@ -103,7 +103,7 @@ mixin _faqItem({ question, answer, buttons, video }, id)
           +video({ ...video, width: 360, height: 202 }, false, "faq__answer-video")
 
       if buttons.length
-        .faq__answer-action.flex.flex-col
+        .faq__answer-action.flex.flex-col.gap-15
           each btn in buttons
             - var { text, link, classes, isOpenContactInfo } = btn;
             - var Tag = link ? "a" : "button";
