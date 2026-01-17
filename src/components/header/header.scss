@@ -13,15 +13,17 @@
 
   &.scrolled {
     box-shadow: var(--shadow-md);
-
-    .nav__item {
-      padding-bottom: 17px;
-    }
   }
 
-  &:not(.scrolled):has(+ .main > .banner) {
-    background-color: transparent;
-    --color-nav: var(--color-white);
+  &:not(.scrolled) {
+    &:has(+ .main > .banner) {
+      background-color: transparent;
+      --color-nav: var(--color-white);
+    }
+
+    .nav__item {
+      padding-bottom: 0;
+    }
   }
 
   &__container {
