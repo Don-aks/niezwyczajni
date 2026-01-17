@@ -107,7 +107,12 @@ mixin _faqItem({ question, answer, buttons, video }, id)
           each btn in buttons
             - var { text, href, classes, isOpenContactInfo } = btn;
             - var Tag = href ? "a" : "button";
-            - href = isOpenContactInfo ? "tel:+48737524539" : href;
+
+            if !text && isOpenContactInfo
+              - text = "Skontaktuj się z nami";
+
+            if isOpenContactInfo
+              - href = null;
 
             #{Tag}.btn.faq__answer-btn(
               class=classes
