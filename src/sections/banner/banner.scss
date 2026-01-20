@@ -106,14 +106,5 @@
   &__note {
     font-size: 14px;
     font-style: italic;
-
-    span:not(:last-child) {
-      margin-right: 5px;
-
-      &::after {
-        content: '•';
-        margin-left: 6px;
-      }
-    }
   }
 }
