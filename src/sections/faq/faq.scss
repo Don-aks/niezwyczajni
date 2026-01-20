@@ -100,23 +100,28 @@
   }
 
   &__answer-text {
-    figure {
+    font-size: 18px;
+
+    blockquote {
+      margin-bottom: 5px;
+
       &:not(:last-child) {
         margin-bottom: 15px;
       }
-    }
 
-    blockquote {
-      padding-top: 5px;
-      margin-bottom: 5px;
+      > :first-child {
+        &::before {
+          top: -5px;
+        }
 
-      &::before {
-        top: -5px;
+        &:not(:last-child) {
+          margin-bottom: 7px;
+        }
       }
-    }
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+      > :not(:first-child):last-child {
+        margin-bottom: 10px;
+      }
     }
   }
 
