@@ -16,7 +16,7 @@ mixin card(props, classNames = "", imageWidth = 370)
   if typeof isOpenInNewTab === "undefined"
     - isOpenInNewTab = true;
 
-  li.card(class=`${classNames} ${isCardClickable ? 'clickable' : ''}`)
+  li.card(class=`${classNames}${isCardClickable ? ' clickable' : ''}`)
     article.card__wrapper
       if imageSrc
         img.card__image(
