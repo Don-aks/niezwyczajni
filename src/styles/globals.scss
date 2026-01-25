@@ -85,6 +85,7 @@ ol:not(.list-reset) {
     counter-increment: list-counter;
     position: relative;
     padding-left: 25px;
+    margin-bottom: 7px;
 
     &::before {
       content: counter(list-counter) '.';
@@ -95,8 +96,8 @@ ol:not(.list-reset) {
       color: var(--color-primary);
     }
 
-    &:not(:last-child, .margin-reset) {
-      margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -105,6 +106,7 @@ ul:not(.list-reset) {
   li {
     position: relative;
     padding-left: 23px;
+    margin-bottom: 7px;
 
     &::before {
       content: '';
@@ -118,28 +120,22 @@ ul:not(.list-reset) {
         no-repeat;
     }
 
-    &:not(:last-child, .margin-reset) {
-      margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
 
 // prettier-ignore
 :is(h1, h2, h3, h4, h5, h6) {
-  &:not(:last-child, .margin-reset) {
-    margin-bottom: 15px;
-  }
-
   font-family: var(--font-family-accent);
   text-transform: uppercase;
 
   color: var(--color-primary);
 }
 
-p {
-  &:not(:last-child, .margin-reset) {
-    margin-bottom: 10px;
-  }
+.text > p:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 blockquote {
@@ -177,7 +173,7 @@ blockquote {
       margin-left: 5px;
     }
 
-    &:not(:last-child, .margin-reset) {
+    &:not(:last-child) {
       margin-bottom: 15px;
     }
   }
@@ -186,7 +182,7 @@ blockquote {
     font-weight: 500;
   }
 
-  &:not(:last-child, .margin-reset) > :not(:first-child):last-child {
+  &:not(:last-child) > :not(:first-child):last-child {
     margin-bottom: 20px;
   }
 }

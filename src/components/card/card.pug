@@ -32,8 +32,8 @@ mixin card(props, classNames = "", imageWidth = 370)
               use(href=`/__spritemap#${iconId}`)
         h4.card__title= title
         if text
-          .card__text
-            p !{ text }
+          .card__text.text(data-acf="" data-acf-html)
+            | !{ text }
         if btnText
           - var Tag = href ? "a" : "button";
 
