@@ -56,7 +56,8 @@
 
     svg {
       @include square(16px);
-      fill: var(--color-primary);
+      color: var(--color-primary);
+      fill: currentColor;
     }
   }
 

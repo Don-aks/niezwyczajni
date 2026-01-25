@@ -8,10 +8,11 @@
 
   &__soc1al-icon {
     @include square(30px);
-    fill: var(--color-white);
+    color: var(--color-white);
+    fill: currentColor;
 
     @include hover(false) {
-      fill: var(--color-primary);
+      color: var(--color-primary);
     }
   }
 }

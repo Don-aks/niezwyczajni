@@ -32,13 +32,15 @@
 
     &:active {
       .slider__btn-icon {
-        fill: var(--color-accent);
+        color: var(--color-accent);
       }
     }
   }
 
   &__btn-icon {
     @include square(55px);
-    fill: var(--color-primary);
+
+    color: var(--color-primary);
+    fill: currentColor;
   }
 }

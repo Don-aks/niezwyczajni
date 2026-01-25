@@ -9,7 +9,8 @@
     width: 11px;
     height: 15px;
 
-    fill: var(--color-nav);
+    color: var(--color-nav);
+    fill: currentColor;
     translate: -50% 0;
   }
 
@@ -78,7 +79,8 @@
         left: 10px;
         top: 50%;
 
-        fill: var(--color-white);
+        color: var(--color-white);
+        fill: currentColor;
         translate: 0 -50%;
       }
     }

@@ -34,7 +34,8 @@
     width: 70px;
     height: 70px;
 
-    fill: var(--color-white);
+    color: var(--color-white);
+    fill: currentColor;
     @include transition(scale);
 
     translate: -50% -50%;

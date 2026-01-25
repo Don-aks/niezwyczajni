@@ -27,8 +27,9 @@ mixin card(props, classNames = "", imageWidth = 370)
         )
       .card__inner
         if iconId
-          svg.card__icon.transition-colors-svg
-            use(href=`/__spritemap#${iconId}`)
+          span.card__icon.transition-colors
+            svg
+              use(href=`/__spritemap#${iconId}`)
         h4.card__title= title
         if text
           .card__text

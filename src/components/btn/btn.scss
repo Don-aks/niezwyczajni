@@ -97,11 +97,18 @@
     align-items: center;
     gap: 7px;
 
-    svg {
-      @include square(17px);
+    .icon {
+      display: grid;
+      place-items: center;
 
-      fill: currentColor;
-      @include transition(fill);
+      font-size: 14px;
+
+      svg {
+        @include square(17px);
+
+        fill: currentColor;
+        @include transition(color);
+      }
     }
   }
 }
