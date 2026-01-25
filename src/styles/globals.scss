@@ -143,7 +143,7 @@ p {
 }
 
 blockquote {
-  :first-child {
+  > :first-child {
     position: relative;
     padding-top: 10px;
 
