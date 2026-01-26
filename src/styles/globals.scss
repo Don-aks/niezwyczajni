@@ -179,6 +179,7 @@ blockquote {
   }
 
   > :not(:first-child):last-child {
+    font-style: normal;
     font-weight: 500;
   }
 
