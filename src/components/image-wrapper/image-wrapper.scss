@@ -18,7 +18,10 @@
     pointer-events: none;
   }
 
-  &:hover:has(&__caption) {
+  &:hover:has(&__caption),
+  &:focus-visible:has(&__caption) {
+    outline: transparent;
+
     &::before {
       opacity: 1;
     }
