@@ -137,6 +137,10 @@
   border-radius: 50%;
 }
 
+.sepia-50 {
+  filter: sepia(0.5);
+}
+
 .no-highlight {
   @include no-highlight;
 }
