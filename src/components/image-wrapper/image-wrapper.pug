@@ -6,7 +6,7 @@ mixin imageWrapper({ src, alt, width, height, caption }, classNames = "")
   if !alt
     - alt = caption ?? "";
 
-  figure.image-wrapper.slider__slide(class=classNames)
+  figure.image-wrapper(class=classNames)
     img.image-wrapper__image(src=src alt=alt width=width height=height)
     if caption
       figcaption.image-wrapper__caption= caption
