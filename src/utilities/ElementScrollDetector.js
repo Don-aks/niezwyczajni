@@ -1,4 +1,4 @@
-class isScrolledToElement {
+class ElementScrollDetector {
   constructor(element, offset = window.innerHeight / 2) {
     this.element = element;
     this.offset = offset;
@@ -79,4 +79,4 @@ class isScrolledToElement {
   }
 }
 
-export default isScrolledToElement;
+export default ElementScrollDetector;
