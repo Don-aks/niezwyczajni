@@ -7,22 +7,24 @@ class ElementScrollDetector {
   check() {
     const viewportThreshold = window.innerHeight - this.offset;
     const { top } = this.element.getBoundingClientRect();
-    return top < viewportThreshold || this.#isScrolledToBottom();
+    return (
+      top < viewportThreshold || ElementScrollDetector.#isScrolledToBottom()
+    );
   }
 
   checkUsingOffsetTop() {
     const { offsetTop } = this.element;
     const scrollY = window.scrollY + this.offset;
-    return offsetTop < scrollY || this.#isScrolledToBottom();
+    return offsetTop < scrollY || ElementScrollDetector.#isScrolledToBottom();
   }
 
   checkIgnoringTransform() {
-    const rect = this.#getRectIgnoringTransform(this.element);
+    const rect = ElementScrollDetector.#getRectIgnoringTransform(this.element);
     const isScrolled = rect.top < window.innerHeight - this.offset;
-    return isScrolled || this.#isScrolledToBottom();
+    return isScrolled || ElementScrollDetector.#isScrolledToBottom();
   }
 
-  #getCumulativeTransformMatrix(element) {
+  static #getCumulativeTransformMatrix(element) {
     let node = element;
     let cumulative = new DOMMatrix();
 
@@ -41,9 +43,9 @@ class ElementScrollDetector {
     return cumulative;
   }
 
-  #getRectIgnoringTransform(element) {
+  static #getRectIgnoringTransform(element) {
     const rect = element.getBoundingClientRect();
-    const matrix = this.#getCumulativeTransformMatrix(element);
+    const matrix = ElementScrollDetector.#getCumulativeTransformMatrix(element);
     if (matrix.isIdentity) return rect;
 
     let inv;
@@ -73,7 +75,7 @@ class ElementScrollDetector {
     };
   }
 
-  #isScrolledToBottom() {
+  static #isScrolledToBottom() {
     const scrollBottom = Math.floor(window.scrollY + window.innerHeight);
     return scrollBottom === document.body.scrollHeight;
   }
