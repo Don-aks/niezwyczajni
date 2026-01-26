@@ -16,6 +16,10 @@
   &--centered {
     text-align: center;
 
+    .section__header {
+      margin-inline: auto;
+    }
+
     .section__title--border-top,
     .section__title--with-cross {
       &::before {
@@ -39,12 +43,12 @@
     gap: 40px;
   }
 
-  &__text {
-    width: min(100%, 777px);
-  }
-
   &__content {
     width: min(100%, 550px);
+  }
+
+  &__header {
+    width: min(100%, 777px);
   }
 
   &__title {
@@ -100,6 +104,10 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+  }
+
+  &__text {
+    width: min(100%, 777px);
   }
 
   &__cards-container {
