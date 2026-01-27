@@ -4,10 +4,6 @@
   position: relative;
 }
 
-.\!relative {
-  position: relative !important;
-}
-
 .absolute {
   position: absolute;
 }
@@ -120,10 +116,6 @@
   }
 }
 
-.bg-secondary {
-  background-color: var(--color-bg-secondary);
-}
-
 // Transitions
 
 .transition-colors {
@@ -132,10 +124,6 @@
 }
 
 // Other
-
-.rounded {
-  border-radius: var(--borders-radius);
-}
 
 .rounded-50 {
   border-radius: 50%;
