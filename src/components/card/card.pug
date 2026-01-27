@@ -45,5 +45,6 @@ mixin card(props, classNames = "", imageWidth = 370)
           )
             | #{ btnText }
             if btnIcon
-              svg
-                use(href=`/__spritemap#${btnIcon}`)
+              span.icon
+                svg
+                  use(href=`/__spritemap#${btnIcon}`)
