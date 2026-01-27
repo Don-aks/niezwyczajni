@@ -1,0 +1,20 @@
+.icon {
+  font-size: 24px;
+  color: var(--color-primary);
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  svg {
+    @include square(30px);
+    fill: currentColor;
+  }
+
+  &--stroke {
+    svg {
+      fill: none;
+      stroke: currentColor;
+    }
+  }
+}

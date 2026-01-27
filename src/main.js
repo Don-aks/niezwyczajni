@@ -10,6 +10,7 @@ import '@/styles/variables.scss';
 import '@/styles/utilities.scss';
 import '@/styles/globals.scss';
 
+import '@/components/icon/icon.scss'
 import '@/components/btn/btn.scss';
 import '@/components/section/section.scss';
 import '@/components/header/header.scss';
