@@ -84,7 +84,7 @@
       @include mq('tablet-lg') {
         @include transition(
           (
-            translate: calc(var(--transition-duration) * 0.25),
+            translate: 0.2s,
           )
         );
       }
