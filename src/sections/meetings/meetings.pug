@@ -1,5 +1,4 @@
 include /components/card/card
-include /components/cta-btn/cta-btn
 
 -
   var meetings = [
@@ -52,7 +51,8 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
         +card(meeting)
 
     footer.section__footer.meetings__footer
-      +ctaBtn
+      button.btn.btn--primary(type="button" data-show-contact-info)
+        | Skontaktuj się z nami
       a.btn.btn--secondary.btn--with-icon.meetings__link(href="#faq")
         | Najczęściej zadawane pytania
         span.icon
