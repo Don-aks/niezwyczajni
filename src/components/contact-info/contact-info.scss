@@ -6,13 +6,17 @@
     gap: 10px;
   }
 
-  &__soc1al-icon {
-    @include square(30px);
+  &__soc1al {
     color: var(--color-white);
-    fill: currentColor;
+    font-size: 24px;
 
-    @include hover(false) {
+    @include hover {
       color: var(--color-primary);
+    }
+
+    svg {
+      @include square(30px);
+      fill: currentColor;
     }
   }
 }
