@@ -25,7 +25,7 @@ mixin eventCard(props, imageWidth = 370, classNames = "")
         | #{ dateText }
     .event-card__inner.flex.flex-col.gap-15
       h3.event-card__title= title
-      a.event-card__location.flex(
+      a.event-card__location.flex.gap-7(
         href=locationUrl
         target="_blank"
         rel="noopener noreferrer"
