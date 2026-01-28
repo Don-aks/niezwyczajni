@@ -125,13 +125,16 @@ mixin faq(page)
   section#faq.faq.section
     .container.faq__container.flex
       .faq__decor-icon.relative(style="width: 500px")
+
       .faq__inner.section__container
         header.faq__header.section__header
           h2.section__title Najczęściej zadawane pytania
           h3.section__subtitle Masz pytania? Mamy odpowiedzi!
+
         .faq__content.section__content
           each item, index in faqItems[page]
             +_faqItem(item, index)
+
         if page === "index"
           footer.section__footer.justify-start
             +ctaBtn
