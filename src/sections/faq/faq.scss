@@ -32,7 +32,7 @@
     cursor: pointer;
 
     &:not(:last-of-type) {
-      margin-bottom: calc(15px - var(--outline-size) - var(--outline-offset));
+      margin-bottom: 15px;
     }
 
     &[open] {
@@ -46,6 +46,7 @@
 
       & + .faq__answer {
         grid-template-rows: 1fr;
+        margin-top: 15px;
         margin-bottom: 20px;
 
         visibility: visible;
@@ -85,7 +86,7 @@
   &__answer {
     grid-template-rows: 0fr;
 
-    transition: var(--transition-duration);
+    @include transition(grid-template-rows);
     visibility: hidden;
   }
 
@@ -93,8 +94,8 @@
     --padding-size: calc(var(--outline-size) + var(--outline-offset));
 
     gap: 23px;
-    padding-top: var(--padding-size);
-    padding-right: var(--padding-size);
+    padding: var(--padding-size);
+    margin: calc(-1 * var(--padding-size));
 
     overflow: hidden;
   }
