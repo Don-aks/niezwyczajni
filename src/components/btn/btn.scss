@@ -91,6 +91,12 @@
     }
   }
 
+  &--white {
+    --color-btn: var(--color-white);
+    --color-btn-hover: var(--color-base);
+    --color-btn-bg-hover: var(--color-white);
+  }
+
   &--with-icon {
     display: inline-flex;
     justify-content: center;
