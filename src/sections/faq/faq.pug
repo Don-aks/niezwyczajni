@@ -97,7 +97,7 @@ mixin _faqItem({ question, answer, buttons, video }, id)
   .faq__answer.grid(id=`faq-answer-${id}` aria-labelledby=`faq-question-${id}`)
     .faq__answer-inner.flex.justify-between
       .faq__answer-text-wrapper
-        .faq__answer-text
+        .faq__answer-text.text
           | !{ answer }
         if video
           +video({ ...video, width: 360, height: 202 }, false, "faq__answer-video")
