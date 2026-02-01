@@ -1,4 +1,5 @@
 include /components/cta-btn/cta-btn
+include /components/contact-btn/contact-btn
 
 section.cta.section
   .container.flex.justify-between.items-center
@@ -13,11 +14,7 @@ section.cta.section
 
       .section__footer
         +ctaBtn("cta__link")
-        button.btn.btn--secondary.cta__btn(
-          type="button"
-          data-show-contact-info
-        )
-          | Skontaktuj się z nami
+        +contactBtn({ classNames: "cta__btn", hasIcon: false })
 
     img.cta__image(
       src="https://as1.ftcdn.net/jpg/02/11/29/06/1000_F_211290641_8wvpbJKta9wIs1jcnwQXjF1dXehA1QM0.jpg"

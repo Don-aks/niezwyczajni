@@ -47,8 +47,7 @@ section.about-banner.section
             | życie.
         .about-banner__buttons.flex.gap-15
           +ctaBtn
-          button.btn.btn--secondary(type="button" data-show-contact-info)
-            | Skontaktuj się z nami
+          +contactBtn({ hasIcon: false })
 
       .about-banner__image-wrapper.relative
         img.about-banner__image.absolute(

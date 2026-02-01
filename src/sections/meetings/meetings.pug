@@ -1,4 +1,5 @@
 include /components/card/card
+include /components/contact-btn/contact-btn
 
 -
   var meetings = [
@@ -51,8 +52,7 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
         +card(meeting)
 
     footer.section__footer.section__footer--centered.meetings__footer
-      button.btn.btn--primary(type="button" data-show-contact-info)
-        | Skontaktuj się z nami
+      +contactBtn({ hasIcon: false })
       a.btn.btn--secondary.btn--with-icon.btn--white(href="#faq")
         | Najczęściej zadawane pytania
         span.icon

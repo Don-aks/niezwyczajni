@@ -1,0 +1,18 @@
+mixin contactBtn(props = {})
+  -
+    var {
+      classNames = "",
+      hasIcon = true,
+    } = props;
+
+  button.btn.btn--secondary(
+    class=`${hasIcon ? "btn--with-icon " : ""}${classNames}`
+    type="button"
+    data-show-contact-info
+  )
+    | Skontaktuj się z nami
+
+    if hasIcon
+      span.icon
+        svg
+          use(href="/__spritemap#phone")
