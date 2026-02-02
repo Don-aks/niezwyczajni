@@ -5,6 +5,8 @@
   background-color: var(--color-background);
   @include transition((background-color, color, scale));
 
+  will-change: transform;
+
   @include hover {
     background-color: var(--color-primary);
     color: var(--color-white);

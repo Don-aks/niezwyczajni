@@ -57,6 +57,8 @@
 
       @include transition(rotate);
       translate: 0 -50%;
+
+      will-change: transform;
     }
 
     &.active {
@@ -103,6 +105,7 @@
     visibility: hidden;
 
     @include transition((opacity, translate, visibility));
+    will-change: opacity, transform;
 
     &::before {
       content: '';

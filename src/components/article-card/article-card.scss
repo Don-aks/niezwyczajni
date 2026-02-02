@@ -5,6 +5,7 @@
   background-color: var(--color-white);
 
   @include transition(translate);
+  will-change: transform;
 
   @include hover {
     translate: 0 -10px;

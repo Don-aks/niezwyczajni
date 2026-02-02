@@ -79,6 +79,7 @@
       translate: 0 100%;
 
       @include transition(translate);
+      will-change: transform;
 
       // Reduce transition duration on smaller screens
       @include mq('tablet-lg') {

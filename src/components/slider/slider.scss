@@ -18,6 +18,8 @@
     translate: 0 -50%;
     @include transition(opacity);
 
+    will-change: opacity;
+
     &--prev {
       right: auto;
       left: -60px;
