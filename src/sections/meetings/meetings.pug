@@ -1,5 +1,5 @@
-include /components/card/card
-include /components/contact-btn/contact-btn
+include /components/cards/card/card
+include /components/buttons/contact-btn
 
 -
   var meetings = [
@@ -52,7 +52,7 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
         +card(meeting)
 
     footer.section__footer.section__footer--centered.meetings__footer
-      +contactBtn({ hasIcon: false })
+      +contactBtn({ classNames: "btn--primary", hasIcon: false, isSecondary: false })
       a.btn.btn--secondary.btn--with-icon.btn--white(href="#faq")
         | Najczęściej zadawane pytania
         span.icon

@@ -1,6 +1,6 @@
-import '@/components/section/section.scss';
-import '@/components/card/card.scss';
-import '@/components/event-card/event-card.scss';
+import '@/components/section.scss';
+import '@/components/cards/card/card.scss';
+import '@/components/cards/event-card/event-card.scss';
 import '@/components/video/video.scss';
 
 import '@/sections/banner/banner.scss';

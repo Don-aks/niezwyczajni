@@ -3,12 +3,18 @@ mixin contactBtn(props = {})
     var {
       classNames = "",
       hasIcon = true,
+      acf = {},
+      isSecondary = true,
     } = props;
 
-  button.btn.btn--secondary(
-    class=`${hasIcon ? "btn--with-icon " : ""}${classNames}`
+    var { key = "contact_button", map = "text:text,href:href" } = acf;
+
+  button.btn(
+    class=`${isSecondary ? "btn--secondary " : ""}${hasIcon ? "btn--with-icon " : ""}${classNames}`
     type="button"
     data-show-contact-info
+    data-acf=key
+    data-acf-map=map
   )
     | Skontaktuj się z nami
 

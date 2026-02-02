@@ -1,9 +1,9 @@
 import 'swiper/css';
 import './about.scss';
 
-import '@/components/story/story.scss';
-import '@/components/slider/slider.scss';
-import '@/components/slider-pagination/slider-pagination.scss';
+import '@/components/cards/card/card.scss';
+import '@/components/slider.scss';
+import '@/components/slider-pagination.scss';
 import '@/components/image-wrapper/image-wrapper.scss';
 import '@/components/article-card/article-card.scss';
 import '@/components/video/video.scss';

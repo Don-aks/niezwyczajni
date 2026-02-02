@@ -10,9 +10,9 @@ import '@/styles/variables.scss';
 import '@/styles/utilities.scss';
 import '@/styles/globals.scss';
 
-import '@/components/icon/icon.scss'
-import '@/components/btn/btn.scss';
-import '@/components/section/section.scss';
+import '@/components/icon.scss';
+import '@/components/buttons/btn.scss';
+import '@/components/section.scss';
 import '@/components/header/header.scss';
 import '@/components/nav/nav.scss';
 import '@/components/contact-info/contact-info.scss';
