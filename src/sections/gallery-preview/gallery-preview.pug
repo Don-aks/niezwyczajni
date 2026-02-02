@@ -24,9 +24,10 @@ section.gallery-preview.section.section--centered
       h3.section__subtitle Nasza galeria
     .gallery-preview__content.relative
       .slider.gallery-preview__slider.swiper
-        .slider__wrapper.swiper-wrapper
+        ul.slider__wrapper.swiper-wrapper.list-reset
           each image of gallery
-            +imageWrapper(image, "swiper-slide slider__slide")
+            li.slider__slide.swiper-slide
+              +imageWrapper(image)
 
       .slider__navigation.gallery-preview__slider-navigation
         button.slider__btn.slider__btn--prev
