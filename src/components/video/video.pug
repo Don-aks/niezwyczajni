@@ -1,11 +1,52 @@
-mixin video({ youtubeId, title, isHD, duration, label, isShowTitle }, hasTitle = true, classNames = "")
-  - isHD = isHD ?? true;
-  - isShowTitle = isShowTitle ?? true;
+-
+  function pluralizeTime(value, forms) {
+    const n = Math.abs(value);
+
+    if (n === 1) return forms[0];
+
+    if (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) {
+      return forms[1];
+    }
+
+    return forms[2];
+  }
+
+  var godzina = n => `${n} ${pluralizeTime(n, ['godzina', 'godziny', 'godzin'])}`;
+  var minuta  = n => `${n} ${pluralizeTime(n, ['minuta', 'minuty', 'minut'])}`;
+  var sekunda = n => `${n} ${pluralizeTime(n, ['sekunda', 'sekundy', 'sekund'])}`;
+
+mixin _videoDuration(duration)
+  -
+    var label = "Czas trwania wideo: ";
+    var parts = duration.split(':').map(Number);
+
+    if (parts.length === 2) {
+      label += `${minuta(parts[0])} ${sekunda(parts[1])}`;
+    }
+
+    if (parts.length === 3) {
+      label += `${godzina(parts[0])} ${minuta(parts[1])} ${sekunda(parts[2])}`;
+    }
+
+  span.video__duration
+    span.visually-hidden= label
+    span(aria-hidden="true")= duration
+
+mixin video(props, hasTitle = true, classNames = "")
+  -
+    var {
+      youtubeId,
+      title,
+      isHD = true,
+      duration,
+      label,
+      isShowTitle = true
+    } = props;
 
   .video.flex.flex-col.gap-15(
     class=classNames
     data-youtube-id=youtubeId
-    title=hasTitle ? "Odtwórz wideo" : `Odtwórz wideo: ${title}`
+    title=hasTitle ? "Odtwórz wideo" : `Odtwórz wideo pt. ${title}`
   )
     .video__inner.flex.flex-col.gap-15
       button.video__btn.relative(
@@ -17,12 +58,17 @@ mixin video({ youtubeId, title, isHD, duration, label, isShowTitle }, hasTitle =
         `
       )
         span.visually-hidden
-          | Odtwórz wideo #{ hasTitle ? '' : `pod tytułem: ${title}` }
+          | Odtwórz wideo pod tytułem #{ title }
         svg.video__icon
           use(href="/__spritemap#video-circle")
+
         if duration
-          time.video__duration(datetime=duration)= duration
+          +_videoDuration(duration)
+
         if label
-          span.video__label= label
+          span.video__label
+            span.visually-hidden Etykieta wideo:
+            | #{ label }
+
       if isShowTitle || hasTitle
-        h3.video__title= title
+        h3.video__title(aria-hidden="true")= title

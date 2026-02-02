@@ -84,16 +84,11 @@ include /components/cta-btn/cta-btn
     ]
   };
 
-mixin _faqItem({ question, answer, buttons, video }, id)
-  - buttons = buttons ?? [];
+mixin _faqQuestion(question, id)
+  summary.faq__question
+    span.faq__question-text(id=`faq-question-${id}` aria-details=`faq-answer-${id}`)= question
 
-  details.faq__item(name="faq")
-    summary.faq__question
-      span.faq__question-text(
-        id=`faq-question-${id}`
-        aria-details=`faq-answer-${id}`
-      )= question
-
+mixin _faqAnswer({ answer, video }, id)
   .faq__answer.grid(id=`faq-answer-${id}` aria-labelledby=`faq-question-${id}`)
     .faq__answer-inner.flex.justify-between
       .faq__answer-text-wrapper
@@ -101,25 +96,33 @@ mixin _faqItem({ question, answer, buttons, video }, id)
           | !{ answer }
         if video
           +video({ ...video, width: 360, height: 202 }, false, "faq__answer-video")
+      block
 
-      if buttons.length
-        .faq__answer-action.flex.flex-col.gap-15
-          each btn in buttons
-            - var { text, href, classes, isOpenContactInfo } = btn;
-            - var Tag = href ? "a" : "button";
+mixin _faqAction(buttons)
+  .faq__answer-action.flex.flex-col.gap-15
+    each btn in buttons
+      - const isLink = btn.href && !btn.isOpenContactInfo;
+      - const label = btn.text ?? (
+        btn.isOpenContactInfo ? "Skontaktuj się z nami" : ""
+      );
 
-            if !text && isOpenContactInfo
-              - text = "Skontaktuj się z nami";
+      - var Tag = isLink ? "a" : "button";
+      #{Tag}.btn.faq__answer-btn(
+        class=btn.classes
+        type=!btn.href && "button"
+        href=isLink ? btn.href : null
+        data-show-contact-info=btn.isOpenContactInfo
+      )= label
 
-            if isOpenContactInfo
-              - href = null;
+mixin _faqItem({ question, answer, buttons, video }, id)
+  - buttons = buttons ?? [];
 
-            #{Tag}.btn.faq__answer-btn(
-              class=classes
-              type=!href && "button"
-              href=href
-              data-show-contact-info=isOpenContactInfo
-            )= text
+  details.faq__item(role="region" aria-labelledby=`faq-question-${id}`)
+    +_faqQuestion(question, id)
+
+  +_faqAnswer({ answer, video }, id)
+    if buttons.length
+      +_faqAction(buttons)
 
 mixin faq(page)
   section#faq.faq.section
