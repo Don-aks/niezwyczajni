@@ -7,7 +7,7 @@ import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 import optimizeSvgSources from './plugins/optimizeSvgSources';
 import spriteReplacer from './plugins/spriteReplacer';
-import { getAllHTMLFiles } from './utilities';
+import getAllHTMLFiles from './utilities/getAllHTMLFiles';
 
 export default {
   base: './',

@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 import { readdirSync } from 'node:fs';
 
-export const getAllHTMLFiles = (path) => {
+const getAllHTMLFiles = (path) => {
   const dirPath = fileURLToPath(path, import.meta.url);
   const allFiles = readdirSync(dirPath, { withFileTypes: true });
   const htmlFiles = allFiles.filter((file) => file.name.endsWith('.html'));
@@ -14,3 +14,5 @@ export const getAllHTMLFiles = (path) => {
     return acc;
   }, {});
 };
+
+export default getAllHTMLFiles;
