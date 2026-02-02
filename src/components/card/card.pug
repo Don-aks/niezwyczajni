@@ -7,14 +7,11 @@ mixin card(props, classNames = "", imageWidth = 370)
       title,
       text,
       href,
-      isOpenInNewTab,
+      isOpenInNewTab = true,
       btnText,
       btnIcon,
       isCardClickable,
     } = props;
-
-  if typeof isOpenInNewTab === "undefined"
-    - isOpenInNewTab = true;
 
   li.card(class=`${classNames}${isCardClickable ? ' clickable' : ''}`)
     article.card__wrapper

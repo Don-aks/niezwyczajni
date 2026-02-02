@@ -1,4 +1,4 @@
-mixin imageWrapper({ src, alt, width, height, caption }, classNames = "")
+mixin imageWrapper({ src, alt, width, height, caption = "" }, classNames = "")
   if !width || !height
     - width = 600;
     - height = 400;
