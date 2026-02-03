@@ -4,7 +4,7 @@ import getDefaultSwiperConfig from '@/utilities/getDefaultSwiperConfig';
 import SWIPER_CONFIGS from '@/constants/swiperConfigs';
 
 class Swipers {
-  elements = [];
+  instances = [];
 
   constructor() {
     SWIPER_CONFIGS.forEach((config) => {
@@ -32,7 +32,7 @@ class Swipers {
   }
 
   createInstance(element, options) {
-    this.elements.push(new Swiper(element, options));
+    this.instances.push(new Swiper(element, options));
   }
 
   static generateOptions(options, useDefault) {
