@@ -62,8 +62,8 @@
 
   &__slider-navigation {
     .slider__btn {
-      top: 300px + 30px;
-      translate: 0 calc(var(--content-height, 0) / 2);
+      top: 300px + 15px;
+      translate: 0 calc(var(--content-height, 0) / 2 - 50%);
 
       @include transition((opacity, translate));
 

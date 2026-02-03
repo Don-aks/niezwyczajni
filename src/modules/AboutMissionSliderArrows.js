@@ -28,10 +28,8 @@ class AboutMissionSliderArrows {
     const activeSlide = this.root.querySelector(this.selectors.activeSlide);
     const content = activeSlide.querySelector(this.selectors.slideContent);
 
-    console.log(activeSlide, content);
-
     const contentHeight = content.offsetHeight;
-    this.root.style.setProperty('--content-height', `${contentHeight / 2}px`);
+    this.root.style.setProperty('--content-height', `${contentHeight}px`);
   };
 }
 
