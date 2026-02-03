@@ -104,6 +104,10 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+
+    strong {
+      color: var(--color-primary);
+    }
   }
 
   &__text {
