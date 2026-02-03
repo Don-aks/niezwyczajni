@@ -1,47 +1,301 @@
+include /components/image-wrapper/image-wrapper
+include /components/buttons/cta-btn
+include /components/buttons/contact-btn
+
 -
-  var storyItems = [
+  var aboutMissionItems = [
     {
-      iconId: "city",
-      title: "Ewangelizacja Uliczna",
-      text: "Regularnie wychodzimy na ulice Radomia, aby dzielić się Dobrą Nowiną z tymi, którzy jej najbardziej potrzebują."
+      image: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+      title: "Na ulicach Radomia",
+      text: "Regularnie wychodzimy na ulice Radomia, aby głosić Ewangelię, uwielbiać Boga poprzez muzykę oraz dzielić się świadectwami realnej przemiany życia w Jezusie Chrystusie.",
+      note: "Światło Ewangelii w codziennym życiu",
+      images: [
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+
+        {
+          src: 'https://www.radom.pl/wp-content/uploads/2025/12/rapackiego_folwarczna-11-scaled.jpg',
+          alt: 'Misja na ulicach Radomia',
+          caption: 'Misja na ulicach Radomia',
+        },
+      ]
     },
     {
-      iconId: "prison",
-      title: "Ewangelizacja więzienna w Radomiu",
-      text: "Odwiedzamy osadzone osoby w radomskich zakładach karnych, oferując im wsparcie duchowe i nadzieję na przemianę poprzez Ewangelię."
+      image: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+      title: "W więzieniach",
+      text: "Odwiedzamy osoby osadzone w radomskich zakładach karnych, niosąc im nadzieję, duchowe wsparcie oraz Dobrą Nowinę, która ma moc zmieniać każde życie.",
+      note: "Nadzieja tam, gdzie jej brakuje",
+      images: [
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+
+        {
+          src: 'https://chwz.gliwice.pl/wp-content/uploads/2008/04/wiezienie_4.jpg',
+          alt: 'Misja w więzieniach',
+          caption: 'Misja w więzieniach',
+        },
+      ]
     },
     {
-      iconId: "bible",
-      title: "Nasza Misja",
-      text: "Głosimy Ewangelię Jezusa Chrystusa jako jedyną drogę do zbawienia i przemiany życia."
-    },
-    {
-      iconId: "heart",
-      title: "Miłość i Troska",
-      text: "Okazujemy miłość i troskę każdemu człowiekowi, niezależnie od jego przeszłości czy obecnej sytuacji."
-    },
-    {
-      iconId: "hands",
-      title: "Wsparcie Duchowe",
-      text: "Wspieramy osoby poprzez modlitwę, rozmowy oraz praktyczną pomoc w ich duchowym rozwoju."
+      image: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+      title: "Słowo Boże",
+      text: "Biblia jest w centrum wszystkiego, co robimy. To Słowo Boże prowadzi, uzdrawia i wskazuje drogę do prawdziwej wolności w Jezusie.",
+      note: "Słowo Boże jako fundament",
+      images: [
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+
+        {
+          src: 'https://zbawienie.pl/wp-content/uploads/2023/10/126-Gdy-Biblia-jest-przewodnikiem-%C5%BCycia-52Prawdy.pl_.jpg',
+          alt: 'Misja Słowo Boże',
+          caption: 'Misja Słowo Boże',
+        },
+      ]
     },
   ]
 
-section.about-mission.section.section--on-dark.section--centered.bg-back(
-  style=`
-    --image-url: url('https://www.custodia.org/wp-content/uploads/2024/11/whatsapp_image_2022-07-01_at_17.41.43.jpeg');
-    --brightness: 0.35;
-    padding-top: ${80 + 100}px;
-  `
-)
+section#about-mission.about-mission.section
   .container.section__container
-    header#about-mission.section__header
-      h2.section__title.section__title--with-cross
-        | Wierzymy w moc przemienienia
-      h3.section__subtitle Ewangelizacja Uliczna i Więzienna
-      .section__text.text
+    header.section__header
+      h2.section__title
+        | Blisko ludzi. Blisko ich bólu i nadziei
+      h3.section__subtitle
+        | Boża łaska ma moc przemienić życie <strong>każdego</strong> człowieka
+      .section__text.text(data-acf="about_mission_text" data-acf-html)
         p
-          | Boża łaska ma moc przemienić życie <strong>każdego</strong>
-          | człowieka. Dlatego odwiedzamy więzienia, szkoły oraz miejsca,
-          | w których żyją ludzie pozbawieni nadziei, dzieląc się z nimi
-          | Ewangelią i osobistym świadectwem.
+          | Dlatego odwiedzamy więzienia, szkoły oraz miejsca, w których żyją
+          | ludzie pozbawieni nadziei, dzieląc się z nimi Ewangelią i osobistym
+          | świadectwem.
+
+    .about-mission__content.relative
+      .about-mission__slider.slider.swiper
+        ul.about-mission__slider-inner.swiper-wrapper.text-center.list-reset
+          each item of aboutMissionItems
+            li.about-mission__item.swiper-slide.flex-col.gap-30
+              .about-mission__slides.swiper
+                ul.about-mission__slides-inner.swiper-wrapper.list-reset
+                  each img in item.images
+                    li.about-mission__slide.swiper-slide
+                      +imageWrapper({ ...img, width: 200, height: 200 })
+
+              .about-mission__item-content
+                .about-mission__item-info.flex.flex-col.gap-15.mx-auto
+                  h4.about-mission__item-title= item.title
+                  p.about-mission__item-text !{ item.text }
+                  span.about-mission__item-note= item.note
+
+      .about-mission__slider-navigation.slider__navigation
+        button.slider__btn.slider__btn--prev
+          svg.slider__btn-icon
+            use(href="__spritemap#arrow-right")
+          span.visually-hidden Poprzednie zdjęcie
+
+        button.slider__btn.slider__btn--next
+          svg.slider__btn-icon
+            use(href="__spritemap#arrow-right")
+          span.visually-hidden Następne zdjęcie
+
+    .section__footer.section__footer--centered
+      +ctaBtn
+      +contactBtn

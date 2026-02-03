@@ -1,5 +1,6 @@
 import Header from '@/modules/Header';
 import Nav from '@/modules/Nav';
+import AboutMissionSliderArrows from '@/modules/AboutMissionSliderArrows';
 import StickyCta from '@/modules/StickyCta';
 import Swipers from '@/modules/swipers';
 import Videos from '@/modules/Videos';
@@ -21,6 +22,7 @@ import '@/components/sticky-cta/sticky-cta.scss';
 
 new Header();
 new Nav();
-new StickyCta();
-new Swipers();
+const swipers = new Swipers();
+new AboutMissionSliderArrows(swipers.instances);
 new Videos();
+new StickyCta();

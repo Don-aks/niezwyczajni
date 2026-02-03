@@ -1,1 +1,79 @@
+.about-mission {
+  &__content {
+    margin-block: -20px 20px;
+  }
 
+  &__item {
+    display: flex;
+  }
+
+  &__slides {
+    z-index: 2;
+    width: 100%;
+    height: 300px;
+  }
+
+  &__slides-inner.swiper-wrapper {
+    align-items: center;
+  }
+
+  &__slide {
+    @include transition(scale);
+    will-change: transform;
+
+    &.swiper-slide-active {
+      z-index: 2;
+      scale: 1.2;
+    }
+
+    .image-wrapper__image {
+      width: 100%;
+    }
+
+    .image-wrapper__caption {
+      inset: auto 15px 10px;
+      font-size: 16px;
+    }
+  }
+
+  &__item-content {
+    padding-inline: calc(55px + var(--container-padding-x));
+  }
+
+  &__item-info {
+    width: min(100%, 777px);
+  }
+
+  &__item-title {
+    font-size: 28px;
+  }
+
+  &__item-text {
+    line-height: 1.5;
+  }
+
+  &__item-note {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  &__slider-navigation {
+    .slider__btn {
+      top: 300px + 30px;
+      translate: 0 calc(var(--content-height, 0) / 2);
+
+      @include transition((opacity, translate));
+
+      &--prev {
+        left: 0;
+      }
+
+      &--next {
+        right: 0;
+      }
+    }
+  }
+}
