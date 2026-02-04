@@ -5,6 +5,36 @@ const nextBtn = '.slider__btn--next';
 
 export default [
   {
+    selector: '.about-mission__slider',
+    options: {
+      slidesPerView: 1,
+      loop: true,
+      allowTouchMove: false,
+      autoHeight: true,
+      navigation: {
+        prevEl: `.about-mission__slider-navigation ${prevBtn}`,
+        nextEl: `.about-mission__slider-navigation ${nextBtn}`,
+      },
+      modules: [Navigation],
+      keyboard: { enabled: true },
+    },
+    useDefaultConfig: false,
+  },
+  {
+    selector: '.about-mission__slides',
+    options: {
+      slidesPerView: 4.5,
+      spaceBetween: 60,
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+      },
+      modules: [Autoplay],
+    },
+    multiple: true,
+  },
+  {
     selector: '.mission__slider',
     options: {
       slidesPerView: 1,
