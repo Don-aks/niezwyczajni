@@ -269,6 +269,17 @@ section#about-mission.about-mission.section
           | świadectwem.
 
     .about-mission__content.relative
+      .about-mission__slider-navigation.slider__navigation
+        button.slider__btn.slider__btn--prev
+          svg.slider__btn-icon
+            use(href="__spritemap#arrow-right")
+          span.visually-hidden Poprzedni słajd
+
+        button.slider__btn.slider__btn--next
+          svg.slider__btn-icon
+            use(href="__spritemap#arrow-right")
+          span.visually-hidden Następny słajd
+
       .about-mission__slider.slider.swiper
         ul.about-mission__slider-inner.swiper-wrapper.text-center.list-reset
           each item of aboutMissionItems
@@ -284,17 +295,6 @@ section#about-mission.about-mission.section
                   h4.about-mission__item-title= item.title
                   p.about-mission__item-text !{ item.text }
                   span.about-mission__item-note= item.note
-
-      .about-mission__slider-navigation.slider__navigation
-        button.slider__btn.slider__btn--prev
-          svg.slider__btn-icon
-            use(href="__spritemap#arrow-right")
-          span.visually-hidden Poprzedni słajd
-
-        button.slider__btn.slider__btn--next
-          svg.slider__btn-icon
-            use(href="__spritemap#arrow-right")
-          span.visually-hidden Następny słajd
 
     .section__footer.section__footer--centered
       +ctaBtn

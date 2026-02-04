@@ -23,12 +23,6 @@ section.gallery-preview.section.section--centered
       h2.section__title.section__title--border-top Zobacz nasze zdjęcia
       h3.section__subtitle Nasza galeria
     .gallery-preview__content.slider.relative
-      .gallery-preview__slider.swiper
-        ul.slider__wrapper.swiper-wrapper.list-reset
-          each image of gallery
-            li.slider__slide.swiper-slide
-              +imageWrapper(image)
-
       .slider__navigation.gallery-preview__slider-navigation
         button.slider__btn.slider__btn--prev
           svg.slider__btn-icon
@@ -38,6 +32,12 @@ section.gallery-preview.section.section--centered
           svg.slider__btn-icon
             use(href="__spritemap#arrow-right")
           span.visually-hidden Następne zdjęcie
+
+      .gallery-preview__slider.swiper
+        ul.slider__wrapper.swiper-wrapper.list-reset
+          each image of gallery
+            li.slider__slide.swiper-slide
+              +imageWrapper(image)
 
     footer.section__footer.section__footer--centered
       +ctaBtn
