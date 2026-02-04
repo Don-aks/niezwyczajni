@@ -25,8 +25,9 @@ include /components/buttons/cta-btn
         answerHtml: "<p>Tak, oczywiście. Nasze spotkania są otwarte dla wszystkich – niezależnie od przekonań religijnych czy etapu duchowej drogi.</p><p>Jedyną zasadą jest wzajemny szacunek. Zależy nam, aby każdy uczestnik czuł się bezpiecznie i komfortowo.</p><p>Jeśli przychodzisz z otwartością i gotowością do spokojnej rozmowy – jesteś u nas mile widziany.</p>",
         buttons: [
           {
-            text: "Zobacz nasze spotkania",
+            type: "link",
             href: "#meetings",
+            label: "Zobacz nasze spotkania",
             classes: "btn--primary",
           }
         ]
@@ -42,7 +43,7 @@ include /components/buttons/cta-btn
         answerHtml: "<p>Jeśli chcesz dołączyć do naszej misji lub wesprzeć nasze działania, skontaktuj się z nami klikając przycisk z prawej strony. Chętnie porozmawiamy o możliwościach współpracy i zaangażowania.</p>",
         buttons: [
           {
-            isOpenContactInfo: true,
+            type: "contact",
             classes: "btn--primary",
           }
         ]
@@ -52,7 +53,7 @@ include /components/buttons/cta-btn
         answerHtml: "<p>Tak. Prowadzimy spotkania w szkołach, więzieniach oraz innych miejscach, do których zostajemy zaproszeni. Jesteśmy otwarci na współpracę z każdą instytucją zainteresowaną takimi działaniami.</p>",
         buttons: [
           {
-            isOpenContactInfo: true,
+            type: "contact",
             classes: "btn--primary",
           }
         ]
@@ -71,12 +72,13 @@ include /components/buttons/cta-btn
         answerHtml: "<p>Jeśli dopiero zaczynasz swoją drogę wiary lub chcesz lepiej poznać Jezusa i Biblię, nie jesteś sam. Wielu z nas przechodziło przez te same pytania i wątpliwości.</p><p>Zachęcamy do rozpoczęcia od Ewangelii, regularnej modlitwy i tzw. „cichego czasu” z Bogiem. Ważne jest także, aby wzrastać we wspólnocie – tam, gdzie Biblia jest czytana i traktowana jako autorytet.</p><p>Chętnie pomożemy Ci postawić pierwsze kroki, odpowiedzieć na pytania i towarzyszyć w dalszej drodze wiary.</p>",
         buttons: [
           {
-            text: "Zobacz więcej porad",
-            classes: "btn--primary",
+            type: "link",
             href: "articles/bla-bla-bla",
+            label: "Zobacz więcej porad",
+            classes: "btn--primary",
           },
           {
-            isOpenContactInfo: true,
+            type: "contact",
             classes: "btn--secondary",
           }
         ]
@@ -107,17 +109,15 @@ mixin _faqAnswer({ answerHtml, video }, id)
 mixin _faqAction(buttons)
   .faq__answer-action.flex.flex-col.gap-15
     each btn in buttons
-      - const isLink = btn.href && !btn.isOpenContactInfo;
-      - const label = btn.text ?? (
-        btn.isOpenContactInfo ? "Skontaktuj się z nami" : ""
-      );
-
+      - var isLink = btn.type === "link";
       - var Tag = isLink ? "a" : "button";
+      - var label = btn.label ?? "Skontaktuj się z nami";
+
       #{Tag}.btn.faq__answer-btn(
         class=btn.classes
-        type=!btn.href && "button"
+        type=!isLink && "button"
         href=isLink ? btn.href : null
-        data-show-contact-info=btn.isOpenContactInfo
+        data-show-contact-info=btn.type === "contact"
       )= label
 
 mixin _faqItem({ question, answerHtml, buttons = [], video }, id)
