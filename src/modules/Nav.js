@@ -12,7 +12,7 @@ class Nav {
     document.addEventListener('click', this.handleToggleSubmenu);
   }
 
-  toggleSubmenu(button, submenu, desiredState = null) {
+  static toggleSubmenu(button, submenu, desiredState = null) {
     const isActive = desiredState ?? !button.classList.contains('active');
 
     button.classList.toggle('active', isActive);
@@ -34,7 +34,7 @@ class Nav {
     }
 
     this.#closeOtherActiveSubmenus(button);
-    this.toggleSubmenu(button, submenu);
+    Nav.toggleSubmenu(button, submenu);
   };
 
   #closeOtherActiveSubmenus(excludeButton) {
@@ -42,7 +42,7 @@ class Nav {
       if (btn !== excludeButton && btn.classList.contains('active')) {
         const submenu = btn.nextElementSibling;
         if (submenu) {
-          this.toggleSubmenu(btn, submenu, false);
+          Nav.toggleSubmenu(btn, submenu, false);
         }
       }
     });

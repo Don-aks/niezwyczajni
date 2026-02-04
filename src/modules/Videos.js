@@ -8,7 +8,7 @@ class Videos {
     document.addEventListener('click', this.onClick);
   }
 
-  getIframe(videoId, width) {
+  static getIframe(videoId, width) {
     const height = Math.round((width * 9) / 16);
 
     return `
@@ -34,7 +34,7 @@ class Videos {
     const width = button.offsetWidth || 360;
 
     button.remove();
-    video.insertAdjacentHTML('afterbegin', this.getIframe(videoId, width));
+    video.insertAdjacentHTML('afterbegin', Videos.getIframe(videoId, width));
   };
 }
 
