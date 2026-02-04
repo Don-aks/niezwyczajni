@@ -6,13 +6,14 @@
   &__decor-icon {
     left: -40px;
 
-    background: url('/__spritemap#question_primary-view') center/contain
-      no-repeat;
+    fill: var(--color-primary);
     opacity: var(--decor-opacity);
 
     @include transition(rotate);
     rotate: 15deg;
+
     aspect-ratio: 1;
+    will-change: rotate;
 
     &.hidden {
       rotate: 0deg;
@@ -80,6 +81,7 @@
       rotate: 90deg;
 
       @include transition(rotate);
+      will-change: rotate;
     }
   }
 
