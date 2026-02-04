@@ -114,9 +114,7 @@ mixin _faqAction(buttons)
         data-show-contact-info=btn.isOpenContactInfo
       )= label
 
-mixin _faqItem({ question, answerHtml, buttons, video }, id)
-  - buttons = buttons ?? [];
-
+mixin _faqItem({ question, answerHtml, buttons = [], video }, id)
   details.faq__item(role="region" aria-labelledby=`faq-question-${id}`)
     +_faqQuestion(question, id)
   +_faqAnswer({ answerHtml, video }, id)
