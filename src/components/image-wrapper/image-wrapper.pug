@@ -1,7 +1,8 @@
-mixin imageWrapper(props, classNames = "")
+mixin imageWrapper(props, classNames = "", flags = {})
   - var { src, alt, caption, width = 600, height = 400 } = props;
+  - var { isFocusable = true } = flags;
 
-  figure.image-wrapper(class=classNames tabindex="0")
+  figure.image-wrapper(class=classNames tabindex=isFocusable && "0")
     img.image-wrapper__image(src=src alt=alt width=width height=height)
     if caption
       figcaption.image-wrapper__caption= caption
