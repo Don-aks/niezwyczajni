@@ -1,5 +1,4 @@
 import 'swiper/css';
-import './about.scss';
 
 import '@/components/cards/card/card.scss';
 import '@/components/slider.scss';
@@ -18,3 +17,5 @@ import '@/sections/articles-preview/articles-preview.scss';
 import '@/sections/faq/faq.scss';
 import '@/sections/gallery-preview/gallery-preview.scss';
 import '@/sections/cta/cta.scss';
+
+import './about.scss';
