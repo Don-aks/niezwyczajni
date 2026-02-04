@@ -14,6 +14,8 @@
     rotate: 5deg;
     @include transition(rotate);
 
+    will-change: transform;
+
     &.hidden {
       rotate: 0deg;
     }
