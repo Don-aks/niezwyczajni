@@ -19,7 +19,8 @@
   }
 
   &:hover:has(&__caption),
-  &:focus-visible:has(&__caption) {
+  &:focus-visible:has(&__caption),
+  &.shown:has(&__caption) {
     outline: transparent;
 
     &::before {
