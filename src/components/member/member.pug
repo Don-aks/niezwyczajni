@@ -1,0 +1,37 @@
+mixin member(props, classNames = "")
+  -
+    var {
+      name,
+      role,
+      imageUrl,
+      facebookLink,
+      testimonyLink
+    } = props;
+
+  .member.flex.flex-col.gap-15(class=classNames)
+    .member__image-wrapper.relative
+      img.member__image(
+        src=imageUrl
+        alt=`Zdjęcie ${name}`
+        width="370"
+        height="370"
+      )
+      if facebookLink || testimonyLink
+        .member__links.absolute.flex.gap-7
+          if facebookLink
+            a.member__link.icon.inline-grid.place-items-center(
+              href=facebookLink
+              target="_blank"
+              rel="noopener noreferrer"
+            )
+              svg
+                use(href="/__spritemap#facebook")
+          if testimonyLink
+            a.member__link.icon.icon--stroke.inline-grid.place-items-center(
+              href=testimonyLink
+            )
+              svg
+                use(href="/__spritemap#book")
+    .member__info.flex.flex-col.gap-7.text-center
+      h3.member__name= name
+      h4.member__role= role
