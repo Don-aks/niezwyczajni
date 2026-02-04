@@ -4,7 +4,7 @@
   }
 
   &__decor-icon {
-    left: -40px;
+    width: 500px;
 
     fill: var(--color-primary);
     opacity: var(--decor-opacity);
@@ -21,7 +21,7 @@
   }
 
   &__inner {
-    max-width: 677px;
+    width: min(100%, 677px);
     margin-left: auto;
   }
 
