@@ -1,12 +1,12 @@
 mixin imageWrapper(props, classNames = "", flags = {})
   - var { src, alt, caption, width = 600, height = 400 } = props;
-  - var { isFocusable = true } = flags;
+  - var { isAnimated = true, isFocusable = true } = flags;
 
   figure.image-wrapper(
     class=classNames
     tabindex=isFocusable && "0"
-    data-animate-on-scroll
-    data-animation-class="shown"
+    data-animate-on-scroll=isAnimated
+    data-animation-class=isAnimated && "shown"
   )
     img.image-wrapper__image(src=src alt=alt width=width height=height)
     if caption
