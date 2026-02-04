@@ -115,7 +115,11 @@ mixin _faqAction(buttons)
       )= label
 
 mixin _faqItem({ question, answerHtml, buttons = [], video }, id)
-  details.faq__item(role="region" aria-labelledby=`faq-question-${id}`)
+  details.faq__item(
+    name="faq"
+    role="region"
+    aria-labelledby=`faq-question-${id}`
+  )
     +_faqQuestion(question, id)
   +_faqAnswer({ answerHtml, video }, id)
     if buttons.length
