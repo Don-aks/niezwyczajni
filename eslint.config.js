@@ -24,9 +24,6 @@ export default [
       'lines-between-class-members': 'off',
       'import/prefer-default-export': 'off',
       'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-      // 'import/extensions': 'off',
-      // 'arrow-body-style': 'error',
-      // 'no-underscore-dangle': 'off',
     },
     settings: {
       'import/resolver': {
