@@ -5,7 +5,7 @@ import '@/components/slider.scss';
 import '@/components/slider-pagination.scss';
 import '@/components/image-wrapper/image-wrapper.scss';
 import '@/components/member/member.scss';
-import '@/components/article-card/article-card.scss';
+import '@/components/cards/article-card/article-card.scss';
 import '@/components/video/video.scss';
 
 import '@/sections/about-banner/about-banner.scss';
