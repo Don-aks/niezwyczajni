@@ -1,0 +1,13 @@
+extends /layout
+
+block head
+  include /constants/constants
+  - var pageName = "event";
+  title= "Wydarzenie — " + TITLE
+  script(src=`src/pages/${pageName}/${pageName}.js` type="module")
+
+block content
+  include /components/header/header
+  +header(pageName)
+
+  main.main
