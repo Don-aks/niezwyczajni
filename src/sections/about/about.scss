@@ -25,16 +25,24 @@
     right: 0;
     z-index: 3;
 
+    @include transition((opacity, translate));
+    will-change: opacity, transform;
+
     &:nth-child(2) {
+      top: -80px;
       right: -80px;
       z-index: 2;
-      translate: 0 -80px;
     }
 
     &:nth-child(3) {
+      top: -160px;
       right: -160px;
       z-index: 1;
-      translate: 0 -160px;
+    }
+
+    &.hidden {
+      opacity: 0;
+      translate: 40px 0;
     }
   }
 }
