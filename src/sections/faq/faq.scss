@@ -106,6 +106,10 @@
   &__answer-text {
     font-size: 18px;
 
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
     blockquote {
       margin-bottom: 5px;
 
@@ -127,9 +131,5 @@
         margin-bottom: 10px;
       }
     }
-  }
-
-  &__answer-video {
-    margin-top: 25px;
   }
 }
