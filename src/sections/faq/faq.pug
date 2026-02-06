@@ -87,8 +87,12 @@ include /components/buttons/cta-btn
   };
 
 mixin _faqQuestion(question, id)
-  summary.faq__question(id=`faq-question-${id}` aria-controls=`faq-answer-${id}`)
-    span.faq__question-text= question
+  details.faq__item(
+    name="faq"
+    id=`faq-question-${id}`
+    aria-controls=`faq-answer-${id}`
+  )
+    summary.faq__question= question
     block
 
 mixin _faqAnswer({ answerHtml, video }, id)
