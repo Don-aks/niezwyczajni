@@ -48,27 +48,26 @@ mixin video(props, hasTitle = true, classNames = "")
     data-youtube-id=youtubeId
     title=hasTitle ? "Odtwórz wideo" : `Odtwórz wideo pt. ${title}`
   )
-    .video__inner.flex.flex-col.gap-15
-      button.video__btn.relative(
-        type="button"
-        style=`
-          background-image: url(
-            'https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg'
-          );
-        `
-      )
-        span.visually-hidden
-          | Odtwórz wideo pod tytułem #{ title }
-        svg.video__icon
-          use(href="/__spritemap#video-circle")
+    button.video__btn.relative(
+      type="button"
+      style=`
+        background-image: url(
+          'https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg'
+        );
+      `
+    )
+      span.visually-hidden
+        | Odtwórz wideo pod tytułem #{ title }
+      svg.video__icon
+        use(href="/__spritemap#video-circle")
 
-        if duration
-          +_videoDuration(duration)
+      if duration
+        +_videoDuration(duration)
 
-        if label
-          span.video__label
-            span.visually-hidden Etykieta wideo:
-            | #{ label }
+      if label
+        span.video__label
+          span.visually-hidden Etykieta wideo:
+          | #{ label }
 
-      if isShowTitle || hasTitle
-        h3.video__title(aria-hidden="true")= title
+    if isShowTitle || hasTitle
+      h3.video__title(aria-hidden="true")= title
