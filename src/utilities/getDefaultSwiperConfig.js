@@ -8,7 +8,7 @@ const setCursorState = (swiperEl, isGrabbing) => {
 };
 
 const getDefaultSwiperConfig = () => ({
-  keyboard: { enabled: true },
+  keyboard: { enabled: true, pageUpDown: true },
   on: {
     init(swiper) {
       // eslint-disable-next-line no-param-reassign
