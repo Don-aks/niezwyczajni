@@ -1,3 +1,5 @@
+import isElementInteractive from './isElementInteractive';
+
 const setCursorState = (swiperEl, isGrabbing) => {
   if (!swiperEl) return;
   const cursor = isGrabbing ? 'grabbing' : 'grab';
@@ -11,7 +13,6 @@ const getDefaultSwiperConfig = () => ({
   keyboard: { enabled: true, pageUpDown: true },
   on: {
     init(swiper) {
-      // eslint-disable-next-line no-param-reassign
       swiper.el.style.cursor = 'grab';
 
       // Prevent page scrolling when space is pressed
@@ -21,20 +22,12 @@ const getDefaultSwiperConfig = () => ({
         }
       });
     },
-    touchStart(swiper, e) {
-      const target = e?.target;
-      // If clicked on an interactive element, don't change cursor
-      if (
-        target &&
-        (target.tagName === 'A' ||
-          target.tagName === 'BUTTON' ||
-          target.hasAttribute('tabindex'))
-      ) {
-        return;
-      }
 
+    touchStart(swiper, { target }) {
+      if (isElementInteractive(target)) return;
       setCursorState(swiper.el, true);
     },
+
     touchEnd(swiper) {
       setCursorState(swiper.el, false);
     },
