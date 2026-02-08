@@ -10,7 +10,7 @@ mixin contactBtn(props = {})
     var { key = "contact_button", map = "text:text,href:href" } = acf;
 
   button.btn(
-    class=`${isSecondary ? "btn--secondary " : ""}${hasIcon ? "btn--with-icon " : ""}${classNames}`
+    class=`${isSecondary ? "btn--secondary " : ""}${hasIcon ? "btn--with-icon" : ""}${classNames ? ` ${classNames}` : ""}`
     type="button"
     data-show-contact-info
     data-acf=key
