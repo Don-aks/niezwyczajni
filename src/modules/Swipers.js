@@ -1,7 +1,11 @@
 import Swiper from 'swiper';
+import { Keyboard } from 'swiper/modules';
 
 import getDefaultSwiperConfig from '@/utilities/getDefaultSwiperConfig';
 import SWIPER_CONFIGS from '@/constants/swiperConfigs';
+
+const hasModuleKeyboard = (options) =>
+  Array.isArray(options.modules) && options.modules.includes(Keyboard);
 
 class Swipers {
   instances = [];
@@ -36,6 +40,10 @@ class Swipers {
   }
 
   static generateOptions(options, useDefault) {
+    if (useDefault && !hasModuleKeyboard(options)) {
+      options.modules.push(Keyboard);
+    }
+
     return {
       ...(useDefault ? getDefaultSwiperConfig() : {}),
       ...options,

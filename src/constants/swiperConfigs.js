@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
 
 const prevBtn = '.slider__btn--prev';
 const nextBtn = '.slider__btn--next';
@@ -15,7 +15,7 @@ export default [
         prevEl: `.about-mission__slider-navigation ${prevBtn}`,
         nextEl: `.about-mission__slider-navigation ${nextBtn}`,
       },
-      modules: [Navigation],
+      modules: [Navigation, Keyboard],
       keyboard: { enabled: true },
     },
     useDefaultConfig: false,
