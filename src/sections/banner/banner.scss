@@ -73,13 +73,12 @@
     padding-block: 9px;
 
     &--primary {
-      color: var(--color-black);
+      color: var(--color-base);
       background-color: var(--color-white);
       outline-color: var(--color-white);
 
       @include hover {
         background-color: var(--color-white-secondary);
-        color: var(--color-base);
       }
     }
 
