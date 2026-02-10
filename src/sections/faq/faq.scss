@@ -10,6 +10,7 @@
     opacity: var(--decor-opacity);
 
     @include transition(rotate);
+    translate: -40px 0;
     rotate: 15deg;
 
     aspect-ratio: 1;
