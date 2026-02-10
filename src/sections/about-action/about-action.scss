@@ -1,9 +1,120 @@
 .about-action {
-  &__text {
+  &__slogan-note,
+  &__info-note {
+    display: block;
+
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  &__content {
     text-align: left;
+  }
+
+  &__quote-wrapper {
+    width: min(500px, 100%);
+
+    &:not(:last-child) {
+      padding-bottom: 30px;
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: block;
+      height: 1px;
+
+      background-color: var(--color-white);
+      opacity: 0.5;
+    }
+  }
+
+  &__quote {
+    padding-left: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background-color: var(--color-primary);
+    }
 
     blockquote {
-      color: var(--color-white);
+      > :only-child,
+      > :not(:last-child) {
+        font-size: 28px;
+        color: var(--color-white);
+
+        &::before,
+        &::after {
+          font-size: 38px;
+        }
+
+        &::before {
+          top: -10px;
+        }
+      }
+
+      > :not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      > :first-child::first-letter {
+        padding-left: 20px;
+      }
+
+      // second-to-last + only child
+      > :has(+ :last-child),
+      > :only-child {
+        margin-bottom: 15px;
+
+        &::after {
+          margin-left: 5px;
+        }
+      }
+
+      > :last-child:not(:only-child) {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__info {
+    width: min(700px, 100%);
+  }
+
+  &__item {
+    padding: 20px;
+
+    background-color: var(--color-white);
+    color: var(--color-base);
+  }
+
+  &__icon {
+    color: var(--color-primary);
+  }
+
+  &__info-note {
+    padding-left: 18px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 14px;
+      height: 14px;
+
+      background: url('/__spritemap#cross_primary-view') center/contain
+        no-repeat;
+      translate: 0 -50%;
     }
   }
 }

@@ -1,27 +1,50 @@
+include /components/buttons/cta-btn
+include /components/buttons/contact-btn
+
 section.about-action.section.section--on-dark.section--centered.section--extended.bg-back(
-  style="--image-url: url('https://zacheusz.wroclaw.pl/wp-content/uploads/2021/07/Zdj%C4%99cie-Wspolnoty-Rabka.jpeg'); --brightness: 0.3"
+  style=`
+    --image-url: url('https://zacheusz.wroclaw.pl/wp-content/uploads/2021/07/Zdj%C4%99cie-Wspolnoty-Rabka.jpeg');
+    --brightness: 0.3;
+    padding-top: ${80 + 100}px;
+  `
 )
   .container.section__container.about-action__container
-    .about-action__content
-      header.section__header
-        h2.section__title Poznaj naszą misję ewangelizacyjną
-        h3.section__subtitle Jak działamy w Radomiu i okolicach
-      .section__text.about-action__text.text
-        p
-          | Jako chrześcijanie, którzy zostali uwolnieni ze swych zniewoleń i
-          | grzechów, przyjęliśmy do naszego życia nakaz misyjny Pana Jezusa,
-          | który przed swoim odejściem powiedział do swoich uczniów:
-        figure
-          blockquote
-            | Idźcie na cały świat i głoście Ewangelię wszelkiemu stworzeniu!
-          figcaption
-            a(
-              href="https://www.bible.com/pl/bible/138/MRK.16.15"
-              target="_blank"
-              rel="noopener"
-            ) Ewangelia Marka 16, 15
-        p
-          | Wierzymy, że każdy człowiek zasługuje na szansę usłyszenia Dobrej
-          | Nowiny i doświadczenia miłości Bożej. Dlatego angażujemy się w
-          | różnorodne działania ewangelizacyjne, które mają na celu dotarcie do
-          | jak najszerszego grona osób w Radomiu i okolicach.
+    header.section__header
+      h2.section__title Poznaj naszą misję ewangelizacyjną
+      h3.section__subtitle Jak działamy w Radomiu i okolicach
+
+    .about-action__content.flex.justify-between.items-center.gap-30
+      .about-action__slogan
+        .about-action__quote-wrapper.relative
+          .about-action__quote.relative
+            blockquote
+              p Idźcie na cały świat i głoście Ewangelię wszelkiemu stworzeniu!
+              p
+                a(href="https://www.bible.com/pl/bible/138/MRK.16.15")
+                  | Ewangelia Marka 16, 15
+        small.about-action__slogan-note
+          | Ten nakaz misyjny Pana Jezusa jest fundamentem naszego działania
+      .about-action__info.flex.flex-col.gap-15
+        ul.about-action__list.list-reset.flex.flex-col.gap-15
+          li.about-action__item.flex.flex-col.gap-7
+            .about-action__icon.icon
+              svg
+                use(href="/__spritemap#bible")
+            h4.about-action__item-title Nasza wiara
+            p.about-action__item-text
+              | Każdy człowiek zasługuje na szansę usłyszenia Dobrej Nowiny i
+              | doświadczenia miłości Bożej
+          li.about-action__item.flex.flex-col.gap-7
+            .about-action__icon.icon
+              svg
+                use(href="/__spritemap#city")
+            h4.about-action__item-title Nasze działanie
+            p.about-action__item-text
+              | Angażujemy się w różnorodne działania ewangelizacyjne, dotarcie
+              | do jak najszerszego grona osób w regionie
+        small.about-action__info-note.relative
+          | Uwolnieni, aby wyzwalać innych
+
+    footer.section__footer.section__footer--centered
+      +ctaBtn
+      +contactBtn({ classNames: "btn--white" })
