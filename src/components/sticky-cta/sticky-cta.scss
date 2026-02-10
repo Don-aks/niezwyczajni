@@ -47,9 +47,11 @@
 
   &__link {
     @include square(77px);
-    background-color: var(--color-primary);
 
+    background-color: var(--color-primary);
+    border-radius: 50%;
     @include transition(scale);
+    @include no-highlight;
 
     &:focus-visible {
       border-radius: 50%;

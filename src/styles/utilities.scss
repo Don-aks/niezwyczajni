@@ -8,10 +8,6 @@
   position: absolute;
 }
 
-.z-1 {
-  z-index: 1;
-}
-
 // Flex
 
 .flex {
@@ -20,10 +16,6 @@
 
 .flex-col {
   flex-direction: column;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-between {
@@ -50,10 +42,6 @@
 
 // Block model
 
-.max-w-1920 {
-  width: min(1920px, 100%);
-}
-
 .gap-7 {
   gap: 7px;
 }
@@ -66,34 +54,10 @@
   gap: 30px;
 }
 
-.px-container {
-  padding-inline: var(--container-padding-x);
-}
-
-.mx-auto {
-  margin-inline: auto;
-}
-
 // Typography
-
-.text-sm {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
 
 .text-center {
   text-align: center;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-// Colors
-
-.text-color-secondary {
-  color: var(--color-text-secondary);
 }
 
 // Backgrounds
@@ -121,16 +85,8 @@
 
 // Other
 
-.rounded-50 {
-  border-radius: 50%;
-}
-
 .sepia-50 {
   filter: sepia(0.5);
-}
-
-.no-highlight {
-  @include no-highlight;
 }
 
 .visually-hidden {
