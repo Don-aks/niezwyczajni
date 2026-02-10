@@ -1,4 +1,5 @@
-include /components/image-wrapper/image-wrapper
+include /components/cards/card/card
+include /components/buttons/cta-btn
 include /components/buttons/contact-btn
 
 -
@@ -17,38 +18,58 @@ include /components/buttons/contact-btn
     }
   ]
 
+-
+  var cards = [
+    { title: "Wiara", iconId: "cross" },
+    { title: "Miłość", iconId: "heart" },
+    { title: "Nadzieja", iconId: "dove" },
+  ]
+
 section.mission.section
-  .container.mission__container.flex.justify-between.gap-30
-    .slider.mission__slider.swiper
-      ul.slider__wrapper.swiper-wrapper.list-reset
-        each image of images
-          li.slider__slide.swiper-slide
-            +imageWrapper(image, "slider__image-wrapper")
+  .container.section__container
+    header.section__header
+      h2.section__title.mission__title Nasza wizja
+      h3.section__subtitle.mission__subtitle Jaki nasz cel?
 
-    .mission__content.section__content
-      h2.section__title.mission__title Jaki nasz cel?
-      h3.section__subtitle.mission__subtitle Nasza Misja
-      .mission__text.text
-        p
-          | Naszym głównym zadaniem jest głoszenie Dobrej Nowiny oraz
-          | niesienie nadziei wszystkim tym, którzy ją utracili.
-        p
-          | Wierzymy, że Pan Jezus kocha każdego człowieka i pragnie, aby każdy
-          | został uwolniony z mocy grzechu, nałogów oraz wszelkich
-          | zniewoleń, które niszczą jego życie.
+    .mission__content.flex.justify-between.items-center
+      .mission__about.flex.flex-col.gap-15
+        .mission__slider.swiper
+          ul.swiper-wrapper.list-reset
+            each image of images
+              li.swiper-slide
+                figure.mission__image-wrapper.flex.flex-col.gap-15
+                  img.mission__image(
+                    src=image.src
+                    alt=image.alt || image.caption
+                    width="600"
+                    height="370"
+                  )
+                  figcaption.mission__image-caption= image.caption
+        .mission__moto.flex.flex-col.gap-7
+          h2.mission__moto-title Nasza misja
+          p.mission__moto-description
+            | Naszym głównym zadaniem jest głoszenie Dobrej Nowiny oraz niesienie
+            | nadziei wszystkim tym, którzy ją utracili
 
-        blockquote
+      .mission__info.section__content.flex.flex-col.gap-30
+        p.mission__text
+          | Wierzymy, że <strong>Pan Jezus kocha każdego człowieka</strong> i
+          | pragnie, aby każdy został uwolniony z mocy grzechu, nałogów oraz
+          | wszelkich zniewoleń, które niszczą jego życie.
+        blockquote.mission__quote
           p
-            | Tak bowiem Bóg umiłował świat, że Syna swego Jednorodzonego
-            | dał, aby każdy, kto w Niego wierzy, nie zginął, ale miał
-            | życie wieczne. Albowiem Bóg nie posłał swego Syna na świat
-            | po to, aby świat potępił, lecz po to, aby świat został przez
-            | Niego zbawiony.
-          cite
-            a(href="https://www.bible.com/pl/bible/3490/JHN.3.16-17")
-              | Ewangelia Jana 3,16–17
-      .slider-pagination.mission__slider-pagination.flex
-
-      .about-mission__footer.section__footer
-        +ctaBtn
-        +contactBtn
+            | Tak bowiem <strong>Bóg umiłował świat</strong>, że Syna swego
+            | Jednorodzonego dał, aby każdy, kto w Niego wierzy, nie zginął,
+            | ale miał <em>życie wieczne</em>.
+          p
+            | Albowiem Bóg nie posłał swego Syna na świat po to, aby świat
+            | potępił, lecz po to, aby świat został przez Niego zbawiony.
+          p
+            a(href="https://www.bible.com/pl/bible/138/JHN.3.16-17") Ewangelia Jana 3,16–17
+        ul.mission__cards.list-reset.flex.gap-7
+          each card in cards
+            +card(card, "mission__card")
+        .mission__slider-pagination.slider-pagination.flex
+        .about-mission__footer.section__footer
+          +ctaBtn
+          +contactBtn
