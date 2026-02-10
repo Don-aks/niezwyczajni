@@ -14,7 +14,7 @@
     rotate: 15deg;
 
     aspect-ratio: 1;
-    will-change: rotate;
+    will-change: transform;
 
     &.hidden {
       rotate: 0deg;
@@ -83,7 +83,7 @@
       rotate: 90deg;
 
       @include transition(rotate);
-      will-change: rotate;
+      will-change: transform;
     }
   }
 
