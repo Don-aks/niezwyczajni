@@ -139,52 +139,56 @@ ul:not(.list-reset) {
 }
 
 blockquote {
-  > :first-child {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  > :not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  // blockquote main text
+  > :not(:last-child),
+  > :only-child {
     position: relative;
-    padding-top: 10px;
 
     font-size: 20px;
     font-weight: 500;
     font-style: italic;
 
     color: var(--color-base-secondary);
+  }
 
-    &:first-letter {
-      padding-left: 17px;
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-
-      font-size: 30px;
-      color: var(--color-primary);
+  > :first-child {
+    &::first-letter {
+      padding-left: 15px;
     }
 
     &::before {
       content: '„';
-      top: 0;
-      margin-right: 5px;
+      position: absolute;
+      top: -9px;
+      font-size: 30px;
+      color: var(--color-primary);
     }
+  }
 
+  // second-to-last or only child
+  > :has(+ :last-child),
+  > :only-child {
     &::after {
       content: '”';
+      position: absolute;
       bottom: -5px;
-      margin-left: 5px;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-left: 4px;
+      font-size: 30px;
+      color: var(--color-primary);
     }
   }
 
-  > :not(:first-child):last-child {
+  > :last-child:not(:only-child) {
     font-style: normal;
     font-weight: 500;
-  }
-
-  &:not(:last-child) > :not(:first-child):last-child {
-    margin-bottom: 20px;
   }
 }
 
