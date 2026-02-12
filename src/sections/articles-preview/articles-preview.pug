@@ -41,7 +41,7 @@ section.articles-preview.section.relative
       h3.section__subtitle Najnowsze artykuły z życia misji
     .articles-preview__content.section__cards-container
       each article of articles
-        +articleCard(article)
+        +articleCard(article, "section__card")
     footer.section__footer.section__footer--centered
       +ctaBtn
       a.btn.btn--secondary.btn--with-icon(href="blog.html")

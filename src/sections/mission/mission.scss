@@ -54,6 +54,7 @@
   }
 
   &__card {
+    width: 100%;
     border: 3px solid var(--color-primary);
     @include transition((translate, background-color));
 
