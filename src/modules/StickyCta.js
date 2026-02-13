@@ -58,11 +58,9 @@ class StickyCta {
     document.removeEventListener('click', this.#handleOutsideClick);
   }
 
-  #handleClick = (event) => {
-    if (window.innerWidth <= breakpoints.tablet) return;
-    event.preventDefault();
-
+  #handleClick = () => {
     const isVisible = this.popover.classList.contains(this.popoverClass);
+
     if (isVisible) {
       this.hidePopover();
     } else {
