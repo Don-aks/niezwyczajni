@@ -46,6 +46,10 @@ body {
   @include container;
 }
 
+img {
+  object-fit: cover;
+}
+
 a {
   text-decoration: underline;
   text-decoration-color: transparent;
