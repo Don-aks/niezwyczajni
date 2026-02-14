@@ -4,6 +4,10 @@
   &__list {
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      @include mq('mobile') {
+        margin-bottom: 0;
+      }
     }
   }
 }

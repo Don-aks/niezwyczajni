@@ -40,16 +40,14 @@ section#meetings.meetings.section.section--on-dark.section--centered.section--ex
       h2.section__title
         | Gdzie można nas znaleźć
       h3.section__subtitle Nasze Spotkania
-      .section__text
+      .section__text.text
         p
-          | Poza działaniami w więzieniach i na ulicach miasta, regularnie
-          | spotykamy się w naszych placówkach, aby wspólnie modlić się,
-          | studiować Pismo Święte oraz budować relacje wsparcia i
-          | przyjaźni.
+          | Regularnie spotykamy się w naszych placówkach, by modlić się,
+          | studiować Pismo Święte i budować relacje wsparcia.
 
     ul.section__cards-container.meetings__list.list-reset
       each meeting of meetings
-        +card(meeting)
+        +card(meeting, "section__card")
 
     footer.section__footer.section__footer--centered.meetings__footer
       +contactBtn({ classNames: "btn--primary", hasIcon: false, isSecondary: false })

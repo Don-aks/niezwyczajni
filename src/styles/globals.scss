@@ -38,7 +38,7 @@ body {
   }
 
   > .section:last-child {
-    padding-bottom: 200px;
+    padding-bottom: clamp(100px, 14vw, 200px);
   }
 }
 

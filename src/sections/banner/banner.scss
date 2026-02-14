@@ -1,9 +1,11 @@
 .banner {
-  padding-block: calc(50px + var(--header-height)) 60px;
+  padding-top: calc(50px + var(--header-height));
+  padding-bottom: clamp(20px, 5vw, 60px);
+
   color: var(--color-white);
 
   &__content {
-    max-width: 57%;
+    width: min(666px, 100%);
     padding-left: 20px;
     padding-bottom: 20px;
 
@@ -44,7 +46,7 @@
   }
 
   &__title {
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
     letter-spacing: 0.12em;
     color: var(--color-white);
 
@@ -55,7 +57,7 @@
 
   &__lead {
     width: min(100%, 500px);
-    font: 18px/1.5 var(--font-family-base);
+    font: clamp(16px, 2.5vw, 18px)/1.5 var(--font-family-base);
 
     &:not(:last-child) {
       margin-bottom: 20px;
@@ -65,18 +67,31 @@
   &__buttons {
     gap: 15px;
 
+    @include mq('mobile') {
+      flex-direction: column;
+      width: max-content;
+    }
+
     &:not(:last-child) {
       margin-bottom: 10px;
+
+      @include mq('mobile') {
+        margin-bottom: 15px;
+      }
     }
   }
 
   &__btn {
-    padding-block: 9px;
+    padding-block: clamp(8px, 2.5vw, 10px);
 
     &--primary {
       color: var(--color-base);
       background-color: var(--color-white);
       outline-color: var(--color-white);
+
+      @include mq('mobile') {
+        font-size: 14px;
+      }
 
       @include hover {
         background-color: var(--color-white-secondary);
@@ -84,6 +99,8 @@
     }
 
     &--secondary {
+      display: inline-grid;
+      place-items: center;
       padding: 10px 14px;
 
       font-family: var(--font-family-accent);
@@ -93,8 +110,13 @@
 
       color: var(--color-white);
       border: 2px solid var(--color-white);
+      white-space: nowrap;
 
       @include transition((color, border-color));
+
+      @include mq('mobile') {
+        padding: 8px 10px;
+      }
 
       @include hover {
         color: var(--color-white-secondary);
@@ -106,5 +128,9 @@
   &__note {
     font-size: 14px;
     font-style: italic;
+
+    @include mq('mobile') {
+      font-size: 12px;
+    }
   }
 }

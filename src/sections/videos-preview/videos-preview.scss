@@ -2,5 +2,54 @@
   &__content {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+
+    @include mq('mobile') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .video {
+    @include mq('tablet-lg') {
+      gap: 10px;
+    }
+
+    &__icon {
+      width: clamp(50px, 5.83vw, 70px);
+
+      @include mq('mobile') {
+        width: 70px;
+      }
+    }
+
+    &__title {
+      @include mq('tablet-lg') {
+        font-size: 16px;
+      }
+    }
+
+    &__duration,
+    &__label {
+      @include mq('tablet-lg') {
+        font-size: 16px;
+      }
+
+      @include mq('tablet') {
+        font-size: 14px;
+      }
+    }
+
+    &__duration {
+      @include mq('tablet-lg') {
+        bottom: 7px;
+        right: 7px;
+      }
+    }
+
+    &__label {
+      @include mq('tablet-lg') {
+        top: 7px;
+        left: 7px;
+      }
+    }
   }
 }

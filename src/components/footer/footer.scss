@@ -3,8 +3,16 @@
   color: var(--color-white);
   padding: 20px 0;
 
+  @include mq('tablet') {
+    padding-bottom: calc(var(--sticky-cta-height) + 20px);
+  }
+
   &__container {
     padding-block: 25px 20px;
+
+    @include mq('mobile') {
+      padding-bottom: 30px;
+    }
   }
 
   &__title {
@@ -13,7 +21,8 @@
   }
 
   &__contacts {
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 30px 70px;
   }
 
   &__copy {

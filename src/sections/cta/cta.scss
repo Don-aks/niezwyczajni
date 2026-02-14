@@ -1,8 +1,26 @@
 .cta {
-  padding-top: 100px;
+  padding-top: clamp(30px, 7vw, 100px);
+
+  &__container {
+    @include mq('tablet-lg') {
+      flex-direction: column-reverse;
+    }
+  }
 
   &__content {
     width: min(600px, 100%);
+
+    @include mq('tablet-lg') {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    min-width: 484px;
+
+    @include mq('tablet-lg') {
+      min-width: 0;
+    }
   }
 
   &__header {

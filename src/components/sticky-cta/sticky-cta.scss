@@ -46,7 +46,7 @@
   z-index: var(--header-z-index);
 
   &__link {
-    @include square(77px);
+    @include square(var(--sticky-cta-height));
 
     background-color: var(--color-primary);
     border-radius: 50%;
@@ -76,7 +76,7 @@
   }
 
   &__icon {
-    @include square(77px - 25px);
+    @include square(calc(var(--sticky-cta-height) - 25px));
 
     color: var(--color-white);
     fill: currentColor;

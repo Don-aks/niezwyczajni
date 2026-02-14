@@ -1,12 +1,16 @@
 .events-preview {
+  @include mq('mobile') {
+    overflow: hidden;
+  }
+
   &__decor {
     position: absolute;
     top: -70px;
     right: clamp(35px, 3vw, -80px);
     z-index: -1;
 
-    width: 557px;
-    height: 777px;
+    width: clamp(425px, 50vw, 557px);
+    aspect-ratio: 557 / 777;
 
     fill: var(--color-primary);
     opacity: var(--decor-opacity);
@@ -18,6 +22,15 @@
 
     &.hidden {
       rotate: 0deg;
+    }
+
+    @include mq('desktop-lg') {
+      // Because of the rotation
+      top: 4px;
+    }
+
+    @include mq('mobile') {
+      right: 0;
     }
   }
 

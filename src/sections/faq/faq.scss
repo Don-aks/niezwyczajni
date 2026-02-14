@@ -1,6 +1,7 @@
 .faq {
   &__container {
     align-items: start;
+    overflow: hidden;
   }
 
   &__decor-icon {
@@ -19,11 +20,30 @@
     &.hidden {
       rotate: 0deg;
     }
+
+    @include mq('tablet-lg') {
+      position: absolute;
+      top: -24px;
+      right: -70px;
+
+      width: 477px;
+      opacity: 0.1;
+    }
+
+    @include mq('mobile') {
+      // top: 100px;
+      right: -130px;
+      opacity: 0.05;
+    }
   }
 
   &__inner {
     width: min(100%, 677px);
     margin-left: auto;
+
+    @include mq('tablet-lg') {
+      margin-left: 0;
+    }
   }
 
   &__content {
@@ -102,6 +122,14 @@
     margin: calc(-1 * var(--padding-size));
 
     overflow: hidden;
+
+    @include mq('tablet') {
+      flex-direction: column;
+
+      .btn--secondary {
+        padding-block: 12px;
+      }
+    }
   }
 
   &__answer-text {
