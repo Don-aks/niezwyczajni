@@ -9,7 +9,7 @@
   background-color: var(--color-white);
   --color-nav: var(--color-primary);
 
-  @include transition((background-color, height));
+  @include transition((background-color, height, translate));
 
   &.scrolled {
     box-shadow: var(--shadow-md);
@@ -24,6 +24,10 @@
     .nav__item {
       padding-bottom: 0;
     }
+  }
+
+  &.hidden {
+    translate: 0 -100%;
   }
 
   &__container {
