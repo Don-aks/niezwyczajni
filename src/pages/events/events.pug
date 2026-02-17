@@ -8,7 +8,53 @@ block head
 
 block content
   include /components/header/header
-  +header(pageName)
+  include /components/cards/event-card/event-card
+
+  -
+    var events = [
+      {
+        title: "Spotkanie modlitewne",
+        date: "2024-07-15",
+        category: "prayer",
+        description: "Dołącz do nas na wspólne spotkanie modlitewne w naszej wspólnocie.",
+      },
+      {
+        title: "Ewangelizacja uliczna",
+        date: "2024-08-05",
+        category: "evangelization",
+        description: "Weź udział w ewangelizacji ulicznej i podziel się dobrą nowiną.",
+      },
+      {
+        title: "Warsztaty dla młodzieży",
+        date: "2024-09-10",
+        category: "community",
+        description: "Zapraszamy młodzież na warsztaty rozwoju osobistego i duchowego.",
+      },
+    ]
 
   main.main
-    include /sections/events/events
+    section.section.events
+      .container.section__container
+        header.events__header.section__header
+          .events__headings
+            h2.section__title.section__title--border-top Nadchodzące wydarzenia
+            h3.section__subtitle Dołącz do naszych spotkań i inicjatyw
+          .filtres
+            button.filtres__button(type="button")
+              svg.filtres__icon
+                use(xlink:href="__spritemap#filter")
+            form.filtres__form(action="#" method="get")
+              select.field.select.filtres__select(name="category")
+                option(value="all") Wszystkie kategorie
+                option(value="evangelization") Ewangelizacja
+                option(value="community") Wspólnota
+                option(value="prayer") Modlitwa
+              select.field.select.filtres__select(name="date")
+                option(value="newest") Najnowsze
+                option(value="oldest") Najstarsze
+
+        ul.events__content.list-reset.grid.js-infinity-scroll
+          each _ in Array.from({ length: 3 })
+            each event in events
+              li.events__event-item
+                +eventCard(event)

@@ -11,4 +11,74 @@ block content
   +header(pageName)
 
   main.main
-    include /sections/articles/articles
+    include /components/cards/article-card/article-card
+
+    -
+      var articles = [
+        {
+          title: "Siła wspólnoty w ewangelizacji",
+          excerpt: "Wspólnota jest fundamentem naszej misji ewangelizacyjnej. Razem możemy osiągnąć więcej i dotrzeć do tych, którzy najbardziej potrzebują wsparcia duchowego.",
+          imageUrl: "https://static.wixstatic.com/media/1fde5d_a29c9714268d4ef88a10e935e72ce0b1~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/1fde5d_a29c9714268d4ef88a10e935e72ce0b1~mv2.jpg",
+          imageAlt: "Wspólnota podczas ewangelizacji",
+          link: "article1.html",
+          date: "2024-05-01",
+          dateText: "1 maja 2024",
+        },
+        {
+          title: "Jak prowadzić skuteczną ewangelizację uliczną",
+          excerpt: "Ewangelizacja uliczna to wyzwanie, które wymaga odwagi i przygotowania. Oto kilka wskazówek, jak skutecznie dzielić się wiarą na ulicach miasta.",
+          imageUrl: "https://d3npyywa6qnolf.cloudfront.net/prod/eyJ1cmwiOiJodHRwczpcL1wvcGF0cm9uaXRlLnMzLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9tYWluXC9wdWJsaWNcL2F1dGhvcnNcLzYwNTQ1MFwvcG9zdHNcLzg5MDVmNTIxLTFmODMtNDBjNi1iODA0LWE0YjljOTEyZWQwYi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDY4LCJoZWlnaHQiOjYzMH0sInRvRm9ybWF0IjoianBlZyJ9fQ%3D%3D/c%2Bep4o3syzvLYlhQ0UFU2znkb4oCKf2494%2Bbanpwv38%3D",
+          imageAlt: "Ewangelizacja na ulicy",
+          link: "article2.html",
+          date: "2024-04-15",
+          dateText: "15 kwietnia 2024"
+        },
+        {
+          title: "Rola modlitwy w życiu ewangelizatora",
+          excerpt: "Modlitwa jest nieodłącznym elementem życia każdego ewangelizatora. Dowiedz się, jak modlitwa może wzmacniać twoją misję i relację z Bogiem.",
+          imageUrl: "https://img.freepik.com/premium-zdjecie/kobieta-modlaca-sie-na-kolanach-w-starozytnej-katolickiej-swiatyni-do-boga-kopia-miejsca_632557-217.jpg",
+          imageAlt: "Osoba modląca się",
+          link: "article3.html",
+          date: "2024-03-30",
+          dateText: "30 marca 2024"
+        }
+      ]
+
+    section.articles.section
+      .container.section__container
+        header.articles__header.section__header
+          .articles__headings
+            h2.section__title.section__title--border-top Najnowsze artykuły
+            h3.section__subtitle Poznaj nasze historie i refleksje
+          .articles__meta
+            button.articles__search-button(type="button")
+              svg.articles__search-icon
+                use(xlink:href="__spritemap#search")
+            form.search(action="#" method="get")
+              input.field.search__input(
+                type="text"
+                name="q"
+                placeholder="Szukaj artykułów..."
+              )
+              //- For search by pressing enter
+              input(type="submit" hidden)
+
+            .filtres
+              button.filtres__button(type="button")
+                svg.filtres__icon
+                  use(xlink:href="__spritemap#filter")
+              form.filtres__form(action="#" method="get")
+                select.field.select.filtres__select(name="category")
+                  option(value="all") Wszystkie kategorie
+                  option(value="evangelization") Ewangelizacja
+                  option(value="community") Wspólnota
+                  option(value="prayer") Modlitwa
+                select.field.select.filtres__select(name="date")
+                  option(value="newest") Najnowsze
+                  option(value="oldest") Najstarsze
+
+        ul.articles__content.list-reset.grid.gap-30
+          each _ in Array.from({ length: 4 })
+            each article in articles
+              li.articles__article-item
+                +articleCard(article, "articles__article")
