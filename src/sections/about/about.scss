@@ -1,4 +1,6 @@
 .about {
+  --images-offset: -80px;
+
   &__container {
     align-items: end;
 
@@ -85,8 +87,8 @@
     }
 
     &:nth-child(2) {
-      top: -80px;
-      right: -80px;
+      top: var(--images-offset);
+      right: var(--images-offset);
       z-index: 2;
 
       @include mq('desktop-lg') {
@@ -94,13 +96,13 @@
       }
 
       @include mq('mobile') {
-        top: -40px;
+        top: calc(var(--images-offset) * 0.5);
       }
     }
 
     &:nth-child(3) {
-      top: -160px;
-      right: -160px;
+      top: calc(var(--images-offset) * 2);
+      right: calc(var(--images-offset) * 2);
       z-index: 1;
 
       @include mq('desktop-lg') {
@@ -108,7 +110,7 @@
       }
 
       @include mq('mobile') {
-        top: -80px;
+        top: calc(var(--images-offset) * 0.5);
       }
     }
   }
