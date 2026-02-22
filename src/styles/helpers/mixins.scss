@@ -109,8 +109,6 @@
 
 @mixin no-highlight {
   -webkit-tap-highlight-color: transparent;
-  -webkit-focus-ring-color: transparent;
-  -webkit-touch-callout: none;
 }
 
 @mixin container {
