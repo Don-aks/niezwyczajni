@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:list';
-@use '@/constants/styles' as *;
+@use '@/styles/constants' as *;
 
 @mixin square($size) {
   width: $size;
