@@ -27,6 +27,8 @@
 @mixin mq($size, $type: max) {
   @if map.has_key($breakpoints, $size) {
     $size: map.get($breakpoints, $size);
+  } @else {
+    @error "Invalid breakpoint: #{$size}";
   }
 
   @if $type == max {
