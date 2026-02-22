@@ -88,8 +88,10 @@
  */
 
 @mixin transition($properties, $duration: var(--transition-duration)) {
-  @if meta.type-of($properties) == 'map' or meta.type-of($properties) == 'list'
-  {
+  $isPropsMap: meta.type-of($properties) == 'map';
+  $isPropsList: meta.type-of($properties) == 'list';
+
+  @if $isPropsMap or $isPropsList {
     $parts: ();
     @each $prop, $dur in $properties {
       @if $dur == null {
