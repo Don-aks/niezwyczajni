@@ -42,6 +42,6 @@ Or, if you want to use it as an image:
 
 ## ScrollAnimator module
 
-Important note: if you using `transform` properties on the elements, you should make a wrapper around them and apply the animation classes to the wrapper, because `transform` creates a new stacking context and may interfere with the animation.
+If your animated elements use `transform`, wrap them in an additional container and apply the animation classes to that wrapper instead. `transform` creates a new stacking context and can interfere with scroll-triggered animations.
 
 If elements inside a `[data-animate-group]` use `transition`, it is also recommended to wrap them and apply the animation classes to the wrapper. Existing transitions may conflict with the scroll animation and produce unexpected behavior.
