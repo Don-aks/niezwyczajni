@@ -44,4 +44,21 @@ Or, if you want to use it as an image:
 
 If your animated elements use `transform`, wrap them in an additional container and apply the animation classes to that wrapper instead. `transform` creates a new stacking context and can interfere with scroll-triggered animations.
 
-If elements inside a `[data-animate-group]` use `transition`, it is also recommended to wrap them and apply the animation classes to the wrapper. Existing transitions may conflict with the scroll animation and produce unexpected behavior.
+If you need a staggered delay in your animation, use a wrapper element as the trigger and add the `data-animate-on-scroll` attribute to it. Place `data-animate-item` on the child elements that should animate. These children can then be styled via state inheritance, for example:
+
+```css
+.wrapper.hidden .child {
+  translate: 0 20px;
+  opacity: 0;
+}
+
+.wrapper.visible .child {
+  scale: 1.05;
+}
+```
+
+### Timing control in staggered animations
+
+- Use the `--delay` CSS variable to define the stagger step between items.
+- Define only the `transition-property` on animated elements (duration and delay are handled via variables).
+- To override the default duration, set the `--transition-duration` variable on the element with the `data-animate-on-scroll` attribute or set `transition-duration` directly on the animated items.
