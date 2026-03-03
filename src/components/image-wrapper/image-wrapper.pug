@@ -7,8 +7,11 @@ mixin imageWrapper(props, classNames = "")
       width = 600,
       height = 400,
       isAnimated = true,
-      isFocusable = props.caption ? true : false
+      isSwiperSlide = false,
+      isFocusable = Boolean(props.caption),
     } = props;
+
+    isAnimated = Boolean(isAnimated && caption && !isSwiperSlide);
 
   figure.image-wrapper(
     class=classNames
