@@ -1,4 +1,10 @@
-import { Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Keyboard,
+  EffectFade,
+} from 'swiper/modules';
 
 const prevBtn = '.slider__btn--prev';
 const nextBtn = '.slider__btn--next';
@@ -48,7 +54,11 @@ export default [
       autoplay: {
         delay: 5000,
       },
-      modules: [Pagination, Autoplay],
+      modules: [Pagination, Autoplay, EffectFade],
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
     },
   },
   {
