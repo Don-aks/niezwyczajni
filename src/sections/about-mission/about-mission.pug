@@ -288,7 +288,7 @@ section#about-mission.about-mission.section
                 ul.about-mission__slides-inner.swiper-wrapper.list-reset
                   each img in item.images
                     li.about-mission__slide.swiper-slide
-                      +imageWrapper({ ...img, width: 200, height: 200 })
+                      +imageWrapper({ ...img, width: 200, height: 200, isSwiperSlide: true })
 
               .about-mission__item-content
                 .about-mission__item-info.flex.flex-col.gap-15

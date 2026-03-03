@@ -37,7 +37,7 @@ section.gallery-preview.section.section--centered
         ul.slider__wrapper.swiper-wrapper.list-reset
           each image of gallery
             li.slider__slide.swiper-slide
-              +imageWrapper(image)
+              +imageWrapper({ ...image, isSwiperSlide: true })
 
     footer.section__footer.section__footer--centered
       +ctaBtn
