@@ -27,6 +27,7 @@ export default [
       spaceBetween: 60,
       loop: true,
       centeredSlides: true,
+      touchEventsTarget: 'container',
       autoplay: {
         delay: 3000,
       },
