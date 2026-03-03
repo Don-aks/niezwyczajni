@@ -1,4 +1,4 @@
-mixin card(props, classNames = "", imageWidth = 370)
+mixin card(props, classNames = "")
   -
     var {
       imageSrc,
@@ -16,12 +16,7 @@ mixin card(props, classNames = "", imageWidth = 370)
   li.card(class=`${classNames}${isCardClickable ? ' clickable' : ''}`)
     article.card__wrapper
       if imageSrc
-        img.card__image(
-          src=imageSrc
-          alt=imageAlt
-          width=imageWidth
-          height="267"
-        )
+        img.card__image(src=imageSrc alt=imageAlt width="370" height="267")
       .card__inner
         if iconId
           span.card__icon.transition-colors
