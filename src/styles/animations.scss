@@ -1,0 +1,42 @@
+// Initial state before ScrollAnimator runs
+.js-scroll-animation-init [data-animate-on-scroll] {
+  opacity: 0 !important;
+  transition: 0.01s !important;
+
+  & > [data-animate-item] {
+    transition: 0.01s !important;
+  }
+}
+
+[data-animate-on-scroll] {
+  --direction: 1;
+
+  .scrolling-up & {
+    --direction: -1;
+  }
+
+  &.hidden {
+    pointer-events: none;
+  }
+}
+
+[data-animate-item] {
+  --effective-index: var(--index);
+  transition-delay: calc(var(--delay, 0.5s) * var(--effective-index));
+
+  @for $i from 1 through 12 {
+    &:nth-of-type(#{$i}) {
+      --index: #{$i - 1};
+    }
+  }
+
+  .scrolling-up & {
+    --effective-index: calc(var(--total) - 1 - var(--index));
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transition-delay: 0s;
+  }
+}
