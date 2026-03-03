@@ -1,3 +1,4 @@
+import debounce from '@/utilities/debounce';
 import isPageScrolledToBottom from '@/utilities/isPageScrolledToBottom';
 
 class ScrollAnimator {
@@ -12,14 +13,17 @@ class ScrollAnimator {
 
   #isFirstIntersection = true;
   #lastScrollY = window.scrollY;
+  #onResizeDebounced;
   #observer;
 
   constructor(IOConfig = { rootMargin: '0px 0px -50%' }) {
     this.IOConfig = IOConfig;
     this.elements = [...document.querySelectorAll(this.#selector)];
     this.#initGroupSizes();
+
     this.#initObserver();
-    window.addEventListener('resize', this.#onResize);
+    this.#onResizeDebounced = debounce(this.#onResize, 200);
+    window.addEventListener('resize', this.#onResizeDebounced);
   }
 
   // --- IntersectionObserver callback ---
@@ -109,7 +113,7 @@ class ScrollAnimator {
   // --- Public API ---
   destroy() {
     this.#observer.disconnect();
-    window.removeEventListener('resize', this.#onResize);
+    window.removeEventListener('resize', this.#onResizeDebounced);
   }
 }
 
