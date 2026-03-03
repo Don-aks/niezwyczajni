@@ -1,6 +1,12 @@
 .member {
   width: min(100%, 370px);
 
+  &.hidden {
+    .member__links {
+      translate: -50% 200%;
+    }
+  }
+
   &__image-wrapper {
     overflow: hidden;
   }
@@ -11,6 +17,7 @@
     padding: 7px;
 
     background-color: var(--color-white);
+    @include transition(translate);
     translate: -50% 0;
   }
 

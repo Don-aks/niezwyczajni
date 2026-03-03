@@ -18,21 +18,23 @@
     pointer-events: none;
   }
 
-  &:hover:has(&__caption),
-  &:focus-visible:has(&__caption),
-  &.shown:has(&__caption) {
-    outline: transparent;
+  &:hover,
+  &:focus-visible,
+  &.visible {
+    &:has(.image-wrapper__caption) {
+      outline: transparent;
 
-    &::before {
-      opacity: 1;
-    }
+      &::before {
+        opacity: 1;
+      }
 
-    .image-wrapper__image {
-      scale: 1.05;
-    }
+      .image-wrapper__image {
+        scale: 1.05;
+      }
 
-    .image-wrapper__caption {
-      opacity: 1;
+      .image-wrapper__caption {
+        opacity: 1;
+      }
     }
   }
 

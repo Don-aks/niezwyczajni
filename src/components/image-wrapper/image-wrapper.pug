@@ -17,7 +17,8 @@ mixin imageWrapper(props, classNames = "")
     class=classNames
     tabindex=isFocusable && "0"
     data-animate-on-scroll=isAnimated
-    data-animation-class=isAnimated && "shown"
+    data-animate-once=isAnimated
+    data-animate-duration=isAnimated && "500"
   )
     img.image-wrapper__image(src=src alt=alt width=width height=height)
     if caption

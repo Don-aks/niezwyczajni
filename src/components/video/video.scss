@@ -8,6 +8,8 @@
     background-size: cover;
 
     aspect-ratio: 16 / 9;
+    overflow: hidden;
+
     @include no-highlight;
 
     &:focus-visible {
@@ -19,6 +21,16 @@
     @include hover {
       .video__icon {
         scale: 1.2;
+      }
+    }
+
+    &.hidden {
+      .video__label {
+        translate: 0 -200%;
+      }
+
+      .video__duration {
+        translate: 0 200%;
       }
     }
   }
@@ -48,8 +60,8 @@
     }
   }
 
-  &__duration,
-  &__label {
+  &__label,
+  &__duration {
     position: absolute;
     z-index: 1;
 
@@ -58,6 +70,7 @@
 
     color: var(--color-white);
     background-color: var(--color-primary);
+    @include transition(translate);
   }
 
   &__duration {

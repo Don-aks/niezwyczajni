@@ -39,7 +39,7 @@ section.videos-preview.section
 
     .videos-preview__content.grid
       each video in videos
-        +video({ ...video, width: 585, height: 329 })
+        +video({ ...video, width: 585, height: 329, hasAnimation: true })
 
     footer.section__footer.section__footer--centered
       +ctaBtn

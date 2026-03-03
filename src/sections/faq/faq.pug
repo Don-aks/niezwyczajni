@@ -133,7 +133,7 @@ mixin _faqItem({ question, answerHtml, buttons = [], video }, id)
 mixin faq(page)
   section#faq.faq.section
     .container.faq__container.relative.flex
-      svg.faq__decor-icon.relative
+      svg.faq__decor-icon.relative(data-animate-on-scroll)
         use(href="/__spritemap#question")
 
       .faq__inner.section__container

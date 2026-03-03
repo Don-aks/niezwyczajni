@@ -26,6 +26,10 @@
       scale: 1.2;
     }
 
+    .image-wrapper {
+      pointer-events: all;
+    }
+
     .image-wrapper__image {
       width: 100%;
     }

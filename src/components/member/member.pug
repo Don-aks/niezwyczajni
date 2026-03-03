@@ -5,10 +5,11 @@ mixin member(props, classNames = "")
       role,
       imageUrl,
       facebookLink,
-      testimonyLink
+      testimonyLink,
+      isAnimated = true,
     } = props;
 
-  .member.flex.flex-col.gap-15(class=classNames)
+  .member.flex.flex-col.gap-15(class=classNames data-animate-on-scroll=isAnimated)
     .member__image-wrapper.relative
       img.member__image(
         src=imageUrl

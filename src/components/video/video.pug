@@ -57,6 +57,7 @@ mixin video(props, classNames = "")
           'https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg'
         );
       `
+      data-animate-on-scroll=hasAnimation
     )
       span.visually-hidden
         | Odtwórz wideo pod tytułem #{ title }
