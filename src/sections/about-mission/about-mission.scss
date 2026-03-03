@@ -13,7 +13,8 @@
     height: 300px;
   }
 
-  &__slides-inner.swiper-wrapper {
+  // Override default Swiper styles, which are loaded after these
+  &__slides-inner.swiper-wrapper.swiper-wrapper {
     align-items: center;
   }
 
