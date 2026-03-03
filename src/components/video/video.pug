@@ -32,7 +32,7 @@ mixin _videoDuration(duration)
     span.visually-hidden= label
     span(aria-hidden="true")= duration
 
-mixin video(props, hasTitle = true, classNames = "")
+mixin video(props, classNames = "")
   -
     var {
       youtubeId,
@@ -40,7 +40,9 @@ mixin video(props, hasTitle = true, classNames = "")
       isHD = true,
       duration,
       label,
-      isShowTitle = true
+      isShowTitle = true,
+      hasTitle = true,
+      hasAnimation = false,
     } = props;
 
   .video.flex.flex-col.gap-15(

@@ -1,4 +1,4 @@
-mixin card(props, classNames = "", options = {})
+mixin card(props, classNames = "")
   -
     var {
       imageSrc,
@@ -10,19 +10,16 @@ mixin card(props, classNames = "", options = {})
       isOpenInNewTab = true,
       btnText,
       btnIcon,
-    } = props;
-
-    var {
       isListItem = true,
       hasAnimation = true,
       isResponsive = true,
-      isCardClickable = false,
-    } = options;
+      isClickable = false,
+    } = props;
 
   - var Tag = isListItem ? "li" : "div";
 
   #{Tag}.card(
-    class=[classNames, isCardClickable && "clickable", isResponsive && "responsive"]
+    class=[classNames, isClickable && "clickable", isResponsive && "responsive"]
     data-animate-on-scroll=hasAnimation
   )
     article.card__wrapper

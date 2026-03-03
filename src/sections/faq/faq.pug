@@ -106,7 +106,7 @@ mixin _faqAnswer({ answerHtml, video }, id)
         .faq__answer-text.text
           | !{ answerHtml }
         if video
-          +video({ ...video, width: 360, height: 202 }, false, "faq__answer-video")
+          +video({ ...video, width: 360, height: 202, hasAnimation: true, hasTitle: false }, "faq__answer-video")
 
       block
 

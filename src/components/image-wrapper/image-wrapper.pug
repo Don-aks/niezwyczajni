@@ -1,6 +1,14 @@
-mixin imageWrapper(props, classNames = "", flags = {})
-  - var { src, alt, caption, width = 600, height = 400 } = props;
-  - var { isAnimated = true, isFocusable = true } = flags;
+mixin imageWrapper(props, classNames = "")
+  -
+    var {
+      src,
+      alt,
+      caption,
+      width = 600,
+      height = 400,
+      isAnimated = true,
+      isFocusable = props.caption ? true : false
+    } = props;
 
   figure.image-wrapper(
     class=classNames
