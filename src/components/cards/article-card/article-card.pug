@@ -23,5 +23,5 @@ mixin articleCard(props, classNames = "")
     .article-card__inner.flex.flex-col.gap-15
       h3.article-card__title= title
       .article-card__text.text !{ excerpt }
-      a.btn.btn--secondary.article-card__link(href=link)
+      a.btn.btn--secondary.btn--fill-overlay.article-card__link(href=link)
         | Czytaj więcej

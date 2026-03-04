@@ -34,6 +34,14 @@
   }
 
   &--secondary {
+    @include transition(
+      (
+        color: var(--transition-duration),
+        background-color: var(--transition-duration),
+        border-color: calc(var(--transition-duration) / 2),
+      )
+    );
+
     // Default button colors
     --color-btn: var(--color-accent);
     --color-btn-hover: var(--color-white);
@@ -49,25 +57,26 @@
     background-color: transparent;
     border: 2px solid var(--color-btn);
 
-    @include transition(
-      (
-        color: var(--transition-duration),
-        border-color: calc(var(--transition-duration) * 0.5),
-      )
-    );
-    overflow: hidden;
-
     @include hover {
       color: var(--color-btn-hover);
       border-color: var(--color-btn-bg-hover);
-
-      &::before {
-        translate: 0 0;
-      }
+      background-color: var(--color-btn-bg-hover);
     }
 
     &:active {
       color: var(--color-btn-hover);
+    }
+  }
+
+  &--fill-overlay {
+    overflow: hidden;
+
+    @include hover {
+      background-color: transparent;
+
+      &::before {
+        translate: 0 0;
+      }
     }
 
     &::before {

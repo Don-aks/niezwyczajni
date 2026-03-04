@@ -33,7 +33,5 @@
     --color-btn: var(--color-accent);
     --color-btn-hover: var(--color-white);
     --color-btn-bg-hover: var(--color-accent);
-
-    @include transition((color, border-color));
   }
 }
