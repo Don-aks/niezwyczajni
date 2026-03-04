@@ -13,13 +13,19 @@
     height: 300px;
   }
 
-  // Override default Swiper styles, which are loaded after these
-  &__slides-inner.swiper-wrapper.swiper-wrapper {
-    align-items: center;
+  &__slides-inner {
+    // Override Swiper’s default styles (they’re loaded after this file in build)
+    &.swiper-wrapper.swiper-wrapper {
+      align-items: center;
+    }
   }
 
   &__slide {
-    @include transition(scale);
+    // Same reason here — increasing specificity to override Swiper styles
+    &.about-mission__slide {
+      @include transition(scale);
+    }
+
     will-change: transform;
 
     &.swiper-slide-active {
