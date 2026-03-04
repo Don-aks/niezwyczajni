@@ -4,6 +4,17 @@
 
   color: var(--color-white);
 
+  &__container {
+    @include mq('desktop-lg') {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+    }
+
+    @include mq('mobile') {
+      grid-template-columns: auto;
+    }
+  }
+
   &__cross {
     top: 0;
     left: 0;
@@ -15,6 +26,15 @@
     stroke: var(--color-white);
 
     translate: calc(-100% + var(--container-padding-x)) 0;
+
+    @include mq('desktop-lg') {
+      position: static;
+      translate: none;
+    }
+
+    @include mq('mobile') {
+      display: none;
+    }
   }
 
   &__content {
