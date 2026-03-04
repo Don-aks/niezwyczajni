@@ -1,11 +1,24 @@
 include /constants/constants
 
+mixin _navSubmenu(subpages, currentPage)
+  ul.nav__submenu.list-reset
+    each [subpage, sublabel] of Object.entries(subpages)
+      li.nav__submenu-item(class=currentPage === subpage ? "relative" : "")
+        a.nav__link.nav__submenu-link(
+          class=currentPage === subpage ? "current" : ""
+          href=subpage + ".html"
+        )= sublabel
+
+        if currentPage === subpage
+          svg.nav__marker.absolute.transition-colors
+            use(href="/__spritemap#cross")
+
 mixin nav(currentPage)
   nav.header__nav.nav
     ul.nav__list.list-reset.flex.items-center.gap-30
       each [page, navItem] of Object.entries(PAGES)
         li.nav__item(class=currentPage === page ? "relative" : "")
-          if currentPage === page && typeof navItem === "string"
+          if currentPage === page
             svg.nav__marker.absolute.transition-colors
               use(href="/__spritemap#cross")
 
@@ -19,17 +32,4 @@ mixin nav(currentPage)
           else
             .nav__submenu-wrapper.relative
               button.nav__link.nav__submenu-toggle(type="button")= navItem.name
-
-              ul.nav__submenu.list-reset
-                each [subpage, sublabel] of Object.entries(navItem.subpages)
-                  li.nav__submenu-item(
-                    class=currentPage === subpage ? "relative" : ""
-                  )
-                    a.nav__link.nav__submenu-link(
-                      class=currentPage === subpage ? "current" : ""
-                      href=subpage + ".html"
-                    )= sublabel
-
-                    if currentPage === subpage
-                      svg.nav__marker.absolute.transition-colors
-                        use(href="/__spritemap#cross")
+              +_navSubmenu(navItem.subpages, currentPage)
