@@ -9,12 +9,6 @@
 }
 
 [data-animate-on-scroll] {
-  --direction: 1;
-
-  .scrolling-up & {
-    --direction: -1;
-  }
-
   &.hidden {
     pointer-events: none;
   }
@@ -23,6 +17,7 @@
 [data-animate-item] {
   --effective-index: var(--index);
   transition-delay: calc(var(--delay, 0.5s) * var(--effective-index));
+  transition-duration: var(--transition-duration);
 
   @for $i from 1 through 12 {
     &:nth-of-type(#{$i}) {
