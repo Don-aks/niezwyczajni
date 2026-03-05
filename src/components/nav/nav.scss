@@ -127,5 +127,10 @@
     display: block;
     padding: 10px 15px;
     color: var(--color-white);
+
+    &:focus-visible {
+      outline-color: var(--color-white);
+      outline-offset: calc(var(--outline-offset) * -1 - 1px);
+    }
   }
 }
