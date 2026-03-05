@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '@/styles/constants/breakpoints' as *;
+
 .events-preview {
   @include mq('mobile') {
     overflow: hidden;
@@ -20,8 +23,10 @@
 
     will-change: transform;
 
-    &.hidden {
-      rotate: 0deg;
+    @media (min-width: map.get($breakpoints, 'tablet-lg')) {
+      &.hidden {
+        rotate: 0deg;
+      }
     }
 
     @include mq('desktop-lg') {
