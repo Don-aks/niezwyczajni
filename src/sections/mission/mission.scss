@@ -55,8 +55,13 @@
 
   &__card {
     width: 100%;
-    border: 3px solid var(--color-primary);
-    @include transition((translate, background-color));
+    @include transition((translate, background-color, opacity));
+
+    .card__wrapper {
+      position: relative;
+
+      border: 3px solid var(--color-primary);
+    }
 
     @include hover {
       scale: 1;
