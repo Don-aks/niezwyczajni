@@ -91,6 +91,7 @@
       }
 
       @include hover {
+        color: var(--color-base);
         background-color: var(--color-white-secondary);
       }
     }
