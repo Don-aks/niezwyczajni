@@ -5,7 +5,6 @@
 1. [Utility classes](#utility-classes)
 1. [SVG sprites](#svg-sprites)
 1. [ScrollAnimator module](#scrollanimator-module)
-   1. [Timing control in staggered animations](#timing-control-in-staggered-animations)
 
 ## Utility classes
 
