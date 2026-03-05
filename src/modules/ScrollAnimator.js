@@ -53,7 +53,9 @@ class ScrollAnimator {
       }
     });
 
-    requestAnimationFrame(this.#handleFirstIntersection.bind(this));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => this.#handleFirstIntersection()),
+    );
   };
 
   // --- Show / Hide ---
