@@ -78,7 +78,7 @@
     right: calc(var(--images-offset) * 2);
     z-index: 1;
 
-    @include transition((opacity, translate));
+    transition-property: opacity, translate;
     will-change: opacity, transform;
 
     @include mq('desktop-lg') {
@@ -91,7 +91,7 @@
     }
 
     @include mq('mobile') {
-      top: calc(var(--images-offset) * 0.5);
+      top: var(--images-offset);
     }
 
     &:nth-child(2) {
@@ -104,7 +104,7 @@
       }
 
       @include mq('mobile') {
-        top: calc(var(--images-offset) * 0.5);
+        top: calc(var(--images-offset) / 2);
       }
     }
 
