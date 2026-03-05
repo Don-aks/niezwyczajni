@@ -86,6 +86,11 @@
       background-color: var(--color-white);
       outline-color: var(--color-white);
 
+      &::selection {
+        color: $color-white;
+        background-color: $color-primary;
+      }
+
       @include mq('mobile') {
         font-size: 14px;
       }
