@@ -4,7 +4,8 @@ const selectors = `
   select:not([disabled]),
   textarea:not([disabled]),
   button:not([disabled]),
-  [tabindex]:not([tabindex="-1"])
+  [role="button"],
+  [role="link"]
 `;
 
 const isElementInteractive = (element) => {
