@@ -78,7 +78,7 @@
     right: calc(var(--images-offset) * 2);
     z-index: 1;
 
-    transition-property: opacity, translate;
+    @include transition((opacity, translate));
     will-change: opacity, transform;
 
     @include mq('desktop-lg') {
