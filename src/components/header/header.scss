@@ -34,10 +34,4 @@
     padding-block: 10px;
     height: 100%;
   }
-
-  .nav__list {
-    @include mq('') {
-      gap: 20px;
-    }
-  }
 }
