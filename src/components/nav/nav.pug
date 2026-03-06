@@ -13,23 +13,32 @@ mixin _navSubmenu(subpages, currentPage)
           svg.nav__marker.absolute.transition-colors
             use(href="/__spritemap#cross")
 
-mixin nav(currentPage)
-  nav.header__nav.nav
-    ul.nav__list.list-reset.flex.items-center.gap-30
-      each [page, navItem] of Object.entries(PAGES)
-        li.nav__item(class=currentPage === page ? "relative" : "")
-          if currentPage === page
-            svg.nav__marker.absolute.transition-colors
-              use(href="/__spritemap#cross")
+mixin _navList(currentPage, classNames = "")
+  ul.nav__list.list-reset.flex.items-center.gap-30(class=classNames)
+    each [page, navItem] of Object.entries(PAGES)
+      li.nav__item(class=currentPage === page ? "relative" : "")
+        if currentPage === page
+          svg.nav__marker.absolute.transition-colors
+            use(href="/__spritemap#cross")
 
-          if typeof navItem === "string"
-            a.nav__link(
-              class=currentPage === page ? "current" : ""
-              href=page + ".html"
-              tabindex=currentPage === page ? "-1" : null
-            )= navItem
+        if typeof navItem === "string"
+          a.nav__link(
+            class=currentPage === page ? "current" : ""
+            href=page + ".html"
+            tabindex=currentPage === page ? "-1" : null
+          )= navItem
 
-          else
-            .nav__submenu-wrapper.relative
-              button.nav__link.nav__submenu-toggle(type="button")= navItem.name
-              +_navSubmenu(navItem.subpages, currentPage)
+        else
+          .nav__submenu-wrapper.relative
+            button.nav__link.nav__submenu-toggle(type="button")= navItem.name
+            +_navSubmenu(navItem.subpages, currentPage)
+
+mixin nav(currentPage, props = {})
+  -
+    var {
+      classNames = "header__nav",
+      isTop = true,
+    } = props;
+
+  nav.nav(class=[classNames, isTop && "nav--top"])
+    +_navList(currentPage)
