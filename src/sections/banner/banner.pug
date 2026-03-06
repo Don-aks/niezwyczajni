@@ -1,7 +1,11 @@
 include /components/buttons/cta-btn
 
 section.banner.relative.bg-back(
-  style="--image-url: url('https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/christianity-gettyimages-121153575?_a=BAVAZGID0'); --brightness: 0.5; --position: center"
+  style={
+    "--image-url": "url('https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/christianity-gettyimages-121153575?_a=BAVAZGID0')",
+    "--brightness": 0.5,
+    "--position": "center",
+  }
 )
   .container.banner__container.relative
     svg.banner__cross.absolute(viewBox="9 0 41 140")

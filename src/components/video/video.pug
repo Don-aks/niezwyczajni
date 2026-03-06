@@ -45,6 +45,8 @@ mixin video(props, classNames = "")
       hasAnimation = false,
     } = props;
 
+    var quality = isHD ? "maxresdefault" : "hqdefault";
+
   .video.flex.flex-col.gap-15(
     class=classNames
     data-youtube-id=youtubeId
@@ -52,11 +54,11 @@ mixin video(props, classNames = "")
   )
     button.video__btn.relative(
       type="button"
-      style=`
-        background-image: url(
-          'https://img.youtube.com/vi/${youtubeId}/${isHD ? 'maxresdefault' : 'hqdefault'}.jpg'
-        );
-      `
+      style={
+        "background-image": `
+                            url('https://img.youtube.com/vi/${youtubeId}/${quality}.jpg')
+                          `,
+      }
       data-animate-on-scroll=hasAnimation
     )
       span.visually-hidden
