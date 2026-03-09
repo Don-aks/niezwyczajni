@@ -17,9 +17,11 @@ class Header {
     const isScrolled = window.scrollY > 0;
     this.element.classList.toggle(this.stateClasses.scrolled, isScrolled);
 
-    if (window.scrollY - this.#lastScrollY > this.#scrollOffset) {
+    const scrollDelta = window.scrollY - this.#lastScrollY;
+
+    if (scrollDelta > this.#scrollOffset) {
       this.element.classList.add('hidden');
-    } else if (this.#lastScrollY - window.scrollY > this.#scrollOffset) {
+    } else if (scrollDelta < -this.#scrollOffset) {
       this.element.classList.remove('hidden');
     }
 
