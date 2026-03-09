@@ -3,29 +3,35 @@ include /constants/constants
 mixin _navSubmenu(subpages, currentPage)
   ul.nav__submenu.list-reset
     each [subpage, sublabel] of Object.entries(subpages)
-      li.nav__submenu-item(class=currentPage === subpage ? "relative" : "")
+      - var isCurrent = currentPage === subpage;
+
+      li.nav__submenu-item(class=isCurrent && "relative")
         a.nav__link.nav__submenu-link(
-          class=currentPage === subpage ? "current" : ""
+          class=isCurrent && "current"
           href=subpage + ".html"
         )= sublabel
 
-        if currentPage === subpage
+        if isCurrent
           svg.nav__marker.absolute.transition-colors
             use(href="/__spritemap#cross")
 
-mixin _navList(currentPage, classNames = "")
-  ul.nav__list.list-reset.flex.items-center.gap-30(class=classNames)
+mixin _navList(currentPage)
+  ul.nav__list.list-reset.flex.items-center.gap-30
     each [page, navItem] of Object.entries(PAGES)
-      li.nav__item(class=currentPage === page ? "relative" : "")
-        if currentPage === page
+      -
+        var isCurrent = currentPage === page;
+        var pageHref = page + ".html";
+
+      li.nav__item(class=isCurrent && "relative")
+        if isCurrent
           svg.nav__marker.absolute.transition-colors
             use(href="/__spritemap#cross")
 
         if typeof navItem === "string"
           a.nav__link(
-            class=currentPage === page ? "current" : ""
-            href=page + ".html"
-            tabindex=currentPage === page ? "-1" : null
+            class=isCurrent && "current"
+            href=pageHref
+            tabindex=isCurrent && "-1"
           )= navItem
 
         else
@@ -37,8 +43,28 @@ mixin nav(currentPage, props = {})
   -
     var {
       classNames = "header__nav",
-      isTop = true,
+      isTop = true
     } = props;
 
   nav.nav(class=[classNames, isTop && "nav--top"])
     +_navList(currentPage)
+
+    button.nav__btn.grid.place-items-center(type="button")
+      span.visually-hidden Otwórz menu
+      span.nav__btn-bar
+
+    if isTop
+      dialog#menu.nav__menu
+        .nav__menu-buttons.relative
+          button.nav__btn.nav__btn--active.nav__menu-btn.absolute.grid.place-items-center(
+            type="button"
+          )
+            span.visually-hidden Zamknij menu
+            span.nav__btn-bar
+
+          button.nav__back.absolute.grid.place-items-center(type="button")
+            span.visually-hidden Wróć do poprzedniego menu
+            svg.nav__back-icon
+              use(href="/__spritemap#arrow-back")
+
+        +_navList(currentPage)
