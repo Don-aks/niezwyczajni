@@ -19,7 +19,7 @@ class Header {
 
     if (window.scrollY - this.#lastScrollY > this.#scrollOffset) {
       this.element.classList.add('hidden');
-    } else if (this.#lastScrollY - window.scrollY > 0) {
+    } else if (this.#lastScrollY - window.scrollY > this.#scrollOffset) {
       this.element.classList.remove('hidden');
     }
 
