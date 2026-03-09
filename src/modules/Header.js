@@ -21,7 +21,7 @@ class Header {
 
     if (scrollDelta > this.#scrollOffset) {
       this.element.classList.add('hidden');
-    } else if (scrollDelta < -this.#scrollOffset) {
+    } else if (scrollDelta < -this.#scrollOffset || !isScrolled) {
       this.element.classList.remove('hidden');
     }
 
