@@ -16,6 +16,10 @@
   }
 
   &:not(.scrolled) {
+    &.hidden {
+      @include transition((height, translate));
+    }
+
     &:has(+ .main > .banner) {
       background-color: transparent;
       --color-nav: var(--color-white);
