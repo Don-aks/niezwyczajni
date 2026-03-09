@@ -119,24 +119,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-
-    @include mq('desktop') {
-      gap: 20px;
-    }
-
-    @include mq('tablet-lg') {
-      gap: 30px;
-    }
   }
 
   &__card {
     flex-basis: calc(33.33% - 20px);
 
     @include mq('desktop') {
-      flex-basis: calc(33.33% - 15px);
-    }
-
-    @include mq('tablet-lg') {
       flex-basis: calc(50% - 15px);
     }
 
