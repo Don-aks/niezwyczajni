@@ -82,12 +82,10 @@
     will-change: opacity, transform;
 
     @include mq('desktop-lg') {
+      left: 80px;
+
       width: calc(100% - 80px);
       height: 100%;
-    }
-
-    @include mq('desktop-lg') {
-      left: 80px;
     }
 
     @include mq('mobile') {
