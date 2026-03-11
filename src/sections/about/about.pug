@@ -1,7 +1,7 @@
 include /components/buttons/cta-btn
 
 section.about.section
-  .container.about__container.flex.justify-between
+  .container.about__container.flex.justify-between.gap-30
     .about__content.section__container
       header.section__header.about__header
         h2.section__title.about__title Kim Jesteśmy
@@ -22,25 +22,27 @@ section.about.section
         a.btn.btn--secondary(href="about.html")
           | Dowiedz się więcej o nas
 
-    .about__image-wrapper.relative(data-animate-on-scroll)
-      img.about__image.absolute(
-        src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
-        alt="..."
-        width="600"
-        height="400"
-        data-animate-item
-      )
-      img.about__image.absolute(
-        src="https://zarzadcy.com.pl/wp-uploads/wspolnota-mieszkaniowa-nmxe.jpg"
-        alt="..."
-        width="600"
-        height="400"
-        data-animate-item
-      )
-      img.about__image.absolute(
-        src="https://www.poslanie.pl/upload/art_paragraph/591_img1_people-4050698_1280.jpg"
-        alt="..."
-        width="600"
-        height="400"
-        data-animate-item
-      )
+    .about__image-wrapper
+      .about__image-container
+        .about__image-inner.relative(data-animate-on-scroll)
+          img.about__image.absolute(
+            src="https://misja.org.pl/wp-content/uploads/2018/07/wspolnota.jpg"
+            alt="..."
+            width="600"
+            height="400"
+            data-animate-item
+          )
+          img.about__image.absolute(
+            src="https://zarzadcy.com.pl/wp-uploads/wspolnota-mieszkaniowa-nmxe.jpg"
+            alt="..."
+            width="600"
+            height="400"
+            data-animate-item
+          )
+          img.about__image.absolute(
+            src="https://www.poslanie.pl/upload/art_paragraph/591_img1_people-4050698_1280.jpg"
+            alt="..."
+            width="600"
+            height="400"
+            data-animate-item
+          )
