@@ -1,5 +1,5 @@
 export default {
-  phone: 576,
+  mobile: 576,
   tablet: 768,
   tabletLg: 992,
   desktop: 1200,
