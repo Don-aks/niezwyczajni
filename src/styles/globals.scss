@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-block-size: 100dvh;
-  min-inline-size: 360px;
+  min-inline-size: $min-viewport-width;
 
   font: 16px/1.5 var(--font-family-base);
   background-color: var(--color-background);
