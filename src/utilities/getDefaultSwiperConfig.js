@@ -15,11 +15,14 @@ const getDefaultSwiperConfig = () => ({
     init(swiper) {
       swiper.el.style.cursor = 'grab';
 
-      // Prevent page scrolling when space is pressed
-      swiper.el.addEventListener('keydown', (e) => {
-        if (e.key === ' ' || e.key === 'Spacebar') {
-          e.preventDefault();
-        }
+      swiper.el.addEventListener('focusin', ({ target }) => {
+        swiper.slides.forEach((slide) => {
+          const isFocusedInside = slide.contains(target);
+          const isActiveSlide = swiper.slides[swiper.activeIndex] === slide;
+
+          if (!isFocusedInside || isActiveSlide) return;
+          swiper.slideTo(swiper.slides.indexOf(slide));
+        });
       });
     },
 

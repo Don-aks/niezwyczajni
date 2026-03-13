@@ -23,6 +23,19 @@ export default [
       },
       modules: [Navigation, Keyboard],
       keyboard: { enabled: true },
+      on: {
+        init(swiper) {
+          swiper.el.addEventListener('focusin', ({ target }) => {
+            swiper.slides.forEach((slide) => {
+              const isFocusedInside = slide.contains(target);
+              const isActiveSlide = swiper.slides[swiper.activeIndex] === slide;
+
+              if (!isFocusedInside || isActiveSlide) return;
+              swiper.slideTo(swiper.slides.indexOf(slide));
+            });
+          });
+        },
+      },
     },
     useDefaultConfig: false,
   },
