@@ -1,5 +1,6 @@
 import Header from '@/modules/Header';
 import Nav from '@/modules/Nav';
+import CardsAnimation from '@/modules/CardsAnimation';
 import ScrollAnimator from '@/modules/ScrollAnimator';
 import Swipers from '@/modules/Swipers';
 import AboutBannerLinks from '@/modules/AboutBannerLinks';
@@ -26,6 +27,7 @@ import '@/components/sticky-cta/sticky-cta.scss';
 new Header();
 new Nav();
 const swipers = new Swipers();
+new CardsAnimation();
 new ScrollAnimator();
 new AboutBannerLinks(swipers.instances);
 new AboutMissionSliderArrows(swipers.instances);

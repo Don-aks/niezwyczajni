@@ -70,6 +70,6 @@ section.about-banner.section
           height="400"
         )
 
-    ul.section__cards-container.about-banner__cards-container.list-reset.relative
+    ul.section__cards-container.about-banner__cards-container.list-reset.relative.js-animation-card-container
       each card in cards
         +card({ ...card, isClickable: true }, "about-banner__card section__card")
