@@ -24,7 +24,7 @@ function applyAnimation({ count, index, colsCount }) {
   const lastRow = rows - 1;
   if (col < centerX) x = -1;
   else if (col > centerX) x = 1;
-  else if (row === 0) y = -1;
+  else if (row === 0 && rows > 1) y = -1;
   else if (row === lastRow) y = 1;
 
   return { x, y };
