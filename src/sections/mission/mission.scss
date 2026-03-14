@@ -61,14 +61,14 @@
       position: relative;
 
       border: 3px solid var(--color-primary);
-    }
 
-    @include hover {
-      scale: 1;
-      translate: 0 -7px;
+      @include hover {
+        scale: 1;
+        translate: 0 -7px;
 
-      .card__icon {
-        color: var(--color-white);
+        .card__icon {
+          color: var(--color-white);
+        }
       }
     }
 
