@@ -1,13 +1,11 @@
-import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  Keyboard,
-  EffectFade,
-} from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+
+import changeSlideOnFocus from '@/modules/Swipers/plugins/focusSlidePlugin';
+import changeCursorToGrab from '@/modules/Swipers/plugins/grabCursorPlugin';
 
 const prevBtn = '.slider__btn--prev';
 const nextBtn = '.slider__btn--next';
+const defaultPlugins = [changeSlideOnFocus, changeCursorToGrab];
 
 export default [
   {
@@ -21,24 +19,11 @@ export default [
         prevEl: `.about-mission__slider-navigation ${prevBtn}`,
         nextEl: `.about-mission__slider-navigation ${nextBtn}`,
       },
-      modules: [Navigation, Keyboard],
-      keyboard: { enabled: true },
-      on: {
-        init(swiper) {
-          swiper.el.addEventListener('focusin', ({ target }) => {
-            swiper.slides.forEach((slide) => {
-              const isFocusedInside = slide.contains(target);
-              const isActiveSlide = swiper.slides[swiper.activeIndex] === slide;
-
-              if (!isFocusedInside || isActiveSlide) return;
-              swiper.slideTo(swiper.slides.indexOf(slide));
-            });
-          });
-        },
-      },
+      modules: [Navigation],
     },
-    useDefaultConfig: false,
+    plugins: [changeSlideOnFocus],
   },
+
   {
     selector: '.about-mission__slides',
     options: {
@@ -53,7 +38,9 @@ export default [
       modules: [Autoplay],
     },
     multiple: true,
+    plugins: defaultPlugins,
   },
+
   {
     selector: '.mission__slider',
     options: {
@@ -73,7 +60,9 @@ export default [
         crossFade: true,
       },
     },
+    plugins: defaultPlugins,
   },
+
   {
     selector: '.gallery-preview__slider',
     options: {
@@ -89,5 +78,6 @@ export default [
       },
       modules: [Navigation, Autoplay],
     },
+    plugins: defaultPlugins,
   },
 ];
