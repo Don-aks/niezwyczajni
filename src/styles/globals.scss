@@ -205,6 +205,10 @@ blockquote {
   color: $color-white;
 }
 
+:focus {
+  -webkit-focus-ring-color: transparent;
+}
+
 :focus-visible {
   outline: var(--outline-size) solid var(--color-primary);
   outline-offset: var(--outline-offset);
