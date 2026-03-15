@@ -280,7 +280,12 @@ section#about-mission.about-mission.section
             use(href="/__spritemap#arrow-right")
           span.visually-hidden Następny słajd
 
-      .about-mission__slider.slider.swiper
+      .about-mission__slider.slider.swiper(
+        data-animate-on-scroll
+        data-animate-once
+        data-animate-duration="500"
+        data-animate-ignore-focus
+      )
         ul.about-mission__slider-inner.swiper-wrapper.text-center.list-reset
           each item of aboutMissionItems
             li.about-mission__item.swiper-slide.flex-col.gap-15

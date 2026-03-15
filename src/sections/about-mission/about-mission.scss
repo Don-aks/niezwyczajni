@@ -3,6 +3,24 @@
     margin-block: -20px 20px;
   }
 
+  &__slider {
+    &.visible {
+      .image-wrapper {
+        &::before {
+          opacity: 1;
+        }
+
+        &__image {
+          scale: 1.05;
+        }
+
+        &__caption {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &__item {
     display: flex;
   }
