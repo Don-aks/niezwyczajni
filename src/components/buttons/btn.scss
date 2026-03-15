@@ -69,7 +69,7 @@
   }
 
   &--fill-overlay {
-    overflow: hidden;
+    overflow: clip;
 
     @include hover {
       background-color: transparent;

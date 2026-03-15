@@ -1,6 +1,6 @@
 .image-wrapper {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 
   &::before {
     content: '';
