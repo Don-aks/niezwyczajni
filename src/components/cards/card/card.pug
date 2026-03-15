@@ -22,7 +22,7 @@ mixin card(props, classNames = "")
     class=[classNames, isClickable && "clickable", isResponsive && "responsive"]
     data-animate-on-scroll=hasAnimation
   )
-    article.card__wrapper(data-animate-item)
+    article.card__wrapper
       if imageSrc
         img.card__image(src=imageSrc alt=imageAlt width="370" height="267")
       .card__inner
