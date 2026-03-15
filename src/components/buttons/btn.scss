@@ -34,13 +34,10 @@
   }
 
   &--secondary {
-    @include transition(
-      (
-        color: var(--transition-duration),
-        background-color: var(--transition-duration),
-        border-color: calc(var(--transition-duration) / 2),
-      )
-    );
+    transition:
+      color var(--transition-duration),
+      background-color var(--transition-duration),
+      border-color calc(var(--transition-duration) / 2);
 
     // Default button colors
     --color-btn: var(--color-accent);
@@ -92,11 +89,7 @@
 
       // Reduce transition duration on smaller screens
       @include mq('tablet-lg') {
-        @include transition(
-          (
-            translate: 0.2s,
-          )
-        );
+        transition-duration: 0.2s;
       }
     }
   }
