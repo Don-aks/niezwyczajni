@@ -15,7 +15,7 @@ html {
   }
 }
 
-:target {
+.header:not(.hidden) + .main :target {
   scroll-margin-top: var(--header-height);
 }
 
