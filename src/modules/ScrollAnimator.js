@@ -24,6 +24,7 @@ class ScrollAnimator {
     this.#initObserver();
     this.#onResizeDebounced = debounce(this.#onResize, 200);
     window.addEventListener('resize', this.#onResizeDebounced);
+    document.addEventListener('focusin', this.#onFocus);
   }
 
   // --- IntersectionObserver callback ---
@@ -112,10 +113,20 @@ class ScrollAnimator {
     this.#initObserver();
   };
 
+  #onFocus = ({ target }) => {
+    this.elements.forEach((element) => {
+      const isFocusedInside = element.contains(target);
+      if (!isFocusedInside) return;
+
+      this.showElement(element);
+    });
+  };
+
   // --- Public API ---
   destroy() {
     this.#observer.disconnect();
     window.removeEventListener('resize', this.#onResizeDebounced);
+    document.removeEventListener('focusin', this.#onFocus);
   }
 }
 
