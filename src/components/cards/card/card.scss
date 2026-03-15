@@ -2,51 +2,10 @@
   --anim-translate: 30%;
 
   &.hidden {
-    --translate: 0 0;
-
     .card__wrapper {
+      translate: var(--translate-x, 0) var(--translate-y, 0);
       opacity: 0;
       pointer-events: none;
-    }
-
-    *:has(> &) {
-      &:has(.card:nth-child(2)) {
-        .card.hidden {
-          &:nth-child(1) {
-            --translate: calc(-1 * var(--anim-translate)) 0;
-          }
-
-          &:nth-child(2) {
-            --translate: var(--anim-translate) 0;
-          }
-        }
-      }
-
-      &:has(.card:nth-child(3)) {
-        .card.hidden {
-          &:nth-child(3n + 1) {
-            --translate: calc(-1 * var(--anim-translate)) 0;
-
-            // @include mq("") {
-            //   &.responsive {
-
-            //   }
-            // }
-          }
-
-          &:nth-child(3n + 2) {
-            --translate: 0 calc(-1 * var(--anim-translate));
-          }
-
-          &:nth-child(3n + 3) {
-            --translate: var(--anim-translate) 0;
-          }
-
-          &:nth-child(6n + 2) {
-            --translate: 0 var(--anim-translate);
-          }
-        }
-      }
     }
   }
 
@@ -60,7 +19,6 @@
     color: var(--color-base);
     background-color: var(--color-background);
 
-    translate: var(--translate, 0 0);
     @include transition((background-color, color, scale, translate, opacity));
     will-change: transform;
 
