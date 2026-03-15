@@ -25,7 +25,8 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd {
+dd,
+dialog {
   margin: 0;
 }
 
@@ -74,4 +75,14 @@ dd {
 
 address {
   font-style: normal;
+}
+
+dialog {
+  border: 0;
+  color: inherit;
+}
+
+[popover] {
+  padding: 0;
+  border: 0;
 }
