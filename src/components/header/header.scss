@@ -9,7 +9,7 @@
   background-color: var(--color-white);
   --color-nav: var(--color-primary);
 
-  @include transition((background-color, height, translate));
+  @include transition((background-color, height, translate, box-shadow));
 
   &.scrolled {
     box-shadow: var(--shadow-md);
@@ -17,7 +17,7 @@
 
   &:not(.scrolled) {
     &.hidden {
-      @include transition((height, translate));
+      @include transition((height, translate, box-shadow));
     }
 
     &:has(+ .main > .banner) {
@@ -32,6 +32,7 @@
 
   &.hidden {
     translate: 0 -100%;
+    box-shadow: none;
   }
 
   &__container {
