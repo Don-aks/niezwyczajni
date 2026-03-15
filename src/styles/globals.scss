@@ -32,6 +32,8 @@ body {
   font: 16px/1.5 var(--font-family-base);
   background-color: var(--color-background);
   color: var(--color-base);
+
+  overflow-x: clip;
 }
 
 .main {
