@@ -88,7 +88,7 @@
       transition: translate var(--transition-duration);
       will-change: transform;
 
-      // Reduce transition duration on smaller screens
+      // For instant feedback on tap
       @include mq('tablet-lg') {
         transition-duration: 0.2s;
       }
