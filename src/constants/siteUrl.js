@@ -1,1 +1,1 @@
-export default 'https://example.com';
+export default 'http://zwyczajnieniezwyczajni.pl';
