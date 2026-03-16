@@ -304,6 +304,13 @@
       &::after {
         display: none;
       }
+
+      &.active + .nav__submenu {
+        translate: 0 0;
+
+        visibility: visible;
+        pointer-events: auto;
+      }
     }
 
     .nav__submenu-wrapper {
@@ -334,13 +341,6 @@
 
       &::before {
         display: none;
-      }
-
-      .nav__submenu-toggle.active + & {
-        translate: 0 0;
-
-        visibility: visible;
-        pointer-events: auto;
       }
     }
 
