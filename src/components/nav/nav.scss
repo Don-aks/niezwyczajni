@@ -111,13 +111,11 @@
     position: absolute;
     top: calc(100% + 10px);
     right: -15px;
-    z-index: calc(var(--header-z-index) + 1);
 
     text-align: center;
 
     background-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-dropdown);
     opacity: 0;
 
     translate: 0 -10px;
