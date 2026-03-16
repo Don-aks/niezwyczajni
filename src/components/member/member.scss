@@ -17,7 +17,7 @@
     padding: 7px;
 
     background-color: var(--color-white);
-    @include transition(translate);
+    transition: translate var(--transition-duration);
     translate: -50% 0;
   }
 

@@ -19,7 +19,8 @@
     color: var(--color-base);
     background-color: var(--color-background);
 
-    @include transition((background-color, color, scale, translate, opacity));
+    transition-property: background-color, color, scale, translate, opacity;
+    transition-duration: var(--transition-duration);
     will-change: transform;
 
     @include hover {
@@ -29,7 +30,7 @@
 
       .card__title {
         color: var(--color-white);
-        @include transition(color);
+        transition: color var(--transition-duration);
       }
 
       a {

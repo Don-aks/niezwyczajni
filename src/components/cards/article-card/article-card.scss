@@ -2,7 +2,7 @@
   color: var(--color-base);
   background-color: var(--color-white);
 
-  @include transition(translate);
+  transition: translate var(--transition-duration);
   will-change: transform;
 
   @include hover {

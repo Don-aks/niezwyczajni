@@ -55,7 +55,8 @@
 
   &__card {
     width: 100%;
-    @include transition((translate, background-color, opacity));
+    transition-property: translate, background-color, opacity;
+    transition-duration: var(--transition-duration);
 
     .card__wrapper {
       position: relative;

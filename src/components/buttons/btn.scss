@@ -9,13 +9,14 @@
   text-wrap: nowrap;
 
   @include no-highlight;
-  @include transition((background-color, color));
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration);
 
   &--primary {
     padding: 12px 25px;
     background-color: var(--color-primary);
     color: var(--color-white);
-    @include transition((background-color, color, opacity));
+    transition-property: background-color, color, opacity;
 
     @include hover(false) {
       background-color: var(--color-primary-dark);
@@ -84,7 +85,7 @@
       background-color: var(--color-btn-bg-hover);
       translate: 0 100%;
 
-      @include transition(translate);
+      transition: translate var(--transition-duration);
       will-change: transform;
 
       // Reduce transition duration on smaller screens
@@ -116,7 +117,7 @@
         @include square(17px);
 
         fill: currentColor;
-        @include transition(color);
+        transition: color var(--transition-duration);
       }
     }
   }

@@ -13,7 +13,7 @@
     fill: var(--color-primary);
     opacity: var(--decor-opacity);
 
-    @include transition(rotate);
+    transition: rotate var(--transition-duration);
     rotate: 5deg;
 
     will-change: transform;

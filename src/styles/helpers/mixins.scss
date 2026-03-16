@@ -73,18 +73,6 @@
   }
 }
 
-@mixin transition($properties, $duration: var(--transition-duration)) {
-  $props-str: null;
-
-  @if meta.type-of($properties) == 'list' {
-    $props-str: list.join($properties, ', ');
-  } @else {
-    $props-str: $properties;
-  }
-
-  transition: #{$props-str} #{$duration};
-}
-
 @mixin no-highlight {
   -webkit-tap-highlight-color: transparent;
 }

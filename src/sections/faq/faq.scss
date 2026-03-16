@@ -10,7 +10,7 @@
     fill: var(--color-primary);
     opacity: var(--decor-opacity);
 
-    @include transition(rotate);
+    transition: rotate var(--transition-duration);
     translate: -40px 0;
     rotate: 15deg;
 
@@ -87,7 +87,7 @@
     font-weight: 500;
     list-style-type: none;
 
-    @include transition(color);
+    transition: color var(--transition-duration);
 
     &::before {
       content: '';
@@ -102,7 +102,7 @@
 
       rotate: 90deg;
 
-      @include transition(rotate);
+      transition: rotate var(--transition-duration);
       will-change: transform;
     }
   }
@@ -110,7 +110,7 @@
   &__answer {
     grid-template-rows: 0fr;
 
-    @include transition(grid-template-rows);
+    transition: grid-template-rows var(--transition-duration);
     visibility: hidden;
   }
 

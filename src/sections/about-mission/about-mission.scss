@@ -41,7 +41,7 @@
   &__slide {
     // Same reason here — increasing specificity to override Swiper styles
     &.about-mission__slide {
-      @include transition(scale);
+      transition: scale var(--transition-duration);
     }
 
     will-change: transform;
@@ -94,7 +94,8 @@
       top: 300px + 15px;
       translate: 0 calc(var(--content-height, 0) / 2 - 50%);
 
-      @include transition((opacity, translate));
+      transition-property: opacity, translate;
+      transition-duration: var(--transition-duration);
 
       &--prev {
         left: 0;

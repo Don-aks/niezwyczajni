@@ -50,7 +50,7 @@
 
     background-color: var(--color-primary);
     border-radius: 50%;
-    @include transition(scale);
+    transition: scale var(--transition-duration);
     @include no-highlight;
 
     &:focus-visible {
@@ -97,7 +97,8 @@
     border-radius: var(--borders-radius);
     translate: 0 0;
 
-    @include transition((translate, visibility));
+    transition-property: translate, visibility;
+    transition-duration: var(--transition-duration);
 
     &:not(.visible) {
       translate: calc(100% + 20px) 0;

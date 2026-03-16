@@ -13,7 +13,7 @@
     background-color: var(--color-base);
     cursor: pointer;
 
-    @include transition(background-color);
+    transition: background-color var(--transition-duration);
     @include no-highlight;
 
     @include hover {

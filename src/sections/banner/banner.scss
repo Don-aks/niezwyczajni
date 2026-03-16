@@ -115,7 +115,8 @@
       border: 2px solid var(--color-white);
       white-space: nowrap;
 
-      @include transition((color, border-color));
+      transition-property: color, border-color;
+      transition-duration: var(--transition-duration);
 
       @include mq('mobile') {
         padding: 8px 10px;

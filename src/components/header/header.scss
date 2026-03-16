@@ -9,7 +9,8 @@
   background-color: var(--color-white);
   --color-nav: var(--color-primary);
 
-  @include transition((background-color, height, translate, box-shadow));
+  transition-property: background-color, height, translate, box-shadow;
+  transition-duration: var(--transition-duration);
 
   &.scrolled {
     box-shadow: var(--shadow-md);
@@ -17,7 +18,7 @@
 
   &:not(.scrolled) {
     &.hidden {
-      @include transition((height, translate, box-shadow));
+      transition-property: height, translate, box-shadow;
     }
 
     &:has(+ .main > .banner) {

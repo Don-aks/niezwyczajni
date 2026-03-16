@@ -18,7 +18,7 @@
     opacity: var(--decor-opacity);
 
     rotate: 5deg;
-    @include transition(rotate);
+    transition: rotate var(--transition-duration);
 
     will-change: transform;
 

@@ -62,7 +62,8 @@ a {
 
   color: var(--color-primary);
 
-  @include transition((text-decoration-color, color));
+  transition-property: text-decoration-color, color;
+  transition-duration: var(--transition-duration);
   @include no-highlight;
 
   @include hover {
