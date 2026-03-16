@@ -34,6 +34,13 @@
   &.hidden {
     translate: 0 -100%;
     box-shadow: none;
+
+    .nav__submenu-toggle.active + .nav__submenu {
+      opacity: 0;
+
+      translate: 0 -10px;
+      visibility: hidden;
+    }
   }
 
   &__container {
