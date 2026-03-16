@@ -11,3 +11,33 @@ block content
   +header(pageName)
 
   main.main
+    article.article
+      .container.article__container
+        header.article__header
+          img.article__banner(
+            src="https://azbyka.ru/wp-content/uploads/2020/12/protestantizm.jpg"
+            alt="Article Banner"
+          )
+          h1.article__title Tytuł artykułu
+          .article__meta
+            span.article__date
+              svg
+                use(href="/__spritemap#calendar")
+              datetime.article__date-text
+                | 1 stycznia 2024
+
+            span.article__author.author
+              span.author__icon.icon
+                svg
+                  use(href="/__spritemap#user")
+              span.article__author-name
+                | Grzegorz Gzik
+        section.article__content.text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    include /sections/cta/cta
+
+  include /components/footer/footer
