@@ -5,10 +5,6 @@
   text-transform: uppercase;
 
   &--top {
-    @include mq('mobile') {
-      --color-nav: var(--color-primary);
-    }
-
     .nav__list {
       @include mq('tablet') {
         gap: 20px;
