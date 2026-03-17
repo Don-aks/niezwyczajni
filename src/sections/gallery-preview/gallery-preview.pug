@@ -33,7 +33,12 @@ section.gallery-preview.section.section--centered
             use(href="/__spritemap#arrow-right")
           span.visually-hidden Następne zdjęcie
 
-      .gallery-preview__slider.swiper
+      .gallery-preview__slider.swiper(
+        data-animate-on-scroll
+        data-animate-once
+        data-animate-duration="500"
+        data-ignore-focus
+      )
         ul.slider__wrapper.swiper-wrapper.list-reset
           each image of gallery
             li.slider__slide.swiper-slide

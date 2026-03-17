@@ -1,1 +1,21 @@
+.gallery-preview {
+  &__slider {
+    &.visible {
+      .image-wrapper:has(.image-wrapper__caption) {
+        outline: transparent;
 
+        &::before {
+          opacity: 1;
+        }
+
+        .image-wrapper__image {
+          scale: 1.05;
+        }
+
+        .image-wrapper__caption {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
