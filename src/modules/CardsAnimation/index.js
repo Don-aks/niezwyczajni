@@ -1,61 +1,37 @@
-import breakpoints from '@/constants/breakpoints';
+import debounce from '@/utilities/debounce';
+
 import applyAnimation from './applyAnimation';
+import getColsCount from './getColsCount';
 
 function setTranslateValue(val) {
   return val === 0 ? '0' : `calc(${val} * var(--anim-translate))`;
 }
 
 class CardsAnimation {
+  currentColsCount = 0;
+
   cardSelector = '.card';
   containerSelector = '.js-animation-card-container';
-
-  #breakpoints = {};
 
   constructor() {
     this.containers = document.querySelectorAll(this.containerSelector);
 
-    this.#initBreakpoints();
+    window.addEventListener('resize', debounce(this.#applyCardAnimations, 150));
     this.#applyCardAnimations();
   }
 
   setupCardAnimation = (container) => {
     const cards = [...container.querySelectorAll(this.cardSelector)];
     const count = cards.length;
+    const colsCount = getColsCount(window.innerWidth);
 
     cards.forEach((card, index) => {
-      let colsCount;
-
-      const [matchedBreakpoint] = Object.entries(this.#breakpoints).find(
-        ([, bp]) => bp.matches,
-      );
-
-      switch (matchedBreakpoint) {
-        case 'desktop':
-          colsCount = 2;
-          break;
-        case 'tablet':
-          colsCount = 1;
-          break;
-        default:
-          colsCount = 3;
-      }
-
       const { x, y } = applyAnimation({ count, index, colsCount });
 
       card.style.setProperty('--translate-x', setTranslateValue(x));
       card.style.setProperty('--translate-y', setTranslateValue(y));
     });
   };
-
-  #initBreakpoints() {
-    Object.entries(breakpoints).forEach(([name, size]) => {
-      this.#breakpoints[name] = window.matchMedia(`(max-width: ${size - 1}px)`);
-      this.#breakpoints[name].addEventListener(
-        'change',
-        this.#applyCardAnimations,
-      );
-    });
-  }
 
   #applyCardAnimations = () => {
     this.containers.forEach(this.setupCardAnimation);
