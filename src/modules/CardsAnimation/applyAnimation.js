@@ -22,6 +22,12 @@ function applyAnimation({ count, index, colsCount }) {
   let y = 0;
 
   const lastRow = rows - 1;
+
+  if (colsCount === 1) {
+    x = index % 2 === 0 ? -1 : 1;
+    return { x, y };
+  }
+
   if (col < centerX) x = -1;
   else if (col > centerX) x = 1;
   else if (row === 0 && rows > 1) y = -1;

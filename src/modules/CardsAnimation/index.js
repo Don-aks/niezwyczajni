@@ -40,14 +40,7 @@ class CardsAnimation {
           colsCount = 3;
       }
 
-      let x = 0;
-      let y = 0;
-
-      if (colsCount > 1) {
-        ({ x, y } = applyAnimation({ count, index, colsCount }));
-      } else {
-        x = index % 2 === 0 ? -1 : 1;
-      }
+      const { x, y } = applyAnimation({ count, index, colsCount });
 
       card.style.setProperty('--translate-x', setTranslateValue(x));
       card.style.setProperty('--translate-y', setTranslateValue(y));
