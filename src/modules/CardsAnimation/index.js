@@ -23,9 +23,32 @@ class CardsAnimation {
     const count = cards.length;
 
     cards.forEach((card, index) => {
-      const colsCount = 3;
+      let colsCount;
 
-      const { x, y } = applyAnimation({ count, index, colsCount });
+      const [matchedBreakpoint] = Object.entries(this.#breakpoints).find(
+        ([, bp]) => bp.matches,
+      );
+
+      switch (matchedBreakpoint) {
+        case 'desktop':
+          colsCount = 2;
+          break;
+        case 'tablet':
+          colsCount = 1;
+          break;
+        default:
+          colsCount = 3;
+      }
+
+      let x = 0;
+      let y = 0;
+
+      if (colsCount > 1) {
+        ({ x, y } = applyAnimation({ count, index, colsCount }));
+      } else {
+        x = index % 2 === 0 ? -1 : 1;
+      }
+
       card.style.setProperty('--translate-x', setTranslateValue(x));
       card.style.setProperty('--translate-y', setTranslateValue(y));
     });
