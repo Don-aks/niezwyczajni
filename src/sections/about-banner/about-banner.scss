@@ -6,7 +6,7 @@
 }
 
 .about-banner {
-  --images-offset: -40px;
+  --images-offset: 40px;
   padding-block: 80px 0;
 
   &__container {
@@ -27,7 +27,7 @@
   }
 
   &__image {
-    top: calc(var(--images-offset) * -1);
+    top: var(--images-offset);
     right: 0;
     z-index: 3;
 
@@ -50,8 +50,8 @@
     }
 
     &:nth-child(3) {
-      top: var(--images-offset);
-      right: calc(var(--images-offset) * 2);
+      top: calc(var(--images-offset) * -1);
+      right: calc(var(--images-offset) * -2);
       z-index: 1;
     }
   }
