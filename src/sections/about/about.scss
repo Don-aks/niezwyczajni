@@ -14,6 +14,10 @@
       gap: 70px;
     }
 
+    @include mq('tablet') {
+      gap: 50px;
+    }
+
     @include mq('mobile') {
       padding-top: 80px;
       gap: 30px;
@@ -56,6 +60,12 @@
 
     @include mq('desktop-lg') {
       height: 260px;
+    }
+
+    @include mq('tablet-lg') {
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
     }
   }
 
