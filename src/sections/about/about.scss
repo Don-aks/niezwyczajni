@@ -1,5 +1,5 @@
 .about {
-  --images-offset: -80px;
+  --images-offset: 80px;
 
   &__container {
     align-items: end;
@@ -108,8 +108,8 @@
   }
 
   &__image {
-    top: calc(var(--images-offset) * 2);
-    right: calc(var(--images-offset) * 2);
+    top: calc(var(--images-offset) * -2);
+    right: calc(var(--images-offset) * -2);
     z-index: 1;
 
     transition-property: opacity, translate;
@@ -117,31 +117,31 @@
     will-change: opacity, transform;
 
     @include mq('desktop-lg') {
-      left: calc(var(--images-offset) * -1);
+      left: var(--images-offset);
 
-      width: calc(100% + var(--images-offset));
+      width: calc(100% - var(--images-offset));
       height: 100%;
     }
 
     @include mq('desktop') {
-      width: calc(100% + var(--images-offset) - var(--container-padding-x));
+      width: calc(100% - var(--images-offset) - var(--container-padding-x));
     }
 
     @include mq('mobile') {
-      top: var(--images-offset);
+      top: calc(var(--images-offset) * -1);
     }
 
     &:nth-child(2) {
-      top: var(--images-offset);
-      right: var(--images-offset);
+      top: calc(var(--images-offset) * -1);
+      right: calc(var(--images-offset) * -1);
       z-index: 2;
 
       @include mq('desktop-lg') {
-        left: calc(var(--images-offset) / -2);
+        left: calc(var(--images-offset) / 2);
       }
 
       @include mq('mobile') {
-        top: calc(var(--images-offset) / 2);
+        top: calc(var(--images-offset) / -2);
       }
     }
 
