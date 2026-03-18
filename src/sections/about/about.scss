@@ -117,7 +117,7 @@
     will-change: opacity, transform;
 
     @include mq('desktop-lg') {
-      left: 80px;
+      left: calc(var(--images-offset) * -1);
 
       width: calc(100% + var(--images-offset));
       height: 100%;
@@ -137,7 +137,7 @@
       z-index: 2;
 
       @include mq('desktop-lg') {
-        left: 40px;
+        left: calc(var(--images-offset) / -2);
       }
 
       @include mq('mobile') {
