@@ -78,6 +78,7 @@
   }
 
   &__image-container {
+    // To prevent images from overflowing the container when they are translated
     @include mq('desktop-lg') {
       width: calc(
         100% + (100dvw - var(--container-width)) / 2 +
