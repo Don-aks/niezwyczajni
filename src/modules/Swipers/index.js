@@ -5,6 +5,19 @@ import SWIPER_CONFIGS from '@/constants/swiperConfigs';
 
 const hasKeyboardModule = (options) => options.modules?.includes(Keyboard);
 
+const addKeyboardModule = (options) => {
+  if (options.modules) {
+    options.modules.push(Keyboard);
+    return;
+  }
+
+  options.modules = [Keyboard];
+};
+
+const addKeyboardOptions = (options) => {
+  options.keyboard = { enabled: true, pageUpDown: true };
+};
+
 class Swipers {
   instances = new Map();
 
@@ -42,17 +55,8 @@ class Swipers {
     const options = { ...incomingOptions };
 
     if (keyboardControl) {
-      if (!hasKeyboardModule(options)) {
-        if (!Array.isArray(options.modules)) {
-          options.modules = [];
-        }
-
-        options.modules.push(Keyboard);
-      }
-
-      if (!options.keyboard) {
-        options.keyboard = { enabled: true, pageUpDown: true };
-      }
+      if (!hasKeyboardModule(options)) addKeyboardModule(options);
+      if (!options.keyboard) addKeyboardOptions(options);
     }
 
     return options;
