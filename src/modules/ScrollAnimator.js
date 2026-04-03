@@ -41,7 +41,7 @@ class ScrollAnimator {
         this.showElement(target);
 
         if (target.hasAttribute('data-animate-once')) {
-          this.#observer.unobserve(target);
+          this.excludeElement(target);
         }
 
         this.#hideAfterAnimationIfNeeded(target);
@@ -123,6 +123,11 @@ class ScrollAnimator {
   };
 
   // --- Public API ---
+  excludeElement(element) {
+    this.#observer.unobserve(element);
+    this.elements = this.elements.filter((el) => el !== element);
+  }
+
   destroy() {
     this.#observer.disconnect();
     window.removeEventListener('resize', this.#onResizeDebounced);
