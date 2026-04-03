@@ -6,7 +6,7 @@ import SWIPER_CONFIGS from '@/constants/swiperConfigs';
 const hasKeyboardModule = (options) => options.modules?.includes(Keyboard);
 
 class Swipers {
-  instances = [];
+  instances = new Map();
 
   constructor() {
     SWIPER_CONFIGS.forEach(this.#processConfig);
@@ -14,8 +14,8 @@ class Swipers {
 
   createInstance(element, { swiperOptions, config = {} }) {
     const instance = new Swiper(element, swiperOptions);
-    this.instances.push(instance);
 
+    this.instances.set(element, instance);
     if (config.plugins) {
       config.plugins.forEach((plugin) => plugin(instance));
     }
