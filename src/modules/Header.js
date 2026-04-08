@@ -5,8 +5,8 @@ class Header {
     hidden: 'hidden',
   };
 
+  scrollOffset = 33;
   #lastScrollY = 0;
-  #scrollOffset = 33;
 
   constructor() {
     this.element = document.querySelector(this.selector);
@@ -22,9 +22,9 @@ class Header {
 
     const scrollDelta = window.scrollY - this.#lastScrollY;
 
-    if (scrollDelta > this.#scrollOffset) {
+    if (scrollDelta > this.scrollOffset) {
       this.element.classList.add(this.stateClasses.hidden);
-    } else if (scrollDelta < -this.#scrollOffset || !isScrolled) {
+    } else if (scrollDelta < -this.scrollOffset || !isScrolled) {
       this.element.classList.remove(this.stateClasses.hidden);
     }
 
