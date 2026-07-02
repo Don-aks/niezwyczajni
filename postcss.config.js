@@ -11,6 +11,5 @@ export default {
       minPixelValue: 0,
     },
   },
-  syntax: 'postcss-scss',
   map: true,
 };
