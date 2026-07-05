@@ -34,6 +34,7 @@ export default [
       touchEventsTarget: 'container',
       autoplay: {
         delay: 3000,
+        disableOnInteraction: false,
       },
       modules: [Autoplay],
     },
