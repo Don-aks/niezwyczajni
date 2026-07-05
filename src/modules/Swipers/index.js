@@ -19,7 +19,7 @@ const addKeyboardOptions = (options) => {
 };
 
 class Swipers {
-  instances = new WeakMap();
+  #instances = new WeakMap();
 
   constructor() {
     SWIPER_CONFIGS.forEach(this.#processConfig);
@@ -27,8 +27,8 @@ class Swipers {
 
   createInstance(element, { swiperOptions, config = {} }) {
     const instance = new Swiper(element, swiperOptions);
+    this.#instances.set(element, instance);
 
-    this.instances.set(element, instance);
     if (config.plugins) {
       config.plugins.forEach((plugin) => plugin(instance));
     }
