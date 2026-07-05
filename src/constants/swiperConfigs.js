@@ -3,8 +3,8 @@ import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import changeSlideOnFocus from '@/modules/Swipers/plugins/focusSlidePlugin';
 import changeCursorToGrab from '@/modules/Swipers/plugins/grabCursorPlugin';
 
-const prevBtn = '.slider__btn--prev';
-const nextBtn = '.slider__btn--next';
+const PREV_BTN = '.slider__btn--prev';
+const NEXT_BTN = '.slider__btn--next';
 const defaultPlugins = [changeSlideOnFocus, changeCursorToGrab];
 
 export default [
@@ -16,8 +16,8 @@ export default [
       allowTouchMove: false,
       autoHeight: true,
       navigation: {
-        prevEl: `.about-mission__slider-navigation ${prevBtn}`,
-        nextEl: `.about-mission__slider-navigation ${nextBtn}`,
+        prevEl: `.about-mission__slider-navigation ${PREV_BTN}`,
+        nextEl: `.about-mission__slider-navigation ${NEXT_BTN}`,
       },
       modules: [Navigation],
     },
@@ -73,8 +73,8 @@ export default [
         delay: 15000,
       },
       navigation: {
-        prevEl: `.gallery-preview__slider-navigation ${prevBtn}`,
-        nextEl: `.gallery-preview__slider-navigation ${nextBtn}`,
+        prevEl: `.gallery-preview__slider-navigation ${PREV_BTN}`,
+        nextEl: `.gallery-preview__slider-navigation ${NEXT_BTN}`,
       },
       modules: [Navigation, Autoplay],
     },
