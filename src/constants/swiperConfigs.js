@@ -10,7 +10,7 @@ const defaultPlugins = [changeSlideOnFocus, changeCursorToGrab];
 export default [
   {
     selector: '.about-mission__slider',
-    options: {
+    swiperOptions: {
       slidesPerView: 1,
       loop: true,
       allowTouchMove: false,
@@ -26,7 +26,7 @@ export default [
 
   {
     selector: '.about-mission__slides',
-    options: {
+    swiperOptions: {
       slidesPerView: 4.5,
       spaceBetween: 60,
       loop: true,
@@ -44,7 +44,7 @@ export default [
 
   {
     selector: '.mission__slider',
-    options: {
+    swiperOptions: {
       slidesPerView: 1,
       spaceBetween: 20,
       loop: true,
@@ -66,7 +66,7 @@ export default [
 
   {
     selector: '.gallery-preview__slider',
-    options: {
+    swiperOptions: {
       slidesPerView: 2,
       spaceBetween: 30,
       loop: true,

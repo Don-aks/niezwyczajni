@@ -34,12 +34,12 @@ class Swipers {
     }
   }
 
-  #processConfig = ({ selector, options, ...config }) => {
+  #processConfig = ({ selector, swiperOptions: baseOptions, ...config }) => {
     const elements = document.querySelectorAll(selector);
     if (elements.length === 0) return;
 
     const keyboardControl = config.keyboardControl ?? true;
-    const swiperOptions = Swipers.generateOptions(options, keyboardControl);
+    const swiperOptions = Swipers.generateOptions(baseOptions, keyboardControl);
 
     if (config.multiple) {
       elements.forEach((el) => {
