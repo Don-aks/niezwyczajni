@@ -14,10 +14,6 @@ const addKeyboardModule = (options) => {
   options.modules = [Keyboard];
 };
 
-const addKeyboardOptions = (options) => {
-  options.keyboard = { enabled: true, pageUpDown: true };
-};
-
 class Swipers {
   #instances = new WeakMap();
 
@@ -29,9 +25,7 @@ class Swipers {
     const instance = new Swiper(element, swiperOptions);
     this.#instances.set(element, instance);
 
-    if (config.plugins) {
-      config.plugins.forEach((plugin) => plugin(instance));
-    }
+    config.plugins?.forEach((plugin) => plugin(instance));
   }
 
   processConfig = ({ selector, swiperOptions: baseOptions, ...config }) => {
@@ -56,7 +50,7 @@ class Swipers {
 
     if (keyboardControl) {
       if (!hasKeyboardModule(options)) addKeyboardModule(options);
-      if (!options.keyboard) addKeyboardOptions(options);
+      options.keyboard ??= { enabled: true, pageUpDown: true };
     }
 
     return options;
