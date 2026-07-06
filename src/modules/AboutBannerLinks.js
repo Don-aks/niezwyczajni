@@ -13,6 +13,7 @@ class AboutBannerLinks {
     if (!this.root || !this.slider) return;
 
     this.swiper = swipers.getInstanceByElement(this.slider);
+    if (!this.swiper) return;
 
     const cards = [...this.root.querySelectorAll(this.selectors.card)];
     this.links = cards.map((card) => card.querySelector(this.selectors.link));
