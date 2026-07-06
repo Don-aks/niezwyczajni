@@ -11,3 +11,11 @@ block content
   +header(pageName)
 
   main.main
+    article.event
+      .container.event__container
+        header.section__header.event__header
+          h2.section__title.event__title(data-acf="event_title") Tytuł wydarzenia
+          h3.section__subtitle.event__subtitle(data-acf="event_subtitle") Podtytuł wydarzenia
+        .event__content.text(data-acf="event_content" data-acf-html)
+          p
+            | Opis wydarzenia, szczegóły, agenda itp.
