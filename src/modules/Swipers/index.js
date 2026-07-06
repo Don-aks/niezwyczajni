@@ -5,6 +5,7 @@ import SWIPER_CONFIGS from '@/constants/swiperConfigs';
 
 const hasKeyboardModule = (options) => options.modules?.includes(Keyboard);
 
+// mutates the original options
 const addKeyboardModule = (options) => {
   if (options.modules) {
     options.modules.push(Keyboard);
