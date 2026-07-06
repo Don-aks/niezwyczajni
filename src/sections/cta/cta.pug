@@ -5,20 +5,24 @@ section.cta.section
   .cta__container.container.flex.justify-between.items-center.gap-30
     .cta__content
       header.cta__header.section__header
-        h2.section__title Dołącz do nas
-        h3.section__subtitle Chcesz być częścią tej misji?
-        .section__text
+        h2.section__title(data-acf="cta_title") Dołącz do nas
+        h3.section__subtitle(data-acf="cta_subtitle")
+          | Chcesz być częścią tej misji?
+        .section__text(data-acf="cta_text")
           p
             | Spotykamy się regularnie, modlimy się,
             | rozmawiamy i pomagamy sobie nawzajem.
 
       footer.section__footer
         +ctaBtn("cta__link")
-        +contactBtn({ classNames: "cta__btn", hasIcon: false })
+        - var acf = { key: "cta_secondary_button", map: "text:text,href:href" };
+        +contactBtn({ classNames: "cta__btn", hasIcon: false, acf })
 
     img.cta__image(
       src="https://as1.ftcdn.net/jpg/02/11/29/06/1000_F_211290641_8wvpbJKta9wIs1jcnwQXjF1dXehA1QM0.jpg"
       alt="..."
       width="550"
       height="400"
+      data-acf="cta_image"
+      data-acf-map="src:url,alt:alt"
     )
