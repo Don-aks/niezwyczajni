@@ -10,4 +10,34 @@ block content
   include /components/header/header
   +header(pageName)
 
+  include /components/buttons/cta-btn
+  include /components/image-wrapper/image-wrapper
+
+  -
+    var images = [
+      {
+        id: 1,
+        url: "https://via.placeholder.com/600x400",
+        alt: "Galeria 1"
+      },
+      {
+        id: 2,
+        url: "https://via.placeholder.com/600x400",
+        alt: "Galeria 2"
+      },
+      {
+        id: 3,
+        url: "https://via.placeholder.com/600x400",
+        alt: "Galeria 3"
+      }
+    ];
+
   main.main
+    section.gallery.section
+      .container.gallery__container
+        header.section__header.gallery__header
+          h2.section__title.gallery__title(data-acf="gallery_title") Galeria
+          h3.section__subtitle.gallery__subtitle(data-acf="gallery_subtitle") Zobacz nasze zdjęcia
+        .gallery__images.section__cards-container.js-animation-card-container.flex.flex-wrap.gap-6
+          each image in images
+            +imageWrapper(image, "section__card")
