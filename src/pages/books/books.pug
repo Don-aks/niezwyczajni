@@ -10,4 +10,65 @@ block content
   include /components/header/header
   +header(pageName)
 
+  -
+    var books = [
+      {
+        id: 1,
+        title: "Książka 1",
+        description: "Opis książki 1",
+        image: {
+          url: "https://via.placeholder.com/300x400",
+          alt: "Książka 1"
+        },
+        link: {
+          url: "https://example.com/book1"
+        }
+      },
+      {
+        id: 2,
+        title: "Książka 2",
+        description: "Opis książki 2",
+        image: {
+          url: "https://via.placeholder.com/300x400",
+          alt: "Książka 2"
+        },
+        link: {
+          url: "https://example.com/book2"
+        }
+      },
+      {
+        id: 3,
+        title: "Książka 3",
+        description: "Opis książki 3",
+        image: {
+          url: "https://via.placeholder.com/300x400",
+          alt: "Książka 3"
+        },
+        link: {
+          url: "https://example.com/book3"
+        }
+      }
+    ];
+
   main.main
+    section.books.section
+      .container.books__container
+        header.section__header.books__header
+          h2.section__title.books__title(data-acf="books_title") Książki
+          h3.section__subtitle.books__subtitle(data-acf="books_subtitle") Nasze publikacje
+        .books__list.flex.flex-wrap.gap-6
+          each book in books
+            .book-card.flex.flex-col.gap-4(
+              data-acf="books.#{book.id}"
+              data-acf-map="image:url,title:title,description:description,link:url"
+              data-acf-book
+            )
+              img.book-card__image(
+                src=book.image.url
+                alt=book.image.alt
+                width="300"
+                height="400"
+              )
+              h4.book-card__title= book.title
+              p.book-card__description= book.description
+              a.btn.btn--primary(href=book.link.url target="_blank") Zobacz więcej
