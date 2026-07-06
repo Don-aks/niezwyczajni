@@ -1,4 +1,5 @@
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 import '@/components/cards/card/card.scss';
 import '@/components/slider.scss';
