@@ -22,7 +22,7 @@ class Swipers {
   #instances = new WeakMap();
 
   constructor() {
-    SWIPER_CONFIGS.forEach(this.#processConfig);
+    SWIPER_CONFIGS.forEach(this.processConfig);
   }
 
   createInstance(element, { swiperOptions, config = {} }) {
@@ -34,7 +34,7 @@ class Swipers {
     }
   }
 
-  #processConfig = ({ selector, swiperOptions: baseOptions, ...config }) => {
+  processConfig = ({ selector, swiperOptions: baseOptions, ...config }) => {
     const elements = document.querySelectorAll(selector);
     if (elements.length === 0) return;
 
