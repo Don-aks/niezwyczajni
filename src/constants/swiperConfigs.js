@@ -7,6 +7,23 @@ const PREV_BTN = '.slider__btn--prev';
 const NEXT_BTN = '.slider__btn--next';
 const defaultPlugins = [changeSlideOnFocus, changeCursorToGrab];
 
+/**
+ * @typedef {Object} SwiperConfig
+ *
+ * // DOM binding
+ * @property {string} selector - CSS selector for the Swiper container.
+ *
+ * // Swiper core config
+ * @property {Object} swiperOptions - Native Swiper API configuration object.
+ *
+ * // Extensions
+ * @property {Array<Function>} [plugins] - Array of plugin functions to extend the Swiper instance.
+ *
+ * // Behaviour
+ * @property {boolean} [keyboardControl=true] - Whether to enable keyboard control.
+ * @property {boolean} [multiple=false] - Whether to apply config to all matched elements or only the first one.
+ */
+
 export default [
   {
     selector: '.about-mission__slider',
