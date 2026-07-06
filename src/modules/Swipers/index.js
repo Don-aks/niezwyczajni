@@ -56,6 +56,10 @@ class Swipers {
 
     return options;
   }
+
+  getInstanceByElement(element) {
+    return this.#instances.get(element);
+  }
 }
 
 export default Swipers;

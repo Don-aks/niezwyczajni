@@ -18,7 +18,7 @@ class AboutMissionSliderArrows {
     this.prev = this.root.querySelector(this.selectors.prev);
     this.next = this.root.querySelector(this.selectors.next);
 
-    this.swiper = swipers.find((swiper) => swiper.el === this.slider);
+    this.swiper = swipers.getInstanceByElement(this.slider);
 
     this.swiper.on('init', this.updateContentHeight);
     this.swiper.on('slideChange', this.updateContentHeight);
