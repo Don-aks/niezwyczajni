@@ -13,6 +13,22 @@
     gap: 70px;
   }
 
+  &__hero {
+    @include mq('tablet-lg') {
+      flex-direction: column-reverse;
+      gap: 70px;
+    }
+  }
+
+  &__content {
+    width: min(100%, 510px);
+    flex-shrink: 0;
+
+    @include mq('tablet-lg') {
+      width: 100%;
+    }
+  }
+
   &__title {
     font-size: 47px;
   }
@@ -24,6 +40,16 @@
   &__image-wrapper {
     width: 600px;
     aspect-ratio: 600 / 340;
+
+    @include mq('desktop-lg') {
+      flex-shrink: 1;
+    }
+
+    @include mq('tablet-lg') {
+      width: 90%;
+      height: clamp(200px, 38vw, 350px);
+      margin-inline: auto;
+    }
   }
 
   &__image {
@@ -37,22 +63,37 @@
     animation: fadeIn 0.5s ease forwards;
     will-change: opacity, transform;
 
+    @include mq('desktop-lg') {
+      right: var(--images-offset);
+
+      width: calc(100% - var(--images-offset));
+      height: 100%;
+    }
+
     &:nth-child(1) {
       animation-delay: 1s;
     }
 
     &:nth-child(2) {
       top: 0;
-      right: var(--images-offset);
+      right: calc(var(--images-offset) * -1);
       z-index: 2;
 
       animation-delay: 0.5s;
+
+      @include mq('desktop-lg') {
+        right: calc(var(--images-offset) / 2);
+      }
     }
 
     &:nth-child(3) {
       top: calc(var(--images-offset) * -1);
       right: calc(var(--images-offset) * -2);
       z-index: 1;
+
+      @include mq('desktop-lg') {
+        right: 0;
+      }
     }
   }
 
