@@ -6,11 +6,15 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 import optimizeSvgSources from './plugins/optimizeSvgSources';
-import spriteReplacer from './plugins/spriteReplacer';
-import getAllHTMLFiles from './utilities/getAllHTMLFiles';
+import fixSpritemapDevPath from './plugins/fixSpritemapDevPath';
+import getRollupPageInputs from './utilities/getRollupPageInputs';
+
+const localhost = 'http://localhost:5173';
+const isProd = process.env.NODE_ENV === 'production';
 
 export default {
-  base: './',
+  base: isProd ? '/wp-content/themes/zwyczajnieniezwyczajni/dist/' : localhost,
+
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
 
   css: {
@@ -22,10 +26,21 @@ export default {
     devSourcemap: true,
   },
 
+  server: {
+    origin: localhost,
+    cors: true,
+    host: true,
+    port: 5173,
+  },
+
   build: {
+    manifest: true,
     emptyOutDir: true,
     rollupOptions: {
-      input: getAllHTMLFiles(new URL('.', import.meta.url)),
+      input: {
+        main: fileURLToPath(new URL('./src/main.js', import.meta.url)),
+        ...getRollupPageInputs('./src/pages'),
+      },
     },
   },
 
@@ -38,6 +53,8 @@ export default {
       styles: false,
       injectSvgOnDev: true,
     }),
+
+    fixSpritemapDevPath(),
 
     vitePluginWebp({ cwd: ['src/assets/images'] }),
     ViteImageOptimizer({
@@ -52,6 +69,5 @@ export default {
     }),
 
     optimizeSvgSources(),
-    spriteReplacer(),
   ],
 };

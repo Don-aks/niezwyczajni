@@ -1,8 +1,7 @@
 {
-  "plugins": ["@prettier/plugin-pug"],
+  "plugins": ["@prettier/plugin-php"],
   "printWidth": 80,
-  "singleQuote": true,
-  "pugSingleQuote": false,
-  "pugAttributeSeparator": "as-needed",
-  "pugCommentPreserveSpaces": "keep-leading"
+  "htmlWhitespaceSensitivity": "ignore",
+  "singleAttributePerLine": true,
+  "singleQuote": true
 }
